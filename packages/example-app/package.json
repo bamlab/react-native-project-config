@@ -8,7 +8,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@bam.tech/eslint-config-bam": "*",
+    "@bam.tech/eslint-config": "*",
     "eslint": "^8.31.0"
   }
 }
