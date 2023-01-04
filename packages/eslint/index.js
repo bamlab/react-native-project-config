@@ -1,7 +1,11 @@
 "use strict";
 
 module.exports = {
-  rules: {
-    "no-console": "error",
+  env: {
+    node: true,
+  },
+  extends: ["eslint:recommended"],
+  parserOptions: {
+    ecmaVersion: "latest",
   },
 };

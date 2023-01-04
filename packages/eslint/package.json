@@ -2,5 +2,8 @@
   "name": "@bam.tech/eslint-config",
   "version": "0.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">= 8"
+  }
 }
