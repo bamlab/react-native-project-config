@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@bam.tech/eslint-config": "*",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
     "eslint": "^8.31.0"
   },
   "private": "true"
