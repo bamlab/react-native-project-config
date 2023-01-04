@@ -1,7 +1,9 @@
-'use strict';
+"use strict";
 
-module.exports = eslintConfigBam;
+const eslintConfig = {
+  rules: {
+    "no-console": "error",
+  },
+};
 
-function eslintConfigBam() {
-    return "Hello from eslintConfigBam";
-}
+module.exports = eslintConfig;

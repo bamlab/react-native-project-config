@@ -1,3 +1,5 @@
 'use strict';
 
-console.log("Run from the example app");
+const eslintConfig = require("@bam.tech/eslint-config-bam")
+
+console.log(eslintConfig);
