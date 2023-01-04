@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "lint": "eslint ."
   },
-  "dependencies": {
-    "@bam.tech/eslint-config-bam": "*"
+  "devDependencies": {
+    "@bam.tech/eslint-config-bam": "*",
+    "eslint": "^8.31.0"
   }
 }
