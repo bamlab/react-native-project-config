@@ -1,9 +1,7 @@
 "use strict";
 
-const eslintConfig = {
+module.exports = {
   rules: {
     "no-console": "error",
   },
 };
-
-module.exports = eslintConfig;
