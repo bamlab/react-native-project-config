@@ -1,0 +1,9 @@
+{
+  "env": {
+    "es6": true
+  },
+  "extends": "@bam.tech/eslint-config",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "example-app",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@bam.tech/eslint-config": "*",
+    "eslint": "^8.31.0"
+  },
+  "private": "true"
+}
