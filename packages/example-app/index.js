@@ -1,7 +1,3 @@
 'use strict';
 
-module.exports = exampleApp;
-
-function exampleApp() {
-    return "Hello from exampleApp";
-}
+console.log("Run from the example app");
