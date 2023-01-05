@@ -5,7 +5,8 @@
   "license": "MIT",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">= 5",
-    "eslint": ">= 8"
+    "eslint": ">= 8",
+    "eslint-plugin-react": "^7.31.11"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.48.0"
