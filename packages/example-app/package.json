@@ -1,7 +1,7 @@
 {
   "name": "example-app",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "break-eslint-recommended-rules.js",
   "license": "MIT",
   "scripts": {
     "start": "node .",
