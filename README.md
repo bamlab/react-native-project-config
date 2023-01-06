@@ -33,3 +33,8 @@ Here are some useful commands:
 
 - `yarn lerna run start`: run the 'start' script in all packages (currently only present in `example-app`),
 - `yarn lerna run lint`: run the 'lint' script in all packages (currently only present in `example-app`).
+
+## How to contribute
+
+- Pick one issue [here](https://github.com/bamlab/react-native-project-config/issues)
+- Pick one task [here](https://github.com/orgs/bamlab/projects/6)
