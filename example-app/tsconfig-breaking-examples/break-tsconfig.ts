@@ -9,3 +9,14 @@ export const lookupHeadphonesManufacturer = (
     ("bose");
   }
 };
+
+// This example breaks the rule allowUnreachableCode: false (https://www.typescriptlang.org/tsconfig#allowUnreachableCode)
+// specified in the imported tsconfig.
+const fn = (n: number) => {
+  if (n > 5) {
+    return true;
+  } else {
+    return false;
+  }
+  return true;
+};
