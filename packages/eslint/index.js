@@ -32,7 +32,6 @@ module.exports = defineConfig({
       jsx: true,
     },
   },
-  plugins: ["@typescript-eslint", "react-native"],
   settings: {
     react: {
       version: "detect",
