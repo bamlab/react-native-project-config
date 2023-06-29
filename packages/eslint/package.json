@@ -12,10 +12,8 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-native": "^4.0.0"
   },
-  "devDependencies": {
-    "@typescript-eslint/parser": "^5.48.0"
-  },
   "dependencies": {
-    "eslint-define-config": "^1.21.0"
+    "eslint-define-config": "^1.21.0",
+    "@typescript-eslint/parser": "^5.48.0"
   }
 }
