@@ -1,6 +1,9 @@
+// @ts-check
 "use strict";
 
-module.exports = {
+const { defineConfig } = require("eslint-define-config");
+
+module.exports = defineConfig({
   env: {
     node: true,
     "react-native/react-native": true,
@@ -24,4 +27,4 @@ module.exports = {
       version: "detect",
     },
   },
-};
+});

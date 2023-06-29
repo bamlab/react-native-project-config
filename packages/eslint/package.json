@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.48.0"
+  },
+  "dependencies": {
+    "eslint-define-config": "^1.21.0"
   }
 }
