@@ -25,6 +25,7 @@ module.exports = defineConfig({
     "plugin:react/recommended",
     "plugin:react/jsx-runtime", // Disables the rules that require importing react when using JSX
     "plugin:react-native/all",
+    "plugin:react-hooks/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -32,6 +33,9 @@ module.exports = defineConfig({
     ecmaFeatures: {
       jsx: true,
     },
+  },
+  rules: {
+    "react-hooks/exhaustive-deps": "error",
   },
   settings: {
     react: {

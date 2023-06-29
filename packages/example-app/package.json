@@ -9,13 +9,16 @@
   },
   "devDependencies": {
     "@bam.tech/eslint-config": "*",
+    "@types/react": "^18.2.14",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "eslint": "^8.31.0",
     "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-native": "^4.0.0"
   },
   "private": "true",
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-native": "^0.72.0"
   }
 }

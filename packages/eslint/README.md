@@ -4,7 +4,11 @@ This project is an ESLint config that gathers all the rules, plugins and parsers
 
 ## How to use?
 
-In your app, run `yarn add --dev @bam.tech/eslint-config eslint-plugin-react-native eslint-plugin-react @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint typescript`.
+In your app, run
+
+```bash
+yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native
+```
 
 In your `.eslintrc` config file, extend the exported configuration:
 
