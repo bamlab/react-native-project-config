@@ -7,7 +7,7 @@ This project is an ESLint config that gathers all the rules, plugins and parsers
 In your app, run
 
 ```bash
-yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native
+yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier
 ```
 
 In your `.eslintrc` config file, extend the exported configuration:

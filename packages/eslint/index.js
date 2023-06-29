@@ -26,6 +26,7 @@ module.exports = defineConfig({
     "plugin:react/jsx-runtime", // Disables the rules that require importing react when using JSX
     "plugin:react-native/all",
     "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -36,6 +37,7 @@ module.exports = defineConfig({
   },
   rules: {
     "react-hooks/exhaustive-deps": "error",
+    "prettier/prettier": ["error", { printWidth: 80 }],
   },
   settings: {
     react: {
