@@ -4,10 +4,6 @@
 const { defineConfig } = require("eslint-define-config");
 
 module.exports = defineConfig({
-  env: {
-    node: true,
-    "react-native/react-native": true,
-  },
   ignorePatterns: [
     ".cache", // tsc/eslint/metro cache
     ".expo-shared",
@@ -28,16 +24,21 @@ module.exports = defineConfig({
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
   rules: {
     "react-hooks/exhaustive-deps": "error",
     "prettier/prettier": ["error", { printWidth: 80 }],
+  },
+  env: {
+    node: true,
+    "react-native/react-native": true,
+  },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   settings: {
     react: {
