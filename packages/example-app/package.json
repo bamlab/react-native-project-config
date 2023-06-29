@@ -14,5 +14,8 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-native": "^4.0.0"
   },
-  "private": "true"
+  "private": "true",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
 }

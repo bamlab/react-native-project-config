@@ -1,4 +1,4 @@
-// This should trigger two errors breaking eslint-plugin-react:
-// react/react-in-jsx-scope
-// react/react-in-jsx-scope
+// This should trigger one error breaking eslint-plugin-react:
+// react/jsx-no-undef
+
 export const MyComponent = () => <ThisIsAViewThatDoesntExist />;

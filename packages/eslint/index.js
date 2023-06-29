@@ -23,6 +23,7 @@ module.exports = defineConfig({
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime", // Disables the rules that require importing react when using JSX
     "plugin:react-native/all",
   ],
   parser: "@typescript-eslint/parser",
