@@ -57,4 +57,17 @@ module.exports = defineConfig({
       version: "detect",
     },
   },
+  overrides: [
+    {
+      files: ["**/*.ts?(x)"],
+      parserOptions: {
+        project: "tsconfig.json",
+      },
+      rules: {
+        // Note: disable the base rule as it can report incorrect errors
+        "no-return-await": "off",
+        "@typescript-eslint/return-await": "error",
+      },
+    },
+  ],
 });
