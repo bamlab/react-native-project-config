@@ -1,0 +1,40 @@
+name: @bam.tech/eslint-config Quality
+
+on: workflow_call
+
+jobs:
+  quality-job:
+    name: Eslint Config Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        # default directory for 'run' actions only in steps
+        working-directory: packages/eslint
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        id: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: packages/eslint/.nvmrc
+
+      - name: Load dependency cache
+        uses: actions/cache@v3
+        with:
+          path: packages/eslint/node_modules
+          # add `-patches-${{ hashFiles('patches/**/*') }}` if you use patch-package
+          key: eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-
+            eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Tests
+        run: yarn test
