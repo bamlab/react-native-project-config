@@ -1,0 +1,2 @@
+"no examples 📝":
+  - all: ["packages/eslint/**/*", "!packages/example-app/**/*"]
