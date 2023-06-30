@@ -24,7 +24,7 @@ jobs:
               - 'packages/example-app/**'
 
   eslint-quality:
-    name: @bam.tech/eslint-config Quality
+    name: Eslint-Config Quality
     needs: changes
     if: ${{ needs.changes.outputs.eslint == 'true' }}
     uses: ./.github/workflows/quality-eslint.yml
