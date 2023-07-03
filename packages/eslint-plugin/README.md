@@ -1,45 +1,81 @@
-# @bam.tech/eslint-plugin
+# ESLint plugin for BAM
 
-eslint plugin for bam projects
+This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project.
 
-## Installation
+## How to use?
 
-You'll first need to install [ESLint](https://eslint.org/):
+In your app, run
 
-```sh
-npm i eslint --save-dev
+```bash
+yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier
 ```
 
-Next, install `@bam.tech/eslint-plugin`:
-
-```sh
-npm install @bam.tech/eslint-plugin --save-dev
-```
-
-## Usage
-
-Add `@bam.tech` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+In your `.eslintrc` config file, extend the exported recommended configuration:
 
 ```json
+// .eslintrc
 {
-  "plugins": ["@bam.tech"]
+  "extends": "plugin:@bam.tech/eslint-plugin/recommended"
 }
 ```
 
-Then configure the rules you want to use under the rules section.
+## How to customize?
 
-```json
-{
-  "rules": {
-    "@bam.tech/rule-name": 2
-  }
+You can still customize your ESLint config by adding configurations, plugins and rules to your `.eslintrc` config file.
+
+## How to improve?
+
+If you find a useful rule that you feel every project at BAM should use, feel free to open a PR.
+
+Use the documentation on how to create a shareable configuration [here](https://eslint.org/docs/latest/developer-guide/shareable-configs).
+
+Here is a small summary:
+
+### Adding new rules
+
+Adding new rules is quite simple, you just have to modify `index.js` and add your rule to the `rules` object:
+
+```js
+module.exports = {
+  ...
+  rules: {
+    ...
+    "my-new-rule": "error",
+  },
+  ...
 }
 ```
 
-## Rules
+### Extending new shareable configurations
 
-<!-- begin auto-generated rules list -->
+Extending new shareable configurations is quite simple, you just have to modify `index.js` and add your shareable configuration to the `extends` array (the order of configurations is important):
 
-TODO: Run eslint-doc-generator to generate the rules list.
+```js
+module.exports = {
+  ...
+  extends: [
+    ...
+    "@some-scope/eslint-config",
+  ],
+  ...
+}
+```
 
-<!-- end auto-generated rules list -->
+The package containing your shareable configuration should be added as a dependency by running `yarn add your-package`.
+
+### Adding a plugin
+
+Adding a plugin is quite simple, you just have to modify `index.js` and add your plugin to the `plugins` array:
+
+```js
+module.exports = {
+  ...
+  plugins: [
+    ...
+    "your-plugin",
+  ],
+  ...
+}
+```
+
+The package containing your plugin should be added as a [peer dependency](https://classic.yarnpkg.com/en/docs/dependency-types/) by running `yarn add --peer your-plugin`.
