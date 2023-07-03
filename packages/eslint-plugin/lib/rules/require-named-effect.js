@@ -22,20 +22,58 @@ module.exports = {
   },
 
   create(context) {
-    // variables should be defined here
-
     //----------------------------------------------------------------------
     // Helpers
     //----------------------------------------------------------------------
 
-    // any helper functions should go here or else delete this section
+    const isUseEffect = (node) => node.callee.name === "useEffect";
+
+    const argumentIsArrowFunction = (node) =>
+      node.arguments[0].type === "ArrowFunctionExpression";
+
+    const effectBodyIsSingleFunction = (node) => {
+      const { body } = node.arguments[0];
+
+      // It's a single unwrapped function call:
+      //   `useEffect(() => theNameOfAFunction(), []);`
+      if (body.type === "CallExpression") {
+        return true;
+      }
+
+      // There's a function body, but it just calls another function:
+      //   `useEffect(() => {
+      //     theOnlyChildIsAFunctionCall();
+      //   }, []);`
+      if (
+        body.body.length &&
+        body.body.length === 1 &&
+        body.body[0] &&
+        body.body[0].expression &&
+        body.body[0].expression.type === "CallExpression"
+      ) {
+        return true;
+      }
+
+      return false;
+    };
+
+    const fail = (report, node) =>
+      report(node, "Complex effects must be a named function.");
 
     //----------------------------------------------------------------------
     // Public
     //----------------------------------------------------------------------
 
     return {
-      // visitor functions for different types of nodes
+      CallExpression(node) {
+        if (
+          isUseEffect(node) &&
+          argumentIsArrowFunction(node) &&
+          !effectBodyIsSingleFunction(node)
+        ) {
+          fail(context.report, node);
+        }
+      },
     };
   },
 };

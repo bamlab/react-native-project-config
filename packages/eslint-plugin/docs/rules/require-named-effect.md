@@ -1,35 +1,38 @@
 # Force the use of named functions inside a useEffect (`require-named-effect`)
 
-Please describe the origin of the rule here.
+Force to use named functions inside a useEffect instead of lambda functions.
 
 ## Rule Details
 
-This rule aims to...
-
 Examples of **incorrect** code for this rule:
 
-```js
+```jsx
+useEffect(() => {}, []);
+```
 
-// fill me in
-
+```jsx
+useEffect(() => {
+  const t = 1;
+  disallowTwoThings(t);
+}, []);
 ```
 
 Examples of **correct** code for this rule:
 
-```js
-
-// fill me in
-
+```jsx
+useEffect(function namedFunction() {}, []);
 ```
 
-### Options
+```jsx
+useEffect(theNameOfAFunction(), []);
+```
 
-If there are any options, describe them here. Otherwise, delete this section.
+```jsx
+useEffect(() => theNameOfAFunction(), []);
+```
 
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+```jsx
+useEffect(() => {
+  theOnlyChildIsAFunctionCall();
+}, []);
+```
