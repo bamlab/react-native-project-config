@@ -3,7 +3,7 @@
     "jsx": "react-native",
     "baseUrl": "./",
     "paths": {
-      "@bam.tech/eslint-config": ["./lib/index"]
+      "@bam.tech/eslint-plugin": ["./lib/index"]
     }
   }
 }
