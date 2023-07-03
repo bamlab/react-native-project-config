@@ -24,6 +24,7 @@ module.exports = defineConfig({
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
+  plugins: ["@bam.tech"],
   rules: {
     "@typescript-eslint/ban-ts-comment": "warn",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -39,6 +40,7 @@ module.exports = defineConfig({
     "react-native/sort-styles": "off",
     "react/no-unstable-nested-components": "error",
     "react/prop-types": "off",
+    "@bam.tech/require-named-effect": "error",
   },
   env: {
     node: true,
