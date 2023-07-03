@@ -1,7 +1,13 @@
 {
-  "name": "@bam.tech/eslint-config",
+  "name": "@bam.tech/eslint-plugin",
   "version": "0.1.0",
-  "main": "index.js",
+  "description": "eslint plugin for bam projects",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
     "test": "echo 'No implemented tests... 😢'"
