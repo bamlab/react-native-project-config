@@ -29,7 +29,8 @@
   "dependencies": {
     "@typescript-eslint/parser": "^5.48.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-define-config": "^1.21.0"
+    "eslint-define-config": "^1.21.0",
+    "requireindex": "^1.2.0"
   },
   "devDependencies": {
     "eslint-plugin-eslint-plugin": "^5.1.0",
