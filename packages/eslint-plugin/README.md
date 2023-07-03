@@ -2,7 +2,7 @@
 
 This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project.
 
-## How to use?
+## How to use the recommended config?
 
 In your app, run
 
@@ -17,6 +17,23 @@ In your `.eslintrc` config file, extend the exported recommended configuration:
 {
   "extends": "plugin:@bam.tech/eslint-plugin/recommended"
 }
+```
+
+## How to use the config for tests ?
+
+```bash
+yarn add --dev eslint-plugin-jest eslint-plugin-jest-formatting eslint-plugin-testing-library
+```
+
+In your `.eslintrc` config file, extend the exported recommended configuration (don't forget to add the overrides to check only the test files)
+
+```json
+  "overrides": [
+    {
+      "files": ["*.test.tsx"],
+      "extends": "plugin:@bam.tech/tests"
+    }
+  ]
 ```
 
 ## How to customize?
