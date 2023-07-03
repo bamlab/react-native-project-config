@@ -21,7 +21,6 @@ jobs:
           filters: |
             eslint:
               - 'packages/eslint-plugin/**'
-              - 'packages/example-app/**'
 
   eslint-quality:
     name: Eslint-Plugin Quality
