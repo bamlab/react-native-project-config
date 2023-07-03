@@ -1,5 +1,8 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "eslint.workingDirectories": ["packages/example-app", "packages/eslint"]
+  "eslint.workingDirectories": [
+    "packages/eslint-plugin/example-app",
+    "packages/eslint-plugin"
+  ]
 }
