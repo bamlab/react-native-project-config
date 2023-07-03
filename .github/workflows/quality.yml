@@ -20,11 +20,11 @@ jobs:
         with:
           filters: |
             eslint:
-              - 'packages/eslint/**'
+              - 'packages/eslint-plugin/**'
               - 'packages/example-app/**'
 
   eslint-quality:
-    name: Eslint-Config Quality
+    name: Eslint-Plugin Quality
     needs: changes
     if: ${{ needs.changes.outputs.eslint == 'true' }}
     uses: ./.github/workflows/quality-eslint.yml

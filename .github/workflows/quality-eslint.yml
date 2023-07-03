@@ -1,17 +1,17 @@
-name: Eslint-Config Quality
+name: Eslint-Plugin Quality
 
 on: workflow_call
 
 jobs:
   quality-job:
-    name: Eslint-Config Quality
+    name: Eslint-Plugin Quality
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     defaults:
       run:
         # default directory for 'run' actions only in steps
-        working-directory: packages/eslint
+        working-directory: packages/eslint-plugin
 
     steps:
       - name: Checkout
@@ -21,12 +21,12 @@ jobs:
         id: setup-node
         uses: actions/setup-node@v3
         with:
-          node-version-file: packages/eslint/.nvmrc
+          node-version-file: packages/eslint-plugin/.nvmrc
 
       - name: Load dependency cache
         uses: actions/cache@v3
         with:
-          path: packages/eslint/node_modules
+          path: packages/eslint-plugin/node_modules
           # add `-patches-${{ hashFiles('patches/**/*') }}` if you use patch-package
           key: eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-${{ hashFiles('yarn.lock') }}
           restore-keys: |

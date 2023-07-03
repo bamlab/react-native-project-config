@@ -12,7 +12,7 @@ There is also an example app under `packages/example-app` whose goal is to demon
 
 ## Using the configurations
 
-- [Using ESLint configuration](./packages/eslint/README.md)
+- [Using ESLint plugin](./packages/eslint/README.md)
 
 ## Installing the project
 

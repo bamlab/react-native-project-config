@@ -1,6 +1,6 @@
-# ESLint config for BAM
+# ESLint plugin for BAM
 
-This project is an ESLint config that gathers all the rules, plugins and parsers that should be used in any new BAM project.
+This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project.
 
 ## How to use?
 
@@ -10,12 +10,12 @@ In your app, run
 yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier
 ```
 
-In your `.eslintrc` config file, extend the exported configuration:
+In your `.eslintrc` config file, extend the exported recommended configuration:
 
 ```json
 // .eslintrc
 {
-  "extends": "@bam.tech/eslint-config"
+  "extends": "plugin:@bam.tech/eslint-plugin/recommended"
 }
 ```
 
