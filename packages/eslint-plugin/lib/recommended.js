@@ -1,4 +1,6 @@
-export const recommended = defineConfig({
+const { defineConfig } = require("eslint-define-config");
+
+module.exports = defineConfig({
   ignorePatterns: [
     ".cache", // tsc/eslint/metro cache
     ".expo-shared",
