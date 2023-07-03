@@ -1,0 +1,47 @@
+name: Quality
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: Check changes
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    outputs:
+      eslint: ${{ steps.filter.outputs.eslint }}
+    steps:
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            eslint:
+              - 'packages/eslint/**'
+              - 'packages/example-app/**'
+
+  eslint-quality:
+    name: Eslint-Config Quality
+    needs: changes
+    if: ${{ needs.changes.outputs.eslint == 'true' }}
+    uses: ./.github/workflows/quality-eslint.yml
+
+  final-check:
+    name: Final Check
+    needs: [eslint-quality]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check previous jobs status
+        run: |
+          status=$(echo "${{ needs.eslint-quality.result }}" | tr '[:upper:]' '[:lower:]')
+          if [[ "$status" == *"failure"* ]]; then
+            echo "One or more previous jobs failed."
+            exit 1
+          else
+            echo "All previous jobs succeeded or were skipped."
+            exit 0
+          fi
