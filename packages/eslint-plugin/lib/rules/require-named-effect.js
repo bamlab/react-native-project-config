@@ -11,14 +11,17 @@
 /** @type {import('eslint').Rule.RuleModule} */
 module.exports = {
   meta: {
-    type: null, // `problem`, `suggestion`, or `layout`
+    type: "suggestion", // `problem`, `suggestion`, or `layout`
     docs: {
       description: "Force the use of named functions inside a useEffect",
-      recommended: false,
-      url: null, // URL to the documentation page for this rule
+      recommended: true,
+      url: "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/require-named-effect.md", // URL to the documentation page for this rule
     },
     fixable: null, // Or `code` or `whitespace`
-    schema: [], // Add a schema if the rule has options
+    schema: [], // Add a schema if the rule has options,
+    messages: {
+      useNamedFunction: "Complex effects must be a named function.",
+    },
   },
 
   create(context) {
@@ -58,7 +61,7 @@ module.exports = {
     };
 
     const fail = (report, node) =>
-      report(node, "Complex effects must be a named function.");
+      report({ node, messageId: "useNamedFunction" });
 
     //----------------------------------------------------------------------
     // Public
