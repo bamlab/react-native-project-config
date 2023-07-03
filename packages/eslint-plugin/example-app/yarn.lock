@@ -722,11 +722,6 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@bam.tech/eslint-config@*":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@bam.tech/eslint-config/-/eslint-config-0.2.0.tgz#53e4a5a357e108b8b779bcbe85e68ebe9b286d8b"
-  integrity sha512-jdCbmqWaMZdq2EuyNTUZ/3LbOvxNvg2EZ9H5SnerdOb85G/MIFGNMzTXQ7lVeOmfD8yAtoQQ0ttisSDlBhZfXw==
-
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
