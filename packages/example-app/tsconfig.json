@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-native",
+    "baseUrl": "./",
+    "paths": {
+      "@bam.tech/eslint-config": ["../eslint/index"]
+    }
+  }
+}
