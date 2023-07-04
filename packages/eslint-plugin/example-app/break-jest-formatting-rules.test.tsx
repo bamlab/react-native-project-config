@@ -1,3 +1,5 @@
+// Save without formatting: [⌘ + K] > [S]
+
 // This should trigger an error breaking eslint-jest-formatting rule:
 // jest-formatting/padding-around-all
 

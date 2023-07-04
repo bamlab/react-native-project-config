@@ -1,3 +1,5 @@
+// Save without formatting: [⌘ + K] > [S]
+
 // This should trigger an error breaking eslint-plugin-bam-custom-rules:
 // bam-custom-rules/require-named-effect
 

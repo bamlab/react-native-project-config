@@ -1,3 +1,5 @@
+// Save without formatting: [⌘ + K] > [S]
+
 // This should trigger one error breaking eslint-plugin-react-native:
 // react-native/no-raw-text
 

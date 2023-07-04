@@ -1,3 +1,5 @@
+// Save without formatting: [⌘ + K] > [S]
+
 // This should trigger an error breaking eslint-plugin-react-hooks:
 // react-hooks/exhaustive-deps
 

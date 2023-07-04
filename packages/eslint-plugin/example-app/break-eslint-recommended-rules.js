@@ -1,3 +1,5 @@
+// Save without formatting: [⌘ + K] > [S]
+
 "use strict";
 
 console.log(
