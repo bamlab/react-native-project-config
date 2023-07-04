@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "@bam.tech/eslint-plugin": ["./lib/index"]
-    }
-  }
-}
