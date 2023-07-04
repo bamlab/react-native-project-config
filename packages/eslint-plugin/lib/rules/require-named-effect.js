@@ -13,7 +13,7 @@ module.exports = {
   meta: {
     type: "suggestion", // `problem`, `suggestion`, or `layout`
     docs: {
-      description: "Force the use of named functions inside a useEffect",
+      description: "Enforces the use of named functions inside a useEffect",
       recommended: true,
       url: "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/require-named-effect.md", // URL to the documentation page for this rule
     },
