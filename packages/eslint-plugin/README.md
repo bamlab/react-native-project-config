@@ -6,15 +6,18 @@ This project is an ESLint plugin that gathers all the rules, plugins and parsers
 
 The plugin exports multiple configs that can be used in your `.eslintrc` config file:
 
-- `@bam.tech/recommended` - The recommended config for all projects
-- `@bam.tech/tests` - The recommended config for all test files
+| Name                                  | Description                               |
+| ------------------------------------- | ----------------------------------------- |
+| `@bam.tech/eslint-plugin/recommended` | The recommended config for all projects   |
+| `@bam.tech/eslint-plugin/tests`       | The recommended config for all test files |
 
-| Name                                  | Dependencies                                                                                                                                                                              |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@bam.tech/eslint-plugin/recommended` | `yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier` |
-| `@bam.tech/eslint-plugin/tests`       | `yarn add --dev eslint-plugin-jest eslint-plugin-jest-formatting eslint-plugin-testing-library`                                                                                           |
+You should install the correct version for each package. You can see the list using:
 
-You can automatically install all the peer dependencies by running:
+```bash
+npm info "@bam.tech/esling-plugin" peerDependencies
+```
+
+With **npm 5+** you can automatically install all the peer dependencies by running:
 
 ```bash
 npx install-peerdeps @bam.tech/eslint-config -D
