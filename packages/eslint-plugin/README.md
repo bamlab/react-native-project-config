@@ -2,26 +2,25 @@
 
 This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project.
 
-## How to use eslint configs?
+## Shared config
 
 The plugin exports multiple configs that can be used in your `.eslintrc` config file:
 
 - `@bam.tech/recommended` - The recommended config for all projects
 - `@bam.tech/tests` - The recommended config for all test files
 
-Each configurations has its dependencies and special setup.
+| Name                                  | Dependencies                                                                                                                                                                              |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@bam.tech/eslint-plugin/recommended` | `yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier` |
+| `@bam.tech/eslint-plugin/tests`       | `yarn add --dev eslint-plugin-jest eslint-plugin-jest-formatting eslint-plugin-testing-library`                                                                                           |
 
-Development dependencies for recommended config:
-
-```bash
-yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier
-```
-
-Development dependencies for tests config:
+You can automatically install all the peer dependencies by running:
 
 ```bash
-yarn add --dev eslint-plugin-jest eslint-plugin-jest-formatting eslint-plugin-testing-library
+npx install-peerdeps @bam.tech/eslint-config -D
 ```
+
+## How to use?
 
 In your `.eslintrc` config file, extend the exported configurations:
 
@@ -36,10 +35,9 @@ In your `.eslintrc` config file, extend the exported configurations:
     }
   ]
 }
+```
 
 Don't forget to add the overrides to check only the test files.
-
-```
 
 ## Rules implemented in this plugin
 
