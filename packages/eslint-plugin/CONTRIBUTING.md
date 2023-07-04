@@ -1,18 +1,10 @@
-# ESLint plugin for BAM
-
-This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project. Here is the documentation on how to contribute to this plugin
-
-## How to improve?
+# Contribute
 
 If you find a useful rule that you feel every project at BAM should use, feel free to open a PR.
 
-Use the documentation on how to create a shareable configuration [here](https://eslint.org/docs/latest/developer-guide/shareable-configs).
+## Creating new rules
 
-Here is a small summary:
-
-### Adding new rules
-
-Adding new rules is quite simple:
+Creating new rules is quite simple:
 
 1. Create a new rule from the template:
 
@@ -21,7 +13,7 @@ Adding new rules is quite simple:
    yo eslint:rule
    ```
 
-1. Add it to the default shared config:
+1. Optionally, add it to some shareable configs (for example `recommended`):
 
    ```js
    // recommended.js
@@ -41,9 +33,15 @@ Adding new rules is quite simple:
    yarn test
    ```
 
-### Extending new shareable configurations
+## Creating new shareable configuration
 
-Extending new shareable configurations is quite simple, you just have to modify `index.js` and add your shareable configuration to the `extends` array (the order of configurations is important):
+Creating a shareable config is simple, you just have to create a new config file in the `lib/configs` directory and modify it.
+
+## Modifying a shareable configuration
+
+### Extending from other shareable configs
+
+Extending new shareable configurations is quite simple, you just have to modify the config file and add your shareable configuration to the `extends` array (the order of configurations is important):
 
 ```js
 module.exports = {
@@ -52,25 +50,23 @@ module.exports = {
     ...
     "@some-scope/eslint-config",
   ],
-  ...
 }
 ```
 
 The package containing your shareable configuration should be added as a dependency by running `yarn add your-package`.
 
-### Adding a plugin
+### Adding a plugin to your shareable config
 
-Adding a plugin is quite simple, you just have to modify `index.js` and add your plugin to the `plugins` array:
+Adding a plugin is quite simple, you just have to modify your config file and add your plugin to the `plugins` array:
 
 ```js
 module.exports = {
   ...
   plugins: [
     ...
-    "your-plugin",
+    "some-plugin",
   ],
-  ...
 }
 ```
 
-The package containing your plugin should be added as a [peer dependency](https://classic.yarnpkg.com/en/docs/dependency-types/) by running `yarn add --peer your-plugin`.
+The package containing your plugin should be added as a [peer dependency](https://classic.yarnpkg.com/en/docs/dependency-types/) by running `yarn add --peer eslint-plugin-some-plugin`.
