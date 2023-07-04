@@ -7,11 +7,19 @@
     "eslintplugin",
     "eslint-plugin"
   ],
+  "author": "BAM.tech",
   "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "exports": "./lib/index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo 'No implemented tests... 😢'",
-    "lint": "eslint ."
+    "lint": "npm-run-all \"lint:*\"",
+    "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
+    "lint:js": "eslint .",
+    "test": "mocha tests --recursive",
+    "update:eslint-docs": "eslint-doc-generator"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">= 5",
@@ -33,10 +41,14 @@
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-doc-generator": "^1.4.3",
     "eslint-plugin-eslint-plugin": "^5.1.0",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5"
   },
-  "files": [
-    "lib"
-  ]
+  "engines": {
+    "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
+  }
 }

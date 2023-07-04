@@ -10,4 +10,11 @@ module.exports = {
   env: {
     node: true,
   },
+  overrides: [
+    {
+      files: ["tests/**/*.js"],
+      env: { mocha: true },
+    },
+  ],
+  ignorePatterns: ["example-app"],
 };

@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "jsx": "react-native",
-    "baseUrl": "./",
     "paths": {
       "@bam.tech/eslint-plugin": ["./lib/index"]
     }
