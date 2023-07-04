@@ -39,3 +39,5 @@ In your `.eslintrc` config file, extend the exported recommended configuration (
 ## How to customize?
 
 You can still customize your ESLint config by adding configurations, plugins and rules to your `.eslintrc` config file.
+
+If you find a useful rule that you feel every project at BAM should use, feel free to contribute, [here is a link](./CONTRIBUTING.md) where you'll find explanations on how to do so.
