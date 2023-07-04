@@ -1,6 +1,2 @@
 "no examples 📝":
-  - all:
-      [
-        "packages/eslint-plugin/**/*",
-        "!packages/eslint-plugin/example-app/**/*",
-      ]
+  - all: ["packages/eslint-plugin/**/*", "!example-app/**/*"]

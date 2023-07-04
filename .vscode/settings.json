@@ -2,8 +2,5 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": { "source.fixAll": true },
-  "eslint.workingDirectories": [
-    "packages/eslint-plugin/example-app",
-    "packages/eslint-plugin"
-  ]
+  "eslint.workingDirectories": ["example-app", "packages/eslint-plugin"]
 }
