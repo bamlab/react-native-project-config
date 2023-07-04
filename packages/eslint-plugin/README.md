@@ -40,12 +40,9 @@ In your `.eslintrc` config file, extend the exported recommended configuration (
 
 <!-- begin auto-generated rules list -->
 
-💼 Configurations enabled in.\
-✅ Set in the `recommended` configuration.
-
-| Name                                                       | Description                                            | 💼  |
-| :--------------------------------------------------------- | :----------------------------------------------------- | :-- |
-| [require-named-effect](docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect | ✅  |
+| Name                                                       | Description                                            |
+| :--------------------------------------------------------- | :----------------------------------------------------- |
+| [require-named-effect](docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect |
 
 <!-- end auto-generated rules list -->
 

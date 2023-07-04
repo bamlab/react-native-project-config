@@ -40,7 +40,6 @@ module.exports = defineConfig({
     "react-native/sort-styles": "off",
     "react/no-unstable-nested-components": "error",
     "react/prop-types": "off",
-    "@bam.tech/require-named-effect": "error",
   },
   env: {
     node: true,
