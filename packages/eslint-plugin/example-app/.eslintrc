@@ -1,9 +1,13 @@
 {
+  "root": true,
   "extends": "plugin:@bam.tech/recommended",
   "overrides": [
     {
       "files": ["*.test.tsx"],
       "extends": "plugin:@bam.tech/tests"
     }
-  ]
+  ],
+  "rules": {
+    "@bam.tech/require-named-effect": "error"
+  }
 }

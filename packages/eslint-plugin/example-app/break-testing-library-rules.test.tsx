@@ -1,3 +1,5 @@
+// Save without formatting: [⌘ + K] > [S]
+
 // This should trigger an error breaking eslint-testing-library rule:
 // testing-library/no-await-sync-events
 

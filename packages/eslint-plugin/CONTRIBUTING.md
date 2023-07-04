@@ -12,18 +12,34 @@ Here is a small summary:
 
 ### Adding new rules
 
-Adding new rules is quite simple, you just have to modify `index.js` and add your rule to the `rules` object:
+Adding new rules is quite simple:
 
-```js
-module.exports = {
-  ...
-  rules: {
-    ...
-    "my-new-rule": "error",
-  },
-  ...
-}
-```
+1. Create a new rule from the template:
+
+   ```bash
+   cd eslint-plugin
+   yo eslint:rule
+   ```
+
+1. Add it to the default shared config:
+
+   ```js
+   // recommended.js
+   module.exports = {
+     ...
+     rules: {
+       ...
+       "@bam.tech/my-new-rule": "error",
+     },
+   }
+   ```
+
+1. Update the README and run the tests:
+   ```bash
+   yarn update:eslint-docs
+   yarn lint
+   yarn test
+   ```
 
 ### Extending new shareable configurations
 

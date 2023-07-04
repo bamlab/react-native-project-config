@@ -36,6 +36,16 @@ In your `.eslintrc` config file, extend the exported recommended configuration (
   ]
 ```
 
+## Rules implemented in this plugin
+
+<!-- begin auto-generated rules list -->
+
+| Name                                                       | Description                                            |
+| :--------------------------------------------------------- | :----------------------------------------------------- |
+| [require-named-effect](docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect |
+
+<!-- end auto-generated rules list -->
+
 ## How to customize?
 
 You can still customize your ESLint config by adding configurations, plugins and rules to your `.eslintrc` config file.
