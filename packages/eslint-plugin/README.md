@@ -2,38 +2,43 @@
 
 This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project.
 
-## How to use the recommended config?
+## How to use eslint configs?
 
-In your app, run
+The plugin exports multiple configs that can be used in your `.eslintrc` config file:
+
+- `@bam.tech/recommended` - The recommended config for all projects
+- `@bam.tech/tests` - The recommended config for all test files
+
+Each configurations has its dependencies and special setup.
+
+Development dependencies for recommended config:
 
 ```bash
 yarn add --dev @bam.tech/eslint-config @typescript-eslint/eslint-plugin eslint eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native prettier
 ```
 
-In your `.eslintrc` config file, extend the exported recommended configuration:
-
-```json
-// .eslintrc
-{
-  "extends": "plugin:@bam.tech/eslint-plugin/recommended"
-}
-```
-
-## How to use the config for tests ?
+Development dependencies for tests config:
 
 ```bash
 yarn add --dev eslint-plugin-jest eslint-plugin-jest-formatting eslint-plugin-testing-library
 ```
 
-In your `.eslintrc` config file, extend the exported recommended configuration (don't forget to add the overrides to check only the test files)
+In your `.eslintrc` config file, extend the exported configurations:
 
 ```json
+// .eslintrc
+{
+  "extends": "plugin:@bam.tech/eslint-plugin/recommended",
   "overrides": [
     {
       "files": ["*.test.tsx"],
       "extends": "plugin:@bam.tech/tests"
     }
   ]
+}
+
+Don't forget to add the overrides to check only the test files.
+
 ```
 
 ## Rules implemented in this plugin
