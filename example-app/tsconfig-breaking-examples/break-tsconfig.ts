@@ -1,4 +1,5 @@
-// This example breaks the rule noImplicitReturns (https://www.typescriptlang.org/tsconfig#noImplicitReturns)
+// This example breaks the rule noImplicitReturns activated by the rule strict
+// (https://www.typescriptlang.org/tsconfig#noImplicitReturns)
 // specified in the imported tsconfig.
 export const lookupHeadphonesManufacturer = (
   color: "blue" | "black"
@@ -18,5 +19,4 @@ const fn = (n: number) => {
   } else {
     return false;
   }
-  return true;
 };
