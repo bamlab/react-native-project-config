@@ -1,0 +1,8 @@
+{
+  "name": "@bam.tech/typescript-config",
+  "version": "0.3.0",
+  "license": "MIT",
+  "peerDependencies": {
+    "expo": ">=47"
+  }
+}

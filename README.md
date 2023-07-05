@@ -29,6 +29,14 @@ Here are some useful commands:
 - rename the directory of a package: `mv package-my-config new-directory-name && yarn lerna bootstrap`,
 - run a script `do-something` that exists in at least one package: `yarn lerna run do-something` (this will try to run the script in all packages in which it is defined).
 
+## Publishing a new version of a package
+
+If this is the first time the package is published to npm, running `yarn lerna publish --no-private` [doesn't seem to work](https://github.com/lerna/lerna/issues/1821). Instead, you should `cd` into your package and run `yarn publish --access public`. `yarn` will then ask the new version the package should have.
+
+If the package has already been published on npm, you can use `yarn lerna publish --no-private` in the root directory of the project.
+
+For each of these two tasks, you will need to have an account on [npmjs.com](https://www.npmjs.com/) and to be added to the [@bam.tech](https://www.npmjs.com/settings/bam.tech/packages) organization.
+
 ## Running commands
 
 - `yarn lerna run start`: run the 'start' script in all packages (currently only present in `example-app`),
