@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "types":"tsc --noEmit"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
