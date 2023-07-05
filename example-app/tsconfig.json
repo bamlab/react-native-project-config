@@ -1,6 +1,3 @@
 {
-  "compilerOptions": {
-    "jsx": "react-native",
-    "baseUrl": "./"
-  }
+  "extends": "@bam.tech/typescript-config"
 }
