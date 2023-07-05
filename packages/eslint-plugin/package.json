@@ -8,6 +8,8 @@
     "eslint-plugin"
   ],
   "author": "BAM.tech",
+  "repository": "https://github.com/bamlab/react-native-project-config",
+  "homepage": "https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/README.md",
   "main": "./lib/index.js",
   "files": [
     "lib"
