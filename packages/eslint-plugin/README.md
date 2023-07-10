@@ -7,8 +7,8 @@ This project is an ESLint plugin that gathers all the rules, plugins and parsers
 Install the plugin and its peer dependencies:
 
 ```bash
-yarn add --dev @bam.tech/eslint-plugin
-npx install-peerdeps --dev @bam.tech/eslint-plugin
+yarn add @bam.tech/eslint-plugin --dev
+npx install-peerdeps @bam.tech/eslint-plugin --dev --yarn
 ```
 
 Then update your `.eslintrc` config file:
@@ -30,10 +30,11 @@ Then update your `.eslintrc` config file:
 
 This plugin exports multiple configurations that can be used in your `.eslintrc` config file:
 
-| Name                    | Description                                                                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `@bam.tech/recommended` | The recommended config for all projects                                                                                              |
-| `@bam.tech/tests`       | The recommended config for test files. By default this applies to every file: put it in an `overrides` to filter on your test files. |
+| Name                    | Description                                                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `@bam.tech/recommended` | The recommended config for all projects                                                                                                                      |
+| `@bam.tech/tests`       | The recommended config for test files. By default this applies to every file: put it in an `overrides` to filter on your test files.                         |
+| `@bam.tech/a11y`        | [beta] Eslint config to check for accessibility. Still in beta to not break existing projects, but will be merged into the recommended config in the future. |
 
 These configs need some peer dependencies. You can list them with:
 
