@@ -33,7 +33,6 @@ module.exports = defineConfig({
     "@typescript-eslint/no-unused-vars": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-return-await": "error",
-    "prettier/prettier": ["error", { printWidth: 80 }],
     "react-hooks/exhaustive-deps": "error",
     "react-native/no-color-literals": "off",
     "react-native/no-raw-text": ["error", { skip: ["Trans"] }],
