@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": "plugin:@bam.tech/recommended",
+  "extends": ["plugin:@bam.tech/recommended", "plugin:@bam.tech/a11y"],
   "overrides": [
     {
       "files": ["*.test.tsx"],
