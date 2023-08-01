@@ -20,7 +20,7 @@ module.exports = {
     fixable: null, // Or `code` or `whitespace`
     schema: [], // Add a schema if the rule has options
     messages: {
-      imageRequiresAccessibleProp: "Image components require accessible prop ",
+      imageRequiresAccessibleProp: "Image components require accessible prop",
     },
   },
 
