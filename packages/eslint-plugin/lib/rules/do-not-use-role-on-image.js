@@ -30,16 +30,24 @@ module.exports = {
   create(context) {
     return {
       JSXAttribute: (node) => {
-        console.log(node.range);
         if (node.name.name === "role" && isImage(node.parent))
           context.report({
             node,
             messageId: "doNotUseRoleOnImage",
             fix: (fixer) => {
-              return fixer.replaceTextRange(
+              const roleFixer = fixer.replaceTextRange(
                 [node.range[0], node.range[0] + 4],
                 "accessibilityRole"
               );
+              if (node.value.type === "Literal" && node.value.value === "img")
+                return [
+                  roleFixer,
+                  fixer.replaceTextRange(
+                    [node.range[1] - 4, node.range[1] - 1],
+                    "image"
+                  ),
+                ];
+              return roleFixer;
             },
           });
       },

@@ -28,14 +28,19 @@ const ruleTester = new RuleTester({
 
 const valid = [`<Image source={{uri:""}} accessibilityRole='button' />`];
 
-const invalid = [`<Image source={{uri:""}} role='button' />`];
-
-ruleTester.run("image-requires-accessible-prop", rule, {
-  valid,
-
-  invalid: invalid.map((code) => ({
-    code,
+const invalid = [
+  {
+    code: `<Image source={{uri:""}} role='button' />`,
     errors: ["Use 'accessibilityRole' instead of 'role' on Image component"],
     output: `<Image source={{uri:""}} accessibilityRole='button' />`,
-  })),
+  },
+  {
+    code: `<Image source={{uri:""}} role='img' />`,
+    errors: ["Use 'accessibilityRole' instead of 'role' on Image component"],
+    output: `<Image source={{uri:""}} accessibilityRole='image' />`,
+  },
+];
+ruleTester.run("image-requires-accessible-prop", rule, {
+  valid,
+  invalid,
 });
