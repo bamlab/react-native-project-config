@@ -29,7 +29,6 @@ module.exports = {
   create(context) {
     return {
       JSXOpeningElement: (node) => {
-        console.log(node);
         if (
           isImage(node) &&
           !node.attributes.some((attr) => attr.name.name === "accessible")
