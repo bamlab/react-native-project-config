@@ -20,7 +20,7 @@ const ruleTester = new RuleTester({
     ecmaVersion: 2021,
     sourceType: "module",
     ecmaFeatures: {
-      jsx: true, // This is the key line
+      jsx: true,
     },
   },
 });
