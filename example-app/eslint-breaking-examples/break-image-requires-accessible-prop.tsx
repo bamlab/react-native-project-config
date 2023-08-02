@@ -9,8 +9,6 @@ const MyComponent = () => {
   return (
     <>
       <Image source={{ uri: "" }} accessibilityIgnoresInvertColors />
-      <Image source={{ uri: "" }} accessibilityIgnoresInvertColors />
-      <Image source={{ uri: "random" }} accessibilityIgnoresInvertColors />
       <OtherImage source={{ uri: "random" }} accessibilityIgnoresInvertColors />
       <NotReallyAnImage></NotReallyAnImage>
     </>
