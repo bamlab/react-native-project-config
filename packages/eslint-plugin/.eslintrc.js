@@ -19,6 +19,7 @@ module.exports = {
           "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/{{name}}.md",
       },
     ],
+    "no-console": ["error", { allow: ["warn", "error"] }],
   },
   env: {
     node: true,
