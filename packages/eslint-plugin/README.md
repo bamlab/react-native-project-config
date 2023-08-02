@@ -73,7 +73,8 @@ To use a rule, just declare it in your `.eslintrc`:
   "plugins": ["@bam.tech"],
   "rules": {
     "@bam.tech/require-named-effect": "error",
-    "@bam.tech/image-requires-accessible-prop": "error"
+    "@bam.tech/image-requires-accessible-prop": "error",
+    "@bam.tech/do-not-use-role-on-image": "error"
   }
 }
 ```
