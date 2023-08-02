@@ -54,9 +54,13 @@ This plugin exports some custom rules that you can optionally use in your projec
 
 <!-- begin auto-generated rules list -->
 
-| Name                                                       | Description                                            |
-| :--------------------------------------------------------- | :----------------------------------------------------- |
-| [require-named-effect](docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect |
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
+💡 Manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
+
+| Name                                                                           | Description                                            | 🔧  | 💡  |
+| :----------------------------------------------------------------------------- | :----------------------------------------------------- | :-- | :-- |
+| [image-requires-accessible-prop](docs/rules/image-requires-accessible-prop.md) | Require accessible prop on image components            | 🔧  | 💡  |
+| [require-named-effect](docs/rules/require-named-effect.md)                     | Enforces the use of named functions inside a useEffect |     |     |
 
 <!-- end auto-generated rules list -->
 
@@ -67,7 +71,8 @@ To use a rule, just declare it in your `.eslintrc`:
 {
   "plugins": ["@bam.tech"],
   "rules": {
-    "@bam.tech/require-named-effect": "error"
+    "@bam.tech/require-named-effect": "error",
+    "@bam.tech/image-requires-accessible-prop": "error"
   }
 }
 ```
