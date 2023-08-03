@@ -13,7 +13,7 @@ module.exports = (element) => {
         if (attribute.value === null) return true;
 
         if (attribute.value.type === "JSXExpressionContainer") {
-          return attribute.value.expression.value === true;
+          return attribute.value.expression.value;
         }
       }
     }
