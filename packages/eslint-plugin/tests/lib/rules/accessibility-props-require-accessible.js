@@ -39,10 +39,12 @@ ruleTester.run("accessibility-props-require-accessible", rule, {
     {
       code: `<View accessibilityRole="button" />`,
       errors: ["Requires accessible prop when role prop is defined"],
+      output: `<View accessibilityRole="button"  accessible/>`,
     },
     {
       code: `<View accessibilityLabel="this is a label" />`,
       errors: ["Requires accessible prop when label prop is defined"],
+      output: `<View accessibilityLabel="this is a label"  accessible/>`,
     },
   ],
 });

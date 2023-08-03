@@ -59,7 +59,7 @@ This plugin exports some custom rules that you can optionally use in your projec
 
 | Name                                                                                           | Description                                                   | 🔧  | 💡  |
 | :--------------------------------------------------------------------------------------------- | :------------------------------------------------------------ | :-- | :-- |
-| [accessibility-props-require-accessible](docs/rules/accessibility-props-require-accessible.md) | Requires accessible prop when accessibility props are defined |     |     |
+| [accessibility-props-require-accessible](docs/rules/accessibility-props-require-accessible.md) | Requires accessible prop when accessibility props are defined | 🔧  |     |
 | [do-not-use-role-on-image](docs/rules/do-not-use-role-on-image.md)                             | Disallow role prop on Image component                         | 🔧  |     |
 | [image-requires-accessible-prop](docs/rules/image-requires-accessible-prop.md)                 | Require accessible prop on image components                   | 🔧  | 💡  |
 | [require-named-effect](docs/rules/require-named-effect.md)                                     | Enforces the use of named functions inside a useEffect        |     |     |

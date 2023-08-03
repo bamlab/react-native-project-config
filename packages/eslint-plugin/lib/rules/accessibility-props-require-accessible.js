@@ -4,7 +4,7 @@
  */
 "use strict";
 
-const isAccessible = require("../utils/isAccessible");
+const { isAccessible, hasPropAccessible } = require("../utils/isAccessible");
 
 //------------------------------------------------------------------------------
 // Rule Definition
@@ -20,7 +20,7 @@ module.exports = {
       recommended: false,
       url: "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/accessibility-props-require-accessible.md", // URL to the documentation page for this rule
     },
-    fixable: null, // Or `code` or `whitespace`
+    fixable: "code", // Or `code` or `whitespace`
     schema: [], // Add a schema if the rule has options
     messages: {
       roleRequiresAccessible:
@@ -39,10 +39,24 @@ module.exports = {
               ["role", "accessibilityRole"].includes(attribute.name.name)
             )
           ) {
-            context.report({
-              node,
-              messageId: "roleRequiresAccessible",
-            });
+            if (!hasPropAccessible(node)) {
+              context.report({
+                node,
+                messageId: "roleRequiresAccessible",
+                fix: (fixer) => {
+                  const openingTagEnd = node.range[1];
+                  return fixer.insertTextBeforeRange(
+                    [openingTagEnd - (node.selfClosing ? 2 : 1), openingTagEnd],
+                    " accessible"
+                  );
+                },
+              });
+            } else {
+              context.report({
+                node,
+                messageId: "roleRequiresAccessible",
+              });
+            }
           }
 
           if (!isAnyParentAccessible(node)) {
@@ -57,10 +71,27 @@ module.exports = {
                 ].includes(attribute.name.name)
               )
             ) {
-              context.report({
-                node,
-                messageId: "labelRequiresAccessible",
-              });
+              if (!hasPropAccessible(node)) {
+                context.report({
+                  node,
+                  messageId: "labelRequiresAccessible",
+                  fix: (fixer) => {
+                    const openingTagEnd = node.range[1];
+                    return fixer.insertTextBeforeRange(
+                      [
+                        openingTagEnd - (node.selfClosing ? 2 : 1),
+                        openingTagEnd,
+                      ],
+                      " accessible"
+                    );
+                  },
+                });
+              } else {
+                context.report({
+                  node,
+                  messageId: "labelRequiresAccessible",
+                });
+              }
             }
           }
         }

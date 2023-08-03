@@ -1,7 +1,7 @@
 const isImage = require("./isImage");
 const isText = require("./isText");
 
-module.exports = (element) => {
+const isAccessible = (element) => {
   if (element.type === "JSXOpeningElement") {
     for (const attribute of element.attributes) {
       if (
@@ -53,4 +53,22 @@ const isTextInput = (element) => {
     return ["TextInput", "Input", "Textarea"].includes(element.name.name);
   }
   return false;
+};
+
+const hasPropAccessible = (element) => {
+  if (element.type === "JSXOpeningElement") {
+    return element.attributes.some((attribute) => {
+      return (
+        attribute.type === "JSXAttribute" &&
+        attribute.name.name === "accessible"
+      );
+    });
+  }
+  return false;
+};
+
+module.exports = {
+  isAccessible,
+  hasPropAccessible,
+  isTextInput,
 };
