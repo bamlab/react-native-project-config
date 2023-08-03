@@ -4,8 +4,8 @@
  */
 "use strict";
 
-const { isAccessible, hasPropAccessible } = require("../utils/isAccessible");
-
+const isAccessible = require("../utils/isAccessible");
+const hasPropAccessible = require("../utils/hasAccessibleProp");
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------

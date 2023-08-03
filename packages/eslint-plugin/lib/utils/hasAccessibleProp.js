@@ -3,11 +3,9 @@ module.exports = (element) => {
     return element.attributes.some((attribute) => {
       return (
         attribute.type === "JSXAttribute" &&
-        (attribute.name.name === "onPress" ||
-          attribute.name.name === "handlePress")
+        attribute.name.name === "accessible"
       );
     });
   }
-
   return false;
 };
