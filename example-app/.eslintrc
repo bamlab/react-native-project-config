@@ -10,6 +10,7 @@
   "rules": {
     "@bam.tech/require-named-effect": "error",
     "@bam.tech/image-requires-accessible-prop": "error",
-    "@bam.tech/do-not-use-role-on-image": "error"
+    "@bam.tech/do-not-use-role-on-image": "error",
+    "@bam.tech/accessibility-props-require-accessible": "error"
   }
 }
