@@ -11,11 +11,11 @@ module.exports = (element) => {
         if (attribute.value === null) return true; // <View accessible />
 
         if (attribute.value.type === "JSXExpressionContainer") {
-          return !(attribute.value.expression.value === false); // <View accessible={false} />
+          return attribute.value.expression.value === true; // <View accessible={false} />
         }
 
         if (attribute.value.type === "Literal") {
-          return !(attribute.value.value === "false"); // <View accessible="false" />
+          return attribute.value.value === "true"; // <View accessible="false" />
         }
       }
     }
@@ -42,7 +42,7 @@ module.exports = (element) => {
     }
   }
 
-  return undefined; // undefined means we don't know if it's accessible or not
+  return false;
 };
 
 const isTextInput = (element) => {

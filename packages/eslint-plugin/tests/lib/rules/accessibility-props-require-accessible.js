@@ -37,13 +37,11 @@ ruleTester.run("accessibility-props-require-accessible", rule, {
 
   invalid: [
     {
-      code: `<View role='button' accessible={false} />`,
+      code: `<View accessibilityRole="button" />`,
       errors: ["Requires accessible prop when role prop is defined"],
     },
     {
-      code: `<View accessible={false} >
-    <View accessibilityLabel='this is a label' />
-  </View>`,
+      code: `<View accessibilityLabel="this is a label" />`,
       errors: ["Requires accessible prop when label prop is defined"],
     },
   ],

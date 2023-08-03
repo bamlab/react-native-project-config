@@ -8,10 +8,8 @@ import { View } from "react-native";
 export const MyComponent = () => {
   return (
     <>
-      <View accessibilityRole="button" accessible={false} />
-      <View accessible={false}>
-        <View accessibilityLabel="this is a label" />
-      </View>
+      <View accessibilityRole="button" />
+      <View accessibilityLabel="this is a label" />
     </>
   );
 };

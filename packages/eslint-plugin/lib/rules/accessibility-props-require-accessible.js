@@ -33,8 +33,7 @@ module.exports = {
   create(context) {
     return {
       JSXOpeningElement(node) {
-        if (isAccessible(node) === false) {
-          // <View accessible={false} />
+        if (!isAccessible(node)) {
           if (
             node.attributes.some((attribute) =>
               ["role", "accessibilityRole"].includes(attribute.name.name)
@@ -45,16 +44,8 @@ module.exports = {
               messageId: "roleRequiresAccessible",
             });
           }
-        }
 
-        if (!isAccessible(node)) {
-          // no accessible prop (undefined)
-          if (isAnyParentAccessible(node) === false) {
-            /* 
-              <View accessible={false}>
-                <View accessibilityLabel="..." />
-              </View>
-            */
+          if (!isAnyParentAccessible(node)) {
             if (
               node.attributes.some((attribute) =>
                 [
@@ -83,8 +74,6 @@ const isAnyParentAccessible = (node) => {
   We have to look for the parent of the parent  */
   if (node.parent.parent && node.parent.parent.type === "JSXElement") {
     if (isAccessible(node.parent.parent.openingElement)) return true;
-
-    if (isAccessible(node.parent.parent.openingElement) === false) return false;
 
     return isAnyParentAccessible(node.parent.parent.openingElement);
   }
