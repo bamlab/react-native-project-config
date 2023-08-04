@@ -64,6 +64,7 @@ This plugin exports some custom rules that you can optionally use in your projec
 | [image-requires-accessible-prop](docs/rules/image-requires-accessible-prop.md)                           | Require accessible prop on image components                     | 🔧  | 💡  |
 | [require-named-effect](docs/rules/require-named-effect.md)                                               | Enforces the use of named functions inside a useEffect          |     |     |
 | [requires-accessibility-role-when-accessible](docs/rules/requires-accessibility-role-when-accessible.md) | Enforces accessibilityRole or role when component is accessible |     | 💡  |
+| [requires-accessibility-label](docs/rules/requires-accessibility-label.md)                               | Enforces label when component accessible                        |     |     |
 
 <!-- end auto-generated rules list -->
 
@@ -78,7 +79,8 @@ To use a rule, just declare it in your `.eslintrc`:
     "@bam.tech/image-requires-accessible-prop": "error",
     "@bam.tech/do-not-use-role-on-image": "error",
     "@bam.tech/accessibility-props-require-accessible": "error",
-    "@bam.tech/requires-accessibility-role-when-accessible": "error"
+    "@bam.tech/requires-accessibility-role-when-accessible": "error",
+    "@bam.tech/requires-accessibility-label": "error"
   }
 }
 ```
