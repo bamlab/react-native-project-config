@@ -1,5 +1,7 @@
 # Enforces label when component accessible (`@bam.tech/requires-accessibility-label`)
 
+💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
+
 <!-- end auto-generated rule header -->
 
 Please describe the origin of the rule here.
