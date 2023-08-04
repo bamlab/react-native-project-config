@@ -35,11 +35,7 @@ module.exports = {
       JSXOpeningElement(node) {
         if (isAccessible(node) && !isText(node)) {
           if (
-            !node.attributes.some((attribute) =>
-              ["accessibilityLabel", "aria-label", "alt"].includes(
-                attribute.name.name
-              )
-            ) &&
+            !hasLabelProp(node) &&
             !hasExactlyOneChildWhichIsTextOrHasALabel(node.parent)
           ) {
             context.report({
