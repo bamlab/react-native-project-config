@@ -65,6 +65,7 @@ This plugin exports some custom rules that you can optionally use in your projec
 | [require-named-effect](docs/rules/require-named-effect.md)                                               | Enforces the use of named functions inside a useEffect          |     |     |
 | [requires-accessibility-role-when-accessible](docs/rules/requires-accessibility-role-when-accessible.md) | Enforces accessibilityRole or role when component is accessible |     | 💡  |
 | [requires-accessibility-label](docs/rules/requires-accessibility-label.md)                               | Enforces label when component accessible                        |     |     |
+| [requires-accessibility-label](docs/rules/requires-accessibility-label.md)                               | Enforces label when component accessible                        |     | 💡  |
 
 <!-- end auto-generated rules list -->
 

@@ -15,6 +15,7 @@ const isText = require("../utils/isText");
 /** @type {import('eslint').Rule.RuleModule} */
 module.exports = {
   meta: {
+    hasSuggestions: true,
     type: "problem", // `problem`, `suggestion`, or `layout`
     docs: {
       description: "Enforces label when component accessible",
@@ -25,6 +26,7 @@ module.exports = {
     schema: [], // Add a schema if the rule has options
     messages: {
       requiresAccessibilityLabel: "Requires accessibilityLabel",
+      suggestAddingAccessibilityLabel: "Add accessibilityLabel",
     },
   },
 
@@ -43,6 +45,21 @@ module.exports = {
             context.report({
               node,
               messageId: "requiresAccessibilityLabel",
+              suggest: [
+                {
+                  messageId: "suggestAddingAccessibilityLabel",
+                  fix: (fixer) => {
+                    const openingTagEnd = node.range[1];
+                    return fixer.insertTextBeforeRange(
+                      [
+                        openingTagEnd - (node.selfClosing ? 2 : 1),
+                        openingTagEnd,
+                      ],
+                      ` accessibilityLabel=""`
+                    );
+                  },
+                },
+              ],
             });
           }
         }
