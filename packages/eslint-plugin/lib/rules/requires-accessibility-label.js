@@ -34,10 +34,7 @@ module.exports = {
     return {
       JSXOpeningElement(node) {
         if (isAccessible(node) && !isText(node)) {
-          if (
-            !hasLabelProp(node) &&
-            !hasExactlyOneChildWhichIsTextOrHasALabel(node.parent)
-          ) {
+          if (!hasLabelProp(node) && !hasOneLabeledChild(node.parent)) {
             context.report({
               node,
               messageId: "requiresAccessibilityLabel",
@@ -64,14 +61,19 @@ module.exports = {
   },
 };
 
-const hasExactlyOneChildWhichIsTextOrHasALabel = (node) => {
+const hasOneLabeledChild = (node) => {
   if (node.type === "JSXElement") {
-    return (
-      node.children.filter(
-        (child) =>
-          child.type === "JSXElement" &&
-          (isText(child.openingElement) || hasLabelProp(child.openingElement))
-      ).length === 1
+    const JSXChildren = node.children.filter(
+      (child) => child.type === "JSXElement"
     );
+    if (JSXChildren.length === 1) {
+      return (
+        isLabeledComponent(JSXChildren[0].openingElement) ||
+        hasOneLabeledChild(JSXChildren[0])
+      );
+    }
   }
 };
+
+const isLabeledComponent = (element) =>
+  isText(element) || hasLabelProp(element);
