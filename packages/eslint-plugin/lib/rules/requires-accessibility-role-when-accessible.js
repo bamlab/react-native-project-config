@@ -9,12 +9,15 @@
 //------------------------------------------------------------------------------
 const isAccessible = require("../utils/isAccessible");
 const isButton = require("../utils/isButton");
+const isImage = require("../utils/isImage");
+const isPressable = require("../utils/isPressable");
 const isText = require("../utils/isText");
 const isTextInput = require("../utils/isTextInput");
 
 /** @type {import('eslint').Rule.RuleModule} */
 module.exports = {
   meta: {
+    hasSuggestions: true,
     type: "problem", // `problem`, `suggestion`, or `layout`
     docs: {
       description:
@@ -27,6 +30,8 @@ module.exports = {
     messages: {
       requiresAccessibilityRoleWhenAccessible:
         "Requires accessibilityRole when accessible",
+      suggestAddingButtonRole: "Add accessibilityRole button to component",
+      suggestAddingImageRole: "Add accessibilityRole image to component",
     },
   },
 
@@ -49,10 +54,52 @@ module.exports = {
                 node.name.name === "ExpoImage"
               )
             ) {
-              context.report({
-                node,
-                messageId: "requiresAccessibilityRoleWhenAccessible",
-              });
+              if (isPressable(node)) {
+                context.report({
+                  node,
+                  messageId: "requiresAccessibilityRoleWhenAccessible",
+                  suggest: [
+                    {
+                      messageId: "suggestAddingButtonRole",
+                      fix: (fixer) => {
+                        const openingTagEnd = node.range[1];
+                        return fixer.insertTextBeforeRange(
+                          [
+                            openingTagEnd - (node.selfClosing ? 2 : 1),
+                            openingTagEnd,
+                          ],
+                          ` accessibilityRole="button"`
+                        );
+                      },
+                    },
+                  ],
+                });
+              } else if (isImage(node)) {
+                context.report({
+                  node,
+                  messageId: "requiresAccessibilityRoleWhenAccessible",
+                  suggest: [
+                    {
+                      messageId: "suggestAddingImageRole",
+                      fix: (fixer) => {
+                        const openingTagEnd = node.range[1];
+                        return fixer.insertTextBeforeRange(
+                          [
+                            openingTagEnd - (node.selfClosing ? 2 : 1),
+                            openingTagEnd,
+                          ],
+                          ` accessibilityRole="image"`
+                        );
+                      },
+                    },
+                  ],
+                });
+              } else {
+                context.report({
+                  node,
+                  messageId: "requiresAccessibilityRoleWhenAccessible",
+                });
+              }
             }
           }
         }
