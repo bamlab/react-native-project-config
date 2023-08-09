@@ -1,6 +1,6 @@
-# ESLint plugin for BAM
+# ESLint plugin by BAM
 
-This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new BAM project.
+This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new react-native BAM project.
 
 ## Quick Setup
 
@@ -19,7 +19,7 @@ Then update your `.eslintrc` config file:
   "extends": "plugin:@bam.tech/recommended",
   "overrides": [
     {
-      "files": ["*.test.tsx"],
+      "files": ["*.test.tsx", "*.test.ts"],
       "extends": "plugin:@bam.tech/tests"
     }
   ]
@@ -30,11 +30,11 @@ Then update your `.eslintrc` config file:
 
 This plugin exports multiple configurations that can be used in your `.eslintrc` config file:
 
-| Name                    | Description                                                                                                                                                  |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `@bam.tech/recommended` | The recommended config for all projects                                                                                                                      |
-| `@bam.tech/tests`       | The recommended config for test files. By default this applies to every file: put it in an `overrides` to filter on your test files.                         |
-| `@bam.tech/a11y`        | [beta] Eslint config to check for accessibility. Still in beta to not break existing projects, but will be merged into the recommended config in the future. |
+| Name                                                    | Description                                                                                                                                                  |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`@bam.tech/recommended`](./lib/configs/recommended.js) | The recommended config for all projects                                                                                                                      |
+| [`@bam.tech/tests`](./lib/configs/tests.js)             | The recommended config for test files. By default this applies to every file: put it in an `overrides` to filter on your test files.                         |
+| [`@bam.tech/a11y` ](./lib/configs/a11y.js)              | [beta] Eslint config to check for accessibility. Still in beta to not break existing projects, but will be merged into the recommended config in the future. |
 
 These configs need some peer dependencies. You can list them with:
 
