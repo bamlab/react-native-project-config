@@ -1,18 +1,19 @@
-# react-native-project-config
+# react-native-project-config by BAM
 
-Monorepo with packages for setting up ESLint, Typescript, Prettier and Jest.
+Monorepo with packages for setting up ESLint and Typescript for any new React Native project.
 
 ## Presentation
 
 The goal of the project is too have a set of configuration files that can be easily imported into a new project, which would reduce the burden of starting new projects.
 
-This repo uses [lerna](https://lerna.js.org/) to maintain, version and publish various packages for configuring ESLint, Typescript, Prettier and Jest.
+This repo uses [lerna](https://lerna.js.org/) to maintain, version and publish various packages for configuring ESLint and Typescript.
 
 There is also an example app under `packages/example-app` whose goal is to demonstrate how to import and use the configuration packages.
 
 ## Using the configurations
 
 - [Using ESLint plugin](./packages/eslint-plugin/README.md)
+- [Using Typescript config](./packages/typescript-config/README.md)
 
 ## Installing the project
 
