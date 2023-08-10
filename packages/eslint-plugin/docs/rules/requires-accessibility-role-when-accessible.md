@@ -1,5 +1,7 @@
 # Enforces accessibilityRole or role when component is accessible (`@bam.tech/requires-accessibility-role-when-accessible`)
 
+💼 This rule is enabled in the ♿ `a11y` config.
+
 💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
 
 <!-- end auto-generated rule header -->
