@@ -1,14 +1,10 @@
 name: Publish Packages
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +23,6 @@ jobs:
         run: npx lerna bootstrap
 
       - name: Publish packages
-        run: npx lerna publish --conventional-commits --no-private --yes
+        run: npx lerna publish from-package --no-private
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
