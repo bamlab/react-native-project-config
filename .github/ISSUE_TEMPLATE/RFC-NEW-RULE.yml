@@ -1,0 +1,43 @@
+name: RFC for a new rule on eslint-plugin ⭐
+description: File a RFC for a new rule for the plugin, and debate on it with the community. After the RFC is accepted, you can open a PR to add the rule.
+title: "[RFC]: plugin:rule-name"
+labels: ["📏 eslint-plugin", "⭐ enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🌟 New Rule Proposal for eslint-plugin
+        Thank you for taking the time to propose a new rule for the plugin.
+  - type: textarea
+    id: why
+    attributes:
+      label: "Why?"
+      description: Please provide a detailed explanation about why this rule should be added.
+      placeholder: "e.g., This rule helps in ensuring code quality by..."
+    validations:
+      required: true
+  - type: input
+    id: rule-url
+    attributes:
+      label: "Rule Documentation 📜"
+      description: If there's documentation for this rule, please provide the link.
+      placeholder: "e.g., [eslint.org/docs/latest/rules/no-console](https://eslint.org/docs/latest/rules/no-console)"
+    validations:
+      required: false
+  - type: dropdown
+    id: eslint-config
+    attributes:
+      label: "Config Selection 🛠"
+      description: "Please select the config where this rule should be added:"
+      options:
+        - "`recommended`"
+        - "`tests`"
+        - "`a11y`"
+    validations:
+      required: true
+  - type: textarea
+    id: optional
+    attributes:
+      label: "(Optional) Additional Details 📝"
+      description: "Please provide any additional details that you think might be helpful."
+      placeholder: "e.g., This rule is similar to the `no-console` rule, but it also..."
