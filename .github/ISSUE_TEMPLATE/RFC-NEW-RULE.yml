@@ -38,6 +38,6 @@ body:
   - type: textarea
     id: optional
     attributes:
-      label: "(Optional) Additional Details) 📝"
+      label: "(Optional) Additional Details 📝"
       description: "Please provide any additional details that you think might be helpful."
       placeholder: "e.g., This rule is similar to the `no-console` rule, but it also..."
