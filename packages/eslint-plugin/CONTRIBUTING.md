@@ -3,7 +3,7 @@
 This plugin is a way to share the best programming experience via rules and configurations to be used in different projects.
 It is important to keep it up to date and to add new rules and configurations when needed.
 
-## Adding a new existing rule
+## Adding a rule from another plugin
 
 If you feel that a rule could be useful to all react-native new projects, you can add it to the plugin by following these steps:
 
