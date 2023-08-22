@@ -53,7 +53,7 @@ If you feel that a rule could be useful to all react-native new projects, you ca
     ```
 - In the description of the PR, add `Closes #<issue number>` to link the PR to the issue and close it automatically when the PR is merged
 
-#### (OPTIONAL) Feel free to add an breaking example of the rule in the `example-app/eslint-breaking-examples` directory:
+#### (OPTIONAL) Feel free to add a breaking example of the rule in the `example-app/eslint-breaking-examples` directory:
 
 Here's an example:
 
