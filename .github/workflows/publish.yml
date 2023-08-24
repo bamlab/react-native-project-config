@@ -24,6 +24,6 @@ jobs:
       #   - name: Bootstrap Lerna
       #     run: npx lerna bootstrap
       - name: Publish to npm
-        run: npx lerna publish from-package --no-private --yes
+        run: npx lerna publish from-package --no-private --yes --loglevel "verbose"
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
