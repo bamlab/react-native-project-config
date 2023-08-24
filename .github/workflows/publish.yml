@@ -21,8 +21,9 @@ jobs:
         run: yarn --immutable
         # run: npm ci
 
-      #   - name: Bootstrap Lerna
-      #     run: npx lerna bootstrap
+      - name: Bootstrap Lerna
+        run: npx lerna bootstrap
+
       - name: Publish to npm
         run: npx lerna publish from-package --no-private --yes --loglevel "verbose"
         env:
