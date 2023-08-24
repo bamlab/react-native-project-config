@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: "chore/npm-publish-auto" # Replace with your branch name
 
       - name: Use Node.js
         uses: actions/setup-node@v3
