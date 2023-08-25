@@ -52,7 +52,7 @@ Run `yarn lerna version` to start the process. It will ask you which packages yo
 ```
 
 After you have selected the packages and the versions, Lerna will push a new tagged commit with the version bumps in `package.json` files.
-The pushed commit will trigger the Github Workflow which will publish the packages to NPM.
+The pushed tag will trigger the Github Workflow which will publish the packages to NPM.
 
 ## Running commands
 
