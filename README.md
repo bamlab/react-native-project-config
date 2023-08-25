@@ -32,11 +32,27 @@ Here are some useful commands:
 
 ## Publishing a new version of a package
 
-If this is the first time the package is published to npm, running `yarn lerna publish --no-private` [doesn't seem to work](https://github.com/lerna/lerna/issues/1821). Instead, you should `cd` into your package and run `yarn publish --access public`. `yarn` will then ask the new version the package should have.
+The publication is done automatically by this [Github Workflow](.github/workflows/publish.yml) when a new tag is pushed to the repository.
+All you have to do is the versioning of the packages you want to publish.
 
-If the package has already been published on npm, you can use `yarn lerna publish --no-private` in the root directory of the project.
+> You need to be on the main branch and have the repo write access to publish a new version.
 
-For each of these two tasks, you will need to have an account on [npmjs.com](https://www.npmjs.com/) and to be added to the [@bam.tech](https://www.npmjs.com/settings/bam.tech/packages) organization.
+Run `yarn lerna version` to start the process. It will ask you which packages you want to publish and which version you want to publish them under.
+
+```bash
+? Select a new version (currently 1.0.0) (Use arrow keys)
+❯ Patch (1.0.1) # bug fixes
+  Minor (1.1.0) # new features
+  Major (2.0.0) # breaking changes
+  Prepatch (1.0.1-alpha.0)
+  Preminor (1.1.0-alpha.0)
+  Premajor (2.0.0-alpha.0)
+  Custom Prerelease
+  Custom Version
+```
+
+After you have selected the packages and the versions, Lerna will push a new tagged commit with the version bumps in `package.json` files.
+The pushed tag will trigger the Github Workflow which will publish the packages to NPM.
 
 ## Running commands
 
