@@ -39,6 +39,7 @@ module.exports = defineConfig({
     "react-native/sort-styles": "off",
     "react/no-unstable-nested-components": "error",
     "react/prop-types": "off",
+    "react/no-unused-prop-types": "error",
   },
   env: {
     node: true,
