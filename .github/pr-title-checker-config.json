@@ -1,6 +1,6 @@
 {
   "LABEL": {
-    "name": ""
+    "name": "no-conventional-pr-name"
   },
   "CHECKS": {
     "regexp": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(([w-.]+))?(:) ([w ])+([sS]*)$",
