@@ -7,7 +7,10 @@ on:
       - synchronize
 
 jobs:
-  check:
+  check-title:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: thehanimo/pr-title-checker@v1.4.0
