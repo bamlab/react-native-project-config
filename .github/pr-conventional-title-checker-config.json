@@ -1,0 +1,14 @@
+{
+  "LABEL": {
+    "name": "no-conventional-pr-name"
+  },
+  "CHECKS": {
+    "regexp": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|BREAKING CHANGE){1}(([w-.]+))?(:) ([w ])+([sS]*)$",
+    "ignoreLabels": ["WIP"]
+  },
+  "MESSAGES": {
+    "success": "All OK",
+    "failure": "Failing CI test",
+    "notice": ""
+  }
+}
