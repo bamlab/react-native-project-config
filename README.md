@@ -37,22 +37,21 @@ All you have to do is the versioning of the packages you want to publish.
 
 > You need to be on the main branch and have the repo write access to publish a new version.
 
-Run `yarn lerna version` to start the process. It will ask you which packages you want to publish and which version you want to publish them under.
+Run `yarn publish` to start the process. It will run the command `yarn lerna version --conventional-commits` which will prompt you to select the packages you want to publish and the version bump for each of them.
+
+Lerna will prompt you to select the version bump for each package. It will also generate the changelog for each package based on the commit messages since the last version.
+
+> Versioning and changelogs generation using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+Here's an example of the output:
 
 ```bash
-? Select a new version (currently 1.0.0) (Use arrow keys)
-❯ Patch (1.0.1) # bug fixes
-  Minor (1.1.0) # new features
-  Major (2.0.0) # breaking changes
-  Prepatch (1.0.1-alpha.0)
-  Preminor (1.1.0-alpha.0)
-  Premajor (2.0.0-alpha.0)
-  Custom Prerelease
-  Custom Version
-```
+lerna info Looking for changed packages since @bam.tech/eslint-plugin@1.0.0
+lerna info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
 
-After you have selected the packages and the versions, Lerna will push a new tagged commit with the version bumps in `package.json` files.
-The pushed tag will trigger the Github Workflow which will publish the packages to NPM.
+Changes:
+ - @bam.tech/eslint-plugin: 1.0.0 => 1.1.0
+```
 
 ## Running commands
 
