@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "publish": "lerna version --conventional-commits --no-private"
+  },
   "workspaces": [
     "packages/*",
     "example-app"
