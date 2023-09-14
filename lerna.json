@@ -5,7 +5,10 @@
   "packages": ["packages/*"],
   "command": {
     "version": {
-      "noPrivate": true
+      "private": false,
+      "message": "chore(release): Publish",
+      "conventionalCommits": true,
+      "allowBranch": "main"
     }
   }
 }
