@@ -1,8 +1,8 @@
 "no examples 📝":
   - all: ["packages/eslint-plugin/**/*", "!example-app/**/*"]
 
-"📏 eslint-plugin"
-  - all: ["packages/eslint-plugin/**/*","!packages/typescript-config/**/*"]
+"📏 eslint-plugin":
+  - all: ["packages/eslint-plugin/**/*", "!packages/typescript-config/**/*"]
 
-"typescript-config"
-  - all: ["packages/typescript-config/**/*","!packages/eslint-plugin/**/*"]
+"typescript-config":
+  - all: ["packages/typescript-config/**/*", "!packages/eslint-plugin/**/*"]
