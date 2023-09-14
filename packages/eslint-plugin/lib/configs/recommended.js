@@ -30,7 +30,6 @@ module.exports = defineConfig({
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-return-await": "error",
     "react-hooks/exhaustive-deps": "error",
@@ -39,7 +38,9 @@ module.exports = defineConfig({
     "react/no-unstable-nested-components": "error",
     "react/prop-types": "off",
     "react/no-unused-prop-types": "error",
+    "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "error",
   },
   env: {
     node: true,
