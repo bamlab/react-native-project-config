@@ -32,6 +32,7 @@ module.exports = defineConfig({
     "@typescript-eslint/no-explicit-any": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-return-await": "error",
+    "array-callback-return": "error",
     "react-hooks/exhaustive-deps": "error",
     "react-native/no-color-literals": "off",
     "react-native/sort-styles": "off",
