@@ -36,6 +36,7 @@ module.exports = defineConfig({
     "react-hooks/exhaustive-deps": "error",
     "react-native/no-color-literals": "off",
     "react-native/sort-styles": "off",
+    "react-native/no-raw-text": "off",
     "react/no-unstable-nested-components": "error",
     "react/prop-types": "off",
     "react/no-unused-prop-types": "error",
