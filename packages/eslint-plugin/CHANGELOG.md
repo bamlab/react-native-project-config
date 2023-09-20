@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@1.0.0...@bam.tech/eslint-plugin@1.0.1) (2023-09-20)
+
+### Bug Fixes
+
+- disable react-native/no-raw-text ([#60](https://github.com/bamlab/react-native-project-config/issues/60)) ([4a8ace3](https://github.com/bamlab/react-native-project-config/commit/4a8ace36fbf91421461b808c896a048ce5138152))
+
 # [1.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@0.4.3...@bam.tech/eslint-plugin@1.0.0) (2023-09-14)
 
 ### Features
