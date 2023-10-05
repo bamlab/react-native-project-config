@@ -40,6 +40,7 @@ module.exports = defineConfig({
     "react/no-unstable-nested-components": "error",
     "react/prop-types": "off",
     "react/no-unused-prop-types": "error",
+    "react/jsx-no-useless-fragment": "error",
     "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": "error",

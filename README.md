@@ -55,6 +55,8 @@ Changes:
 
 It will then push a tagged commit `chore(release): Publish` which will then trigger the Github Workflow to publish the new version of each package to NPM.
 
+> If you add a new rule to a config, this is a breaking change, because it could make the CI fail on projects that use the plugin. The commit name where you add the new rule needs to follow this patern `BREAKING CHANGE : the description of your commit`
+
 ## Running commands
 
 - `yarn lerna run start`: run the 'start' script in all packages (currently only present in `example-app`),
