@@ -12,8 +12,8 @@ There is also an example app under `packages/example-app` whose goal is to demon
 
 ## Using the configurations
 
-- [Using ESLint plugin](./packages/eslint-plugin/README.md)
-- [Using Typescript config](./packages/typescript-config/README.md)
+- [Using ESLint plugin](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/README.md)
+- [Using Typescript config](https://github.com/bamlab/react-native-project-config/blob/main/packages/typescript-config/README.md)
 
 ## Installing the project
 
@@ -32,7 +32,7 @@ Here are some useful commands:
 
 ## Publishing a new version of a package
 
-The publication is done automatically by this [Github Workflow](.github/workflows/publish.yml) when a new tag is pushed to the repository.
+The publication is done automatically by this [Github Workflow](https://github.com/bamlab/react-native-project-config/blob/main/.github/workflows/publish.yml) when a new tag is pushed to the repository.
 All you have to do is the versioning of the packages you want to publish.
 
 > You need to be on the main branch and have the repo write access to publish a new version.
