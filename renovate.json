@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:monorepos"],
+  "extends": ["config:recommended", "schedule:earlyMondays", "group:monorepos"],
   "labels": ["dependencies"],
   "stabilityDays": 3,
   "internalChecksFilter": "strict",
