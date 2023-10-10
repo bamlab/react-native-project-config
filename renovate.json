@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "group:monorepos"],
+  "labels": ["dependencies"],
+  "stabilityDays": 3,
+  "internalChecksFilter": "strict",
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "updatePinnedDependencies": false,
+  "dependencyDashboardApproval": true,
+  "packageRules": [
+    {
+      "groupName": "devDependencies",
+      "matchDepTypes": ["devDependencies"],
+      "dependencyDashboardApproval": false
+    },
+    {
+      "groupName": "js dependencies",
+      "matchDepTypes": ["dependencies"],
+      "dependencyDashboardApproval": false
+    }
+  ]
+}
