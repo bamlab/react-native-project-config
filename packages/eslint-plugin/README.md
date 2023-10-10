@@ -89,6 +89,6 @@ To use a rule, just declare it in your `.eslintrc`:
 
 You can still customize your ESLint config by adding other configurations, plugins and rules to your `.eslintrc` config file.
 
-## [Contribute](./CONTRIBUTING.md)
+## [Contribute](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/CONTRIBUTING.md)
 
 If you find a useful rule that you feel every project at BAM should use, feel free to [contribute](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/CONTRIBUTING.md).
