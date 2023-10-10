@@ -2,5 +2,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": { "source.fixAll": true },
-  "eslint.workingDirectories": ["example-app", "packages/eslint-plugin"]
+  "eslint.workingDirectories": ["example-app", "packages/eslint-plugin"],
+  "markdownlint.customRules": [
+    "./markdown-lint-custom-rules/no-relative-links.js"
+  ]
 }
