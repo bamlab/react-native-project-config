@@ -1,0 +1,35 @@
+name: Quality
+
+on: pull_request
+
+jobs:
+  quality-job:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        id: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: packages/eslint-plugin/.nvmrc
+
+      - name: Load dependency cache
+        uses: actions/cache@v3
+        with:
+          path: packages/eslint-plugin/node_modules
+          # add `-patches-${{ hashFiles('patches/**/*') }}` if you use patch-package
+          key: eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-
+            eslint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Markdown lint
+        run: yarn lint-md

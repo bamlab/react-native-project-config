@@ -5,8 +5,14 @@
     "packages/*",
     "example-app"
   ],
+  "scripts": {
+    "lint-md": "find . -name '*.md' -not -path './node_modules/*' -exec markdownlint --config ./.markdownlint.json --rules ./markdown-lint-custom-rules/no-relative-links.js {} +"
+  },
   "devDependencies": {
     "lerna": "^6.3.0",
+    "markdownlint": "^0.31.1",
+    "markdownlint-cli": "^0.37.0",
+    "markdownlint-rule-helpers": "^0.22.0",
     "prettier": "^2.8.1"
   }
 }
