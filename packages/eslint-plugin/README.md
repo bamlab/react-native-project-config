@@ -74,15 +74,14 @@ This plugin exports some custom rules that you can optionally use in your projec
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
 💡 Manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
 
-| Name                                        | Description | 💼  | 🔧  | 💡  |
-| :------------------------------------------ | :---------- | :-- | :-- | :-- |
-
-| [accessibility-props-require-accessible](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/accessibility-props-require-accessible.md) | Requires accessible prop when accessibility props are defined | ♿ | 🔧 | |
-| [do-not-use-role-on-image](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/do-not-use-role-on-image.md) | Disallow role prop on Image component | ♿ | 🔧 | |
-| [image-requires-accessible-prop](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/image-requires-accessible-prop.md) | Require accessible prop on image components | ♿ | 🔧 | 💡 |
-| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect | | | |
-| [requires-accessibility-label](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/requires-accessibility-label.md) | Enforces label when component accessible | ♿ | | 💡 |
-| [requires-accessibility-role-when-accessible](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/requires-accessibility-role-when-accessible.md) | Enforces accessibilityRole or role when component is accessible | ♿ | | 💡 |
+| Name                                                                                                                                                                                            | Description                                                     | 💼  | 🔧  | 💡  |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- | :-- | :-- | :-- |
+| [accessibility-props-require-accessible](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/accessibility-props-require-accessible.md)           | Requires accessible prop when accessibility props are defined   | ♿  | 🔧  |     |
+| [do-not-use-role-on-image](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/do-not-use-role-on-image.md)                                       | Disallow role prop on Image component                           | ♿  | 🔧  |     |
+| [image-requires-accessible-prop](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/image-requires-accessible-prop.md)                           | Require accessible prop on image components                     | ♿  | 🔧  | 💡  |
+| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md)                                               | Enforces the use of named functions inside a useEffect          |     |     |     |
+| [requires-accessibility-label](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/requires-accessibility-label.md)                               | Enforces label when component accessible                        | ♿  |     | 💡  |
+| [requires-accessibility-role-when-accessible](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/requires-accessibility-role-when-accessible.md) | Enforces accessibilityRole or role when component is accessible | ♿  |     | 💡  |
 
 <!-- end auto-generated rules list -->
 
