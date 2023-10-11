@@ -1,7 +1,5 @@
 # Disallow role prop on Image component (`@bam.tech/do-not-use-role-on-image`)
 
-💼 This rule is enabled in the ♿ `a11y` config.
-
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
 <!-- end auto-generated rule header -->
