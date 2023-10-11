@@ -41,6 +41,19 @@ Update your `.vscode/settings.json` by adding the directories of apps using the 
 }
 ```
 
+### ⚠️ React version
+
+With the introduction of React 18, it's no longer necessary to import React in your JSX files. The ESLint plugin is configured for React version 18 and above, so you won't encounter any errors. However, TypeScript will generate an error if it isn't configured correctly. To resolve this, simply add `"jsx": "react-native"` to your `tsconfig.json` file.
+
+If your project is using a version of React that's below 18, iyou should upgrade to a newer version of React. If upgrading isn't an option, here's the situation: importing React in your JSX files remains mandatory, but ESLint won't flag any errors, even though it should. This is due to the plugin configuration; the recommended configuration extends the plugin react/jsx-runtime, which disables the following rules:
+
+- `'react/jsx-uses-react': "error"`
+- `'react/react-in-jsx-scope': "error"`
+
+These rules are crucial as they trigger an error when React is not in scope. Therefore, you'll need to include them in the rules section of your .eslintrc.js file to ensure an error is flagged whenever someone omits the import for React.
+
+Remember, the recommended solution is to upgrade to a newer version of React. This advice should only be disregarded in exceptional circumstances where upgrading React is not feasible.
+
 ## Shareable configurations
 
 This plugin exports multiple configurations that can be used in your `.eslintrc` config file:
