@@ -41,6 +41,24 @@ Update your `.vscode/settings.json` by adding the directories of apps using the 
 }
 ```
 
+### Handling files ignored by TypeScript
+
+The plugin default behavior is to use TypeScript configuration to lint all TypeScript files. However, in your project, there may be files you've chosen to ignore with TypeScript. It's advisable to also disable ESLint checking for these files. To achieve this, add the files you want to ignore with ESLint in the overrides section of your `eslintrc.js`. Below is an example illustrating this. The configuration for mock files is overridden: the TypeScript parser is removed, and the behavior of the `@typescript-eslint/return-await` rule is modified.
+
+```javascript
+overrides: [
+  {
+    files: ["mocks/**/*"],
+    parserOptions: {
+      project: null,
+    },
+    rules: {
+      "@typescript-eslint/return-await": "off",
+    },
+  },
+];
+```
+
 ### ⚠️ React version
 
 With the introduction of React 18, it's no longer necessary to import React in your JSX files. The ESLint plugin is configured for React version 18 and above, so you won't encounter any errors. However, TypeScript will generate an error if it isn't configured correctly. To resolve this, simply add `"jsx": "react-native"` to your `tsconfig.json` file.
