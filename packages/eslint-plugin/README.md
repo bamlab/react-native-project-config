@@ -26,6 +26,21 @@ Then update your `.eslintrc` config file:
 }
 ```
 
+### Setting up the plugin on a monorepo
+
+Update your `.vscode/settings.json` by adding the directories of apps using the plugin:
+
+```json
+// .vscode/settings.json
+{
+  ...
+  "eslint.workingDirectories": [
+    "apps/yourFirstApp",
+    "apps/yourSecondApp"
+    ]
+}
+```
+
 ## Shareable configurations
 
 This plugin exports multiple configurations that can be used in your `.eslintrc` config file:
