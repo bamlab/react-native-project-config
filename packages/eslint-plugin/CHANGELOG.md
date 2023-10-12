@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@1.0.1...@bam.tech/eslint-plugin@2.0.0) (2023-10-12)
+
+### Features
+
+- **a11y:** remove custom rules from a11y config ([#65](https://github.com/bamlab/react-native-project-config/issues/65)) ([8fdb40b](https://github.com/bamlab/react-native-project-config/commit/8fdb40b18c7ebe9aab6b00960bf5fdfcc55790bc))
+- add jsx-no-useless-fragment ([#69](https://github.com/bamlab/react-native-project-config/issues/69)) ([2227246](https://github.com/bamlab/react-native-project-config/commit/2227246b8a0341b212b29adbe258f93b1eb5d861))
+- **recommended:** no-floating-promises ([#70](https://github.com/bamlab/react-native-project-config/issues/70)) ([830eead](https://github.com/bamlab/react-native-project-config/commit/830eead6c36c1652f82aa80f78f3cd3d0b7f666a))
+
+### Reverts
+
+- **eslint-plugin:** delete custom rules ([#81](https://github.com/bamlab/react-native-project-config/issues/81)) ([e6fcf3b](https://github.com/bamlab/react-native-project-config/commit/e6fcf3b48ae5659fe022526862d7d09e5e41ffbc))
+
+### BREAKING CHANGES
+
+- **a11y:** remove custom rules from config a11y
+
+- docs: update a11y documentation for removed rules
+
+- fix(example-app): no custom rules in eslint config
+- **recommended:** no-floating-promises
+- add jsx-no-useless-fragment
+
+- doc: precise what to do when you add a rule
+
+- feat: add a pull request template
+
 ## [1.0.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@1.0.0...@bam.tech/eslint-plugin@1.0.1) (2023-09-20)
 
 ### Bug Fixes
