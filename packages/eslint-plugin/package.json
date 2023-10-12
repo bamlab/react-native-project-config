@@ -18,8 +18,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
-    "lint:js": "eslint .",
-    "test": "mocha tests --recursive"
+    "lint:js": "eslint ."
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.61.0",
