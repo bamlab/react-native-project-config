@@ -2,6 +2,8 @@
 
 This project is an ESLint plugin that gathers all the rules, plugins and parsers that should be used in any new react-native BAM project.
 
+The list of rules and configuration details can be found [`here`](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/lib/configs/recommended.js).
+
 ## Quick Setup
 
 Install the plugin and its peer dependencies:
