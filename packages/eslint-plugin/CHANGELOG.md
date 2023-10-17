@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@2.0.0...@bam.tech/eslint-plugin@2.0.1) (2023-10-17)
+
+### Bug Fixes
+
+- remove useless required line in index ([#84](https://github.com/bamlab/react-native-project-config/issues/84)) ([4c81100](https://github.com/bamlab/react-native-project-config/commit/4c81100d01d790210c6201509bb2f5dfb8976414))
+
 # [2.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@1.0.1...@bam.tech/eslint-plugin@2.0.0) (2023-10-12)
 
 ### Features
