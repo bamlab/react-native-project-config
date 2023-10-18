@@ -11,3 +11,7 @@ console.log(
 // no-empty
 if (true) {
 }
+
+// This should trigger an error breaking no-floating-promises rule
+const promise = new Promise((resolve) => resolve("value"));
+promise;
