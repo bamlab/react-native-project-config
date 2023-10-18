@@ -44,7 +44,7 @@ module.exports = defineConfig({
     "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": "error",
-    "@typescript-eslint/no-floating-promises": "error",
+    // "@typescript-eslint/no-floating-promises": "error", //TODO: A réactiver après le fix de @thomasrebam https://www.notion.so/m33/ETQU-sur-le-plugin-eslint-la-r-gle-no-floating-promises-fonctionne-949b4beca2b34704a87c41faa982f540
   },
   env: {
     node: true,

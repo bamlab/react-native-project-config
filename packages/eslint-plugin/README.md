@@ -96,6 +96,32 @@ If you use **npm >= 5** you can automatically install them by running:
 npx install-peerdeps @bam.tech/eslint-config -D
 ```
 
+## Eslint rules
+
+This plugin exports some custom rules that you can optionally use in your project:
+
+<!-- begin auto-generated rules list -->
+
+| Name                                                                                                                                              | Description                                            |
+| :------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------- |
+| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect |
+
+<!-- end auto-generated rules list -->
+
+To use a rule, just declare it in your `.eslintrc`:
+
+```json
+// .eslintrc
+{
+  "plugins": ["@bam.tech"],
+  "rules": {
+    "@bam.tech/require-named-effect": "error"
+  }
+}
+```
+
+> _Tip: if your config is already extended from a `@bam.tech` config, you don't need to declare the plugin._
+
 ## How to customize?
 
 You can still customize your ESLint config by adding other configurations, plugins and rules to your `.eslintrc` config file.
