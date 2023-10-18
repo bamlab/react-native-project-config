@@ -19,9 +19,7 @@
   "scripts": {
     "lint": "npm-run-all \"lint:*\"",
     "lint:js": "eslint .",
-    "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
-    "test": "mocha tests --recursive",
-    "update:eslint-docs": "eslint-doc-generator"
+    "test": "mocha tests --recursive"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.61.0",
