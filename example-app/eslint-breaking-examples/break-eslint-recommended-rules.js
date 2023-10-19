@@ -2,8 +2,9 @@
 
 "use strict";
 
+// This should trigger an error breaking no-console rule:
 console.log(
-  "This is a console.log statement to see it the linter produces an error"
+  "This is a console.log statement to see if the linter produces an error"
 );
 
 // This should trigger two errors breaking eslint:recommended rules:
