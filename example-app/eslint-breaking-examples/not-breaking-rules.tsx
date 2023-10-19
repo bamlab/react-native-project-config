@@ -17,3 +17,12 @@ const styles = StyleSheet.create({
   },
 });
 styles.view;
+
+// This should not trigger a warning nor an error because sort-styles rule is off
+const notSortedStyles = StyleSheet.create({
+  beta: {},
+  alpha: {},
+});
+notSortedStyles.alpha;
+notSortedStyles.beta;
+
