@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 // This should not trigger a warning nor an error because explicit-function-return-type rule is off
 const noReturnTypeDefined = () => {
@@ -27,8 +27,14 @@ notSortedStyles.alpha;
 notSortedStyles.beta;
 
 // This should not trigger an error because no-raw-text rule is off
-import { View } from "react-native";
 
 export const MyText = () => {
   return <View>Test</View>;
+};
+
+// This should not trigger an error because react/prop-types rule is off
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+export const ComponentWithNotTypedProps = ({ name }) => {
+  return <Text>{name}</Text>;
 };
