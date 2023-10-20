@@ -26,3 +26,9 @@ const notSortedStyles = StyleSheet.create({
 notSortedStyles.alpha;
 notSortedStyles.beta;
 
+// This should not trigger an error because no-raw-text rule is off
+import { View } from "react-native";
+
+export const MyText = () => {
+  return <View>Test</View>;
+};
