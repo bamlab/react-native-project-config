@@ -3,9 +3,9 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.0.2](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@2.0.1...@bam.tech/eslint-plugin@2.0.2) (2023-10-23)
+## [3.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@2.0.1...@bam.tech/eslint-plugin@2.0.2) (2023-10-23)
 
-### Bug Fixes
+### BREAKING CHANGES
 
 - **eslint-plugin:** Activate no floating promises rule ([#87](https://github.com/bamlab/react-native-project-config/issues/87)) ([d8d5289](https://github.com/bamlab/react-native-project-config/commit/d8d5289d6c79902303dd17f6334ad0f8826e1a11))
 - **eslint-plugin:** reinstating require-named-effects ([#86](https://github.com/bamlab/react-native-project-config/issues/86)) ([2b4c10c](https://github.com/bamlab/react-native-project-config/commit/2b4c10cc112fa77eb003cfbf4edcf988a7eee553)), closes [#84](https://github.com/bamlab/react-native-project-config/issues/84) [#81](https://github.com/bamlab/react-native-project-config/issues/81)
