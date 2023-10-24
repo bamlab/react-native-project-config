@@ -57,6 +57,10 @@ It will then push a tagged commit `chore(release): Publish` which will then trig
 
 > If you add a new rule to a config, this is a breaking change, because it could make the CI fail on projects that use the plugin. The commit name where you add the new rule needs to follow this patern `BREAKING CHANGE : the description of your commit`
 
+## Conventional commits
+
+We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to automate the release process.
+
 ## Running commands
 
 - `yarn lerna run start`: run the 'start' script in all packages (currently only present in `example-app`),
