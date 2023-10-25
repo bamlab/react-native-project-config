@@ -30,6 +30,8 @@ Here are some useful commands:
 - rename the directory of a package: `mv package-my-config new-directory-name && yarn lerna bootstrap`,
 - run a script `do-something` that exists in at least one package: `yarn lerna run do-something` (this will try to run the script in all packages in which it is defined).
 
+- [Testing ESLint plugin](packages/eslint-plugin/docs/Testing.md)
+
 ## Conventional commits
 
 We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to automate the release process.
