@@ -1,5 +1,7 @@
 # Enforces awaiting userEvent calls (`@bam.tech/await-user-event`)
 
+💼 This rule is enabled in the `tests` config.
+
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
 <!-- end auto-generated rule header -->
