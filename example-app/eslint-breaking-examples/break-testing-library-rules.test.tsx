@@ -1,8 +1,11 @@
+import { fireEvent, userEvent } from "@testing-library/react-native";
 // Save without formatting: [⌘ + K] > [S]
 
 // This should trigger an error breaking eslint-testing-library rule:
 // testing-library/no-await-sync-events
+// @bam.tech/await-user-event
 
-it("a test", () => {
-  await fireEvent();
+it("a test", async () => {
+  fireEvent();
+  userEvent.press(button);
 });
