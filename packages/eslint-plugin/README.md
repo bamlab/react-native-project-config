@@ -102,9 +102,12 @@ This plugin exports some custom rules that you can optionally use in your projec
 
 <!-- begin auto-generated rules list -->
 
-| Name                                                                                                                                              | Description                                            |
-| :------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------- |
-| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect |
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
+
+| Name                                                                                                                                              | Description                                            | 🔧  |
+| :------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------- | :-- |
+| [await-user-event](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/await-user-event.md)         | Enforces awaiting userEvent calls                      | 🔧  |
+| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md) | Enforces the use of named functions inside a useEffect |     |
 
 <!-- end auto-generated rules list -->
 
