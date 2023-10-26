@@ -45,5 +45,6 @@ module.exports = defineConfig({
     "testing-library/prefer-presence-queries": "error",
     "testing-library/no-wait-for-side-effects": "error",
     "testing-library/prefer-screen-queries": "error",
+    "@bam.tech/await-user-event": "error",
   },
 });
