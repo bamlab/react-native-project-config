@@ -6,6 +6,6 @@ import { fireEvent, userEvent } from "@testing-library/react-native";
 // @bam.tech/await-user-event
 
 it("a test", async () => {
-  fireEvent();
+  await fireEvent();
   userEvent.press(button);
 });
