@@ -19,8 +19,8 @@ module.exports = {
       url: "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/prefer-user-event.md",
     },
     messages: {
-      replacePress: "Replace fireEvent.press with await userEvent.press.",
-      replaceChangeText: "Replace fireEvent.changeText with userEvent.type.",
+      replacePress: "Replace `fireEvent.press` with `await userEvent.press.`",
+      replaceChangeText: "Replace `fireEvent.changeText` with `await userEvent.type.`",
     },
     fixable: "code",
     schema: [],
