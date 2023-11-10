@@ -4857,9 +4857,7 @@ react-is@^17.0.1:
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
 react-native@^0.72.0:
-  version "0.72.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.72.1.tgz#a60f8494ec74cc201ed095aaf2ff2c912c708ec6"
-  integrity sha512-O9cIVD++kt2XQl0XLCUGUgwSKr8xp+yo0ho5QK6KYWJrCFnnvQLTKL0+HD0rZUcuqFfGknHQJh3h0moQO2EMDg==
+  version "0.72.6"
   dependencies:
     "@jest/create-cache-key-function" "^29.2.1"
     "@react-native-community/cli" "11.3.3"
