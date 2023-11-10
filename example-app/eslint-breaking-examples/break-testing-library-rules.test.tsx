@@ -3,7 +3,7 @@ import { fireEvent, userEvent } from "@testing-library/react-native";
 
 // This should trigger an error breaking eslint-testing-library rule:
 // testing-library/no-await-sync-events
-// @bam.tech/await-user-event
+// @typescript-eslint/no-floating-promises
 
 it("a test", async () => {
   await fireEvent();
