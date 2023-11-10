@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@3.0.0...@bam.tech/eslint-plugin@3.1.0) (2023-11-10)
+
+### Features
+
+- add a Testing documentation to the project ([#92](https://github.com/bamlab/react-native-project-config/issues/92)) ([55749de](https://github.com/bamlab/react-native-project-config/commit/55749debb230b7faaecade18be21bbe2b1626bb1))
+- Custom test rules ([#93](https://github.com/bamlab/react-native-project-config/issues/93)) ([5aee16c](https://github.com/bamlab/react-native-project-config/commit/5aee16c901be989608596ea9028a560876935e85))
+
 ## [3.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@2.0.1...@bam.tech/eslint-plugin@2.0.2) (2023-10-23)
 
 ### BREAKING CHANGES
