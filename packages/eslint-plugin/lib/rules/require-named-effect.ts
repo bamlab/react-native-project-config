@@ -8,8 +8,10 @@
 // Rule Definition
 //------------------------------------------------------------------------------
 
-/** @type {import('eslint').Rule.RuleModule} */
-module.exports = {
+import type { Rule } from 'eslint'
+import { CallExpression } from 'estree';
+
+export const requireNamedEffectRule: Rule.RuleModule = {
   meta: {
     type: "suggestion", // `problem`, `suggestion`, or `layout`
     docs: {
@@ -17,7 +19,7 @@ module.exports = {
       recommended: false,
       url: "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/require-named-effect.md", // URL to the documentation page for this rule
     },
-    fixable: null, // Or `code` or `whitespace`
+    fixable: undefined, // Or `code` or `whitespace`
     schema: [], // Add a schema if the rule has options,
     messages: {
       useNamedFunction: "Complex effects must be a named function.",
@@ -29,13 +31,21 @@ module.exports = {
     // Helpers
     //----------------------------------------------------------------------
 
-    const isUseEffect = (node) => node.callee.name === "useEffect";
+    const isUseEffect = (node: CallExpression & Rule.NodeParentExtension) => {
+      return 'name' in node.callee && node.callee.name === "useEffect"
+    };
 
-    const argumentIsArrowFunction = (node) =>
-      node.arguments[0].type === "ArrowFunctionExpression";
+    const argumentIsArrowFunction = (node: CallExpression & Rule.NodeParentExtension) => {
+     return node.arguments[0].type === "ArrowFunctionExpression";
+    }
 
-    const effectBodyIsSingleFunction = (node) => {
-      const { body } = node.arguments[0];
+    const effectBodyIsSingleFunction = (node: CallExpression & Rule.NodeParentExtension) => {
+      const firstArg = node.arguments[0];
+      if (! ('body' in firstArg)) {
+        return false
+        
+      }
+      const { body } =firstArg;
 
       // It's a single unwrapped function call:
       //   `useEffect(() => theNameOfAFunction(), []);`
@@ -48,9 +58,12 @@ module.exports = {
       //     theOnlyChildIsAFunctionCall();
       //   }, []);`
       if (
-        body.body.length &&
+        'body' in body &&
+        'length' in body.body &&
+        body. body.length &&
         body.body.length === 1 &&
         body.body[0] &&
+        'expression' in body.body[0] &&
         body.body[0].expression &&
         body.body[0].expression.type === "CallExpression"
       ) {
@@ -60,9 +73,6 @@ module.exports = {
       return false;
     };
 
-    const fail = (report, node) =>
-      report({ node, messageId: "useNamedFunction" });
-
     //----------------------------------------------------------------------
     // Public
     //----------------------------------------------------------------------
@@ -70,11 +80,12 @@ module.exports = {
     return {
       CallExpression(node) {
         if (
-          isUseEffect(node) &&
+          'name' in node.callee &&
+          node.callee.name === "useEffect" &&
           argumentIsArrowFunction(node) &&
           !effectBodyIsSingleFunction(node)
         ) {
-          fail(context.report, node);
+         context.report({ node, messageId: "useNamedFunction" })
         }
       },
     };

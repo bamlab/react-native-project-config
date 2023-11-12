@@ -2,14 +2,10 @@
  * @fileoverview Makes sure userEvent.press and userEvent.type are awaited
  * @author Pierre Zimmermann
  */
-"use strict";
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
+import type { Rule } from 'eslint'
 
-/** @type {import('eslint').Rule.RuleModule} */
-module.exports = {
+export const awaitUserEventRule: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
@@ -30,6 +26,7 @@ module.exports = {
       CallExpression(node) {
         if (
           node.callee.type === "MemberExpression" &&
+          'name' in node.callee.object &&
           node.callee.object.name === "userEvent"
         ) {
           // Check if the parent is not an AwaitExpression
