@@ -103,6 +103,7 @@ Creating new rules is quite simple:
 1. Update the README and run the tests:
 
    ```bash
+   yarn build
    yarn update:eslint-docs
    yarn lint
    yarn test

@@ -5,8 +5,11 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:eslint-plugin/recommended",
-    "plugin:node/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
   ],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   rules: {
     "eslint-plugin/require-meta-docs-description": [
       2,
@@ -24,11 +27,5 @@ module.exports = {
   env: {
     node: true,
   },
-  overrides: [
-    {
-      files: ["tests/**/*.js"],
-      env: { mocha: true },
-    },
-  ],
   ignorePatterns: ["example-app"],
 };

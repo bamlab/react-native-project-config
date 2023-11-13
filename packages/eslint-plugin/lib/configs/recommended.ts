@@ -1,9 +1,6 @@
-// @ts-check
-"use strict";
+import { defineConfig } from "eslint-define-config";
 
-const { defineConfig } = require("eslint-define-config");
-
-module.exports = defineConfig({
+export const recommendedConfig = defineConfig({
   ignorePatterns: [
     ".cache", // tsc/eslint/metro cache
     ".expo-shared",

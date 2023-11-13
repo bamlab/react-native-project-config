@@ -1,9 +1,6 @@
-// @ts-check
-"use strict";
+import { defineConfig } from "eslint-define-config";
 
-const { defineConfig } = require("eslint-define-config");
-
-module.exports = defineConfig({
+export const a11yconfig = defineConfig({
   extends: ["plugin:react-native-a11y/all"],
   rules: {
     "react-native-a11y/has-accessibility-hint": "off",

@@ -2,14 +2,9 @@
  * @fileoverview Forces usage of userEvent.press over fireEvent.press and userEvent.type over fireEvent.changeText
  * @author Pierre Zimmermann
  */
-"use strict";
+import type { Rule } from "eslint";
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
-
-/** @type {import('eslint').Rule.RuleModule} */
-module.exports = {
+export const preferUserEventRule: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
@@ -20,7 +15,8 @@ module.exports = {
     },
     messages: {
       replacePress: "Replace `fireEvent.press` with `await userEvent.press.`",
-      replaceChangeText: "Replace `fireEvent.changeText` with `await userEvent.type.`",
+      replaceChangeText:
+        "Replace `fireEvent.changeText` with `await userEvent.type.`",
     },
     fixable: "code",
     schema: [],
@@ -29,8 +25,8 @@ module.exports = {
   create(context) {
     return {
       MemberExpression: (node) => {
-        if (node.object.name === "fireEvent") {
-          if (node.property.name === "press") {
+        if ("name" in node.object && node.object.name === "fireEvent") {
+          if ("name" in node.property && node.property.name === "press") {
             context.report({
               node: node.property,
               messageId: "replacePress",
@@ -41,7 +37,10 @@ module.exports = {
                 ];
               },
             });
-          } else if (node.property.name === "changeText") {
+          } else if (
+            "name" in node.property &&
+            node.property.name === "changeText"
+          ) {
             context.report({
               node: node.property,
               messageId: "replaceChangeText",

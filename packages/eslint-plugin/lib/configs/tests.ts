@@ -1,9 +1,6 @@
-// @ts-check
-"use strict";
+import { defineConfig } from "eslint-define-config";
 
-const { defineConfig } = require("eslint-define-config");
-
-module.exports = defineConfig({
+export const testsConfig = defineConfig({
   env: {
     "jest/globals": true,
   },
