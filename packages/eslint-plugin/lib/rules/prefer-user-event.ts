@@ -2,9 +2,9 @@
  * @fileoverview Forces usage of userEvent.press over fireEvent.press and userEvent.type over fireEvent.changeText
  * @author Pierre Zimmermann
  */
-import type { Rule } from 'eslint'
+import type { Rule } from "eslint";
 
-export const  preferUserEventRule: Rule.RuleModule = {
+export const preferUserEventRule: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
@@ -15,7 +15,8 @@ export const  preferUserEventRule: Rule.RuleModule = {
     },
     messages: {
       replacePress: "Replace `fireEvent.press` with `await userEvent.press.`",
-      replaceChangeText: "Replace `fireEvent.changeText` with `await userEvent.type.`",
+      replaceChangeText:
+        "Replace `fireEvent.changeText` with `await userEvent.type.`",
     },
     fixable: "code",
     schema: [],
@@ -24,8 +25,8 @@ export const  preferUserEventRule: Rule.RuleModule = {
   create(context) {
     return {
       MemberExpression: (node) => {
-        if ('name' in node.object && node.object.name === "fireEvent") {
-          if ('name' in node.property && node.property.name === "press") {
+        if ("name" in node.object && node.object.name === "fireEvent") {
+          if ("name" in node.property && node.property.name === "press") {
             context.report({
               node: node.property,
               messageId: "replacePress",
@@ -36,7 +37,10 @@ export const  preferUserEventRule: Rule.RuleModule = {
                 ];
               },
             });
-          } else if ('name' in node.property && node.property.name === "changeText") {
+          } else if (
+            "name" in node.property &&
+            node.property.name === "changeText"
+          ) {
             context.report({
               node: node.property,
               messageId: "replaceChangeText",

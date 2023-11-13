@@ -3,7 +3,7 @@
  * @author Pierre Zimmermann
  */
 
-import type { Rule } from 'eslint'
+import type { Rule } from "eslint";
 
 export const awaitUserEventRule: Rule.RuleModule = {
   meta: {
@@ -26,7 +26,7 @@ export const awaitUserEventRule: Rule.RuleModule = {
       CallExpression(node) {
         if (
           node.callee.type === "MemberExpression" &&
-          'name' in node.callee.object &&
+          "name" in node.callee.object &&
           node.callee.object.name === "userEvent"
         ) {
           // Check if the parent is not an AwaitExpression

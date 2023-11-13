@@ -4,7 +4,7 @@ module.exports = (element) => {
       return (
         attribute.type === "JSXAttribute" &&
         ["accessibilityLabel", "aria-label", "alt"].includes(
-          attribute.name.name
+          attribute.name.name,
         )
       );
     });
