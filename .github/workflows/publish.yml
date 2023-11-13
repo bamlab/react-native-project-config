@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
-      - name: Build
-        run: yarn build
+      - name: Build eslint-plugin
+        run: yarn workspace @bam.tech/eslint-plugin build
 
       - name: Set up .npmrc file
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
