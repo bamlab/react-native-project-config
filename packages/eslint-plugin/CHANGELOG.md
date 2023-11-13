@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@3.1.1...@bam.tech/eslint-plugin@3.1.2) (2023-11-13)
+
+### Reverts
+
+- Revert "chore(release): Publish" (#99) ([82534fd](https://github.com/bamlab/react-native-project-config/commit/82534fd3beb053af5a98434383cc0a2f248cd3ed)), closes [#99](https://github.com/bamlab/react-native-project-config/issues/99)
+
 ## [3.1.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@3.1.1...@bam.tech/eslint-plugin@3.1.1) (2023-11-13)
 
 ### Reverts
