@@ -1,7 +1,7 @@
-const isImage = require("./isImage");
-const isPressable = require("./isPressable");
-const isText = require("./isText");
-const isTextInput = require("./isTextInput");
+import isImage from "./isImage";
+import isPressable from "./isPressable";
+import isText from "./isText";
+import isTextInput from "./isTextInput";
 
 module.exports = (element) => {
   if (element.type === "JSXOpeningElement") {

@@ -8,8 +8,8 @@
 // Rule Definition
 //------------------------------------------------------------------------------
 
-import type { Rule } from 'eslint'
-import { CallExpression } from 'estree';
+import type { Rule } from "eslint";
+import { CallExpression } from "estree";
 
 export const requireNamedEffectRule: Rule.RuleModule = {
   meta: {
@@ -31,21 +31,20 @@ export const requireNamedEffectRule: Rule.RuleModule = {
     // Helpers
     //----------------------------------------------------------------------
 
-    const isUseEffect = (node: CallExpression & Rule.NodeParentExtension) => {
-      return 'name' in node.callee && node.callee.name === "useEffect"
+    const argumentIsArrowFunction = (
+      node: CallExpression & Rule.NodeParentExtension,
+    ) => {
+      return node.arguments[0].type === "ArrowFunctionExpression";
     };
 
-    const argumentIsArrowFunction = (node: CallExpression & Rule.NodeParentExtension) => {
-     return node.arguments[0].type === "ArrowFunctionExpression";
-    }
-
-    const effectBodyIsSingleFunction = (node: CallExpression & Rule.NodeParentExtension) => {
+    const effectBodyIsSingleFunction = (
+      node: CallExpression & Rule.NodeParentExtension,
+    ) => {
       const firstArg = node.arguments[0];
-      if (! ('body' in firstArg)) {
-        return false
-        
+      if (!("body" in firstArg)) {
+        return false;
       }
-      const { body } =firstArg;
+      const { body } = firstArg;
 
       // It's a single unwrapped function call:
       //   `useEffect(() => theNameOfAFunction(), []);`
@@ -58,12 +57,12 @@ export const requireNamedEffectRule: Rule.RuleModule = {
       //     theOnlyChildIsAFunctionCall();
       //   }, []);`
       if (
-        'body' in body &&
-        'length' in body.body &&
-        body. body.length &&
+        "body" in body &&
+        "length" in body.body &&
+        body.body.length &&
         body.body.length === 1 &&
         body.body[0] &&
-        'expression' in body.body[0] &&
+        "expression" in body.body[0] &&
         body.body[0].expression &&
         body.body[0].expression.type === "CallExpression"
       ) {
@@ -80,12 +79,12 @@ export const requireNamedEffectRule: Rule.RuleModule = {
     return {
       CallExpression(node) {
         if (
-          'name' in node.callee &&
+          "name" in node.callee &&
           node.callee.name === "useEffect" &&
           argumentIsArrowFunction(node) &&
           !effectBodyIsSingleFunction(node)
         ) {
-         context.report({ node, messageId: "useNamedFunction" })
+          context.report({ node, messageId: "useNamedFunction" });
         }
       },
     };
