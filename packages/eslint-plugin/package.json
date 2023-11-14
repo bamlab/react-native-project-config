@@ -28,6 +28,7 @@
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "eslint": "^8.44.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jest": "^27.2.2",
     "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -40,15 +41,14 @@
     "prettier": "^3.0.0"
   },
   "dependencies": {
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-define-config": "^1.21.0",
-    "requireindex": "^1.2.0"
+    "eslint-define-config": "^1.21.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.44.7",
+    "@typescript-eslint/parser": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "eslint": "^8.44.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-doc-generator": "^1.4.3",
     "eslint-plugin-eslint-plugin": "^5.1.0",
     "eslint-plugin-jest": "^27.2.2",
