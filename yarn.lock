@@ -4889,7 +4889,7 @@ eslint-plugin-react-hooks@^4.6.0:
 
 eslint-plugin-react-native-a11y@^3.3.0:
   version "3.3.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-react-native-a11y/-/eslint-plugin-react-native-a11y-3.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-native-a11y/-/eslint-plugin-react-native-a11y-3.3.0.tgz#0485a8f18474bf54ec68d004b50167f75ffbf201"
   integrity sha512-21bIs/0yROcMq7KtAG+OVNDWAh8M+6scII0iXcO3i9NYHe2xZ443yPs5KSUMSvQJeRLLjuKB7V5saqNjoMWDHA==
   dependencies:
     "@babel/runtime" "^7.15.4"
