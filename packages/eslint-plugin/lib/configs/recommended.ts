@@ -19,9 +19,10 @@ export const recommendedConfig = defineConfig({
     "plugin:react/jsx-runtime", // Disables the rules that require importing react when using JSX
     "plugin:react-native/all",
     "plugin:react-hooks/recommended",
+    "plugin:@bam.tech/import",
     "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  plugins: ["@bam.tech", "unused-imports"],
+  plugins: ["@bam.tech"],
   rules: {
     "@typescript-eslint/ban-ts-comment": "warn",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -38,9 +39,6 @@ export const recommendedConfig = defineConfig({
     "react/prop-types": "off",
     "react/no-unused-prop-types": "error",
     "react/jsx-no-useless-fragment": "error",
-    "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": "error",
     // ☢️ Rules that require type information must be added to the `.ts` overrides section below
   },
   env: {
