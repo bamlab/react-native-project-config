@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@4.0.0...@bam.tech/eslint-plugin@4.0.1) (2023-12-29)
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-define-config to v2 ([#103](https://github.com/bamlab/react-native-project-config/issues/103)) ([47850a9](https://github.com/bamlab/react-native-project-config/commit/47850a9251d7f9dd778b2814c7984552444f3d9c))
+- **eslint-config:** handle non-typechecked files without breaking ([#107](https://github.com/bamlab/react-native-project-config/issues/107)) ([443f363](https://github.com/bamlab/react-native-project-config/commit/443f3638d4a1e3fc08792c05637e3719f55cf49c))
+
 # [4.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@3.1.2...@bam.tech/eslint-plugin@4.0.0) (2023-11-15)
 
 ### Bug Fixes
