@@ -41,7 +41,7 @@ export const recommendedConfig = defineConfig({
     "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": "error",
-    "@typescript-eslint/no-floating-promises": "error",
+    // ☢️ Rules that require type information must be added to the `.ts` overrides section below
   },
   env: {
     node: true,
@@ -54,8 +54,6 @@ export const recommendedConfig = defineConfig({
     ecmaFeatures: {
       jsx: true,
     },
-    // Introduced to define the parserOptions.project property for @typescript-eslint/no-floating-promises
-    project: ["tsconfig.json"],
   },
   settings: {
     react: {
@@ -69,9 +67,9 @@ export const recommendedConfig = defineConfig({
         project: "tsconfig.json",
       },
       rules: {
-        // Note: disable the base rule as it can report incorrect errors
-        "no-return-await": "off",
+        "no-return-await": "off", // Disable the base rule as it can report incorrect errors
         "@typescript-eslint/return-await": "error",
+        "@typescript-eslint/no-floating-promises": "error",
       },
     },
   ],
