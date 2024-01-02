@@ -1,6 +1,6 @@
 {
   "name": "@bam.tech/eslint-plugin",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "eslint plugin for bam projects",
   "keywords": [
     "eslint",

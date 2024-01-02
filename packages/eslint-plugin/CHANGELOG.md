@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@4.0.1...@bam.tech/eslint-plugin@5.0.0) (2024-01-02)
+
+### Features
+
+- **eslint-plugin:** add new imports config ([#108](https://github.com/bamlab/react-native-project-config/issues/108)) ([2199fb4](https://github.com/bamlab/react-native-project-config/commit/2199fb4954960607151b30bcffca5ae45efdabca))
+
 ## [4.0.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@4.0.0...@bam.tech/eslint-plugin@4.0.1) (2023-12-29)
 
 ### Bug Fixes
