@@ -7,5 +7,7 @@
       "extends": "plugin:@bam.tech/tests"
     }
   ],
-  "rules": { "@bam.tech/require-named-effect": "error" }
+  "rules": {
+    "@bam.tech/require-named-effect": "error"
+  }
 }

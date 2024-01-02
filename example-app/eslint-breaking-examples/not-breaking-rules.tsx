@@ -1,3 +1,5 @@
+import "react";
+
 import { StyleSheet, Text, View } from "react-native";
 
 // This should not trigger a warning nor an error because explicit-function-return-type rule is off
