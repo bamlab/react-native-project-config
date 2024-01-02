@@ -13,7 +13,7 @@ If you feel that a rule could be useful to all react-native new projects, you ca
 - Fill the template with any relevant information about the rule (why it is needed, how it works, shareable configs to add it to, etc.)
 - Submit the issue and share it with the community
 
-#### Get the rule approuved
+#### Get the rule approved
 
 - At the next Café Tech, we discuss with other tech leads whether we sould approuve the rule or not. Owner: @Cyril
 
