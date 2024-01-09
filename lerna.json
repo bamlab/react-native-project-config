@@ -7,8 +7,7 @@
       "private": false,
       "message": "chore(release): Publish",
       "conventionalCommits": true,
-      "allowBranch": "main",
-      "createRelease": "github"
+      "allowBranch": "main"
     }
   }
 }
