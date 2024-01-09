@@ -35,7 +35,7 @@ export const recommendedConfig = defineConfig({
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
-    "typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-shadow": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-return-await": "error",
     "array-callback-return": "error",
