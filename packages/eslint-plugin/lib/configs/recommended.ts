@@ -76,6 +76,7 @@ export const recommendedConfig = defineConfig({
         "no-return-await": "off", // Disable the base rule as it can report incorrect errors
         "@typescript-eslint/return-await": "error",
         "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/no-unnecessary-condition": "error",
       },
     },
   ],

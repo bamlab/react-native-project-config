@@ -19,6 +19,10 @@ There is also an example app under `packages/example-app` whose goal is to demon
 
 - clone the project: `git clone https://github.com/bamlab/react-native-project-config`,
 - install the dependencies: `yarn install`,
+- install the dependencies in the example-app: `cd example-app && yarn && cd ../`
+- build the eslint-plugin: `cd packages/eslint-plugin && yarn build && cd ../..`
+
+✅ Check : in the example-app in eslint-breaking-examples you should see the eslint errors.
 
 ## Modifying the project
 
