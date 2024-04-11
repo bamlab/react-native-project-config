@@ -10,6 +10,14 @@ The example-app folder is located at the root of `react-native-project-config`.
 The goal of each file of example-app is to simulate the behavior of a rule or a set of rules, so that you can visually check it or by running the `yarn lint` command.
 When you add or remove a rule from the recommended config, please modify (or add/remove) the corresponding file in the example-app folder.
 
+## Adding a new rule
+
+In order to add a new rule, you must add it to the packages eslint-plugin, and then build it (it is in typescript) before seeing the changes in the example-app with the command:
+
+```bash
+yarn workspace @bam.tech/eslint-plugin build
+```
+
 ## Real example testing
 
 In order to test that your rule will be properly deployed, use another project, in which you install the eslint-plugin from your local files.
