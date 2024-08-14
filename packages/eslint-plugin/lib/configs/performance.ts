@@ -23,6 +23,11 @@ export const performanceConfig = defineConfig({
             message:
               "Please use useFocusEffect instead of useIsFocused to avoid excessive rerenders.",
           },
+          {
+            name: "react-native-svg",
+            message:
+              "Usage of react-native-svg is discouraged. Consider alternatives if applicable.",
+          },
         ],
       },
     ],
