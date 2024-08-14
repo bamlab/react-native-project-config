@@ -11,6 +11,7 @@
   "devDependencies": {
     "@bam.tech/eslint-plugin": "*",
     "@bam.tech/typescript-config": "*",
+    "@react-navigation/stack": "^6.4.1",
     "@testing-library/react-native": "^12.3.1",
     "@types/jest": "^29.5.2",
     "@types/react": "^18.2.14",
