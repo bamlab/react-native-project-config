@@ -4,7 +4,7 @@ Monorepo with packages for setting up ESLint and Typescript for any new React Na
 
 ## Presentation
 
-The goal of the project is too have a set of configuration files that can be easily imported into a new project, which would reduce the burden of starting new projects.
+The goal of the project is to have a set of configuration files that can be easily imported into a new project, which would reduce the burden of starting new projects.
 
 This repo uses [lerna](https://lerna.js.org/) to maintain, version and publish various packages for configuring ESLint and Typescript.
 
@@ -39,7 +39,7 @@ Here are some useful commands:
 
 We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to automate the release process.
 
-> If you add a new rule to a config, this is a breaking change, because it could make the CI fail on projects that use the plugin. The commit name where you add the new rule needs to follow this patern `BREAKING CHANGE : the description of your commit`
+> If you add a new rule to a config, this is a breaking change, because it could make the CI fail on projects that use the plugin. The commit name where you add the new rule needs to follow this pattern `BREAKING CHANGE : the description of your commit`
 
 ## Publishing a new version of a package
 
@@ -68,7 +68,7 @@ It will then push a tagged commit `chore(release): Publish` which will then trig
 
 ## Unpublish a package version
 
-If you want to unpublish a package, you have to be contributor of @bam.tech/eslint-plugin (in this case for the eslint plugin). Use the following commad :
+If you want to unpublish a package, you have to be contributor of @bam.tech/eslint-plugin (in this case for the eslint plugin). Use the following command :
 `npm unpublish @bam.tech/eslint-plugin@X.Y.Z`
 
 ## Running commands
