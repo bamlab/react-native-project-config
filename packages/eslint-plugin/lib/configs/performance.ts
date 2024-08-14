@@ -17,6 +17,12 @@ export const performanceConfig = defineConfig({
             message:
               'Please use "@react-navigation/native-stack" instead of "@react-navigation/stack".',
           },
+          {
+            name: "@react-navigation/native",
+            importNames: ["useIsFocused"],
+            message:
+              "Please use useFocusEffect instead of useIsFocused to avoid excessive rerenders.",
+          },
         ],
       },
     ],
