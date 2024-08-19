@@ -31,6 +31,7 @@ export const performanceConfig = defineConfig({
         ],
       },
     ],
+    "no-animated-without-native-driver": "error",
   },
   overrides: [
     {
