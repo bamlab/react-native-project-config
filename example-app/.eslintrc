@@ -8,7 +8,6 @@
     }
   ],
   "rules": {
-    "@bam.tech/require-named-effect": "error",
-    "@bam.tech/no-different-displayname": "error"
+    "@bam.tech/require-named-effect": "error"
   }
 }

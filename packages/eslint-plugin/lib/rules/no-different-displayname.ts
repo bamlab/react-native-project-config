@@ -11,7 +11,7 @@ export const noDifferentDisplaynameRule: Rule.RuleModule = {
     type: "problem",
     docs: {
       description: "Enforce component displayName to match with component name",
-      recommended: false,
+      recommended: true,
       url: "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/no-different-displayname.md",
     },
     messages: {
