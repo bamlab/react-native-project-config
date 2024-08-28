@@ -32,6 +32,7 @@ export const performanceConfig = defineConfig({
       },
     ],
     "@bam.tech/no-animated-without-native-driver": "error",
+    "@bam.tech/avoid-intl-number-format": "error",
   },
   overrides: [
     {

@@ -1,3 +1,4 @@
+import { avoidIntlNumberFormatRule } from "./avoid-intl-number-format";
 import { awaitUserEventRule } from "./await-user-event";
 import { noDifferentDisplaynameRule } from "./no-different-displayname";
 import { noAnimatedWithoutNativeDriverRule } from "./no-animated-without-native-driver";
@@ -10,4 +11,5 @@ export default {
   "require-named-effect": requireNamedEffectRule,
   "no-different-displayname": noDifferentDisplaynameRule,
   "no-animated-without-native-driver": noAnimatedWithoutNativeDriverRule,
+  "avoid-intl-number-format": avoidIntlNumberFormatRule,
 };
