@@ -107,12 +107,14 @@ This plugin exports some custom rules that you can optionally use in your projec
 🧪 Set in the `tests` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
-| Name                                                                                                                                                      | Description                                                | 💼  | 🔧  |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- | :-- | :-- |
-| [await-user-event](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/await-user-event.md)                 | Enforces awaiting userEvent calls                          | 🧪  | 🔧  |
-| [no-different-displayname](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/no-different-displayname.md) | Enforce component displayName to match with component name | ✅  | 🔧  |
-| [prefer-user-event](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/prefer-user-event.md)               | Enforces usage of userEvent over fireEvent in tests.       |     | 🔧  |
-| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md)         | Enforces the use of named functions inside a useEffect     |     |     |
+| Name                                                                                                                                                                        | Description                                                  | 💼                     | 🔧  |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------- | :--------------------- | :-- |
+| [await-user-event](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/await-user-event.md)                                   | Enforces awaiting userEvent calls                            | 🧪                     | 🔧  |
+| [no-different-displayname](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/no-different-displayname.md)                   | Enforce component displayName to match with component name   | ✅                     | 🔧  |
+| [no-animated-without-native-driver](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/no-animated-without-native-driver.md) | Disallow the use of `Animated` with `useNativeDriver: false` | ![badge-performance][] |     |
+| [prefer-user-event](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/prefer-user-event.md)                                 | Enforces usage of userEvent over fireEvent in tests.         |                        | 🔧  |
+| [require-named-effect](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/require-named-effect.md)                           | Enforces the use of named functions inside a useEffect       |                        |     |
+| Name                                                                                                                                                                        |
 
 <!-- end auto-generated rules list -->
 
