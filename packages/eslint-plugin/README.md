@@ -103,13 +103,14 @@ This plugin exports some custom rules that you can optionally use in your projec
 <!-- begin auto-generated rules list -->
 
 💼 Configurations enabled in.\
-✅ Set in the `recommended` configuration.\
+⚠️ Configurations set to warn in.\
 🧪 Set in the `tests` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
 | Name                                                                                                                                                                        | Description                                                                  | 💼                     | 🔧  |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------- | :--------------------- | :-- |
 | [avoid-intl-number-format](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/avoid-intl-number-format.md)                   | Disallow the use of `Intl.NumberFormat` due to potential performance issues. | ![badge-performance][] |     |
+| [avoid-react-native-svg](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/avoid-react-native-svg.md)                       | Disallow importing the `react-native-svg` package.                           |                        | ![badge-performance][] |     |
 | [await-user-event](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/await-user-event.md)                                   | Enforces awaiting userEvent calls                                            | 🧪                     | 🔧  |
 | [no-different-displayname](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/no-different-displayname.md)                   | Enforce component displayName to match with component name                   | ✅                     | 🔧  |
 | [no-animated-without-native-driver](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/docs/rules/no-animated-without-native-driver.md) | Disallow the use of `Animated` with `useNativeDriver: false`                 | ![badge-performance][] |     |

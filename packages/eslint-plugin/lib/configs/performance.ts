@@ -3,7 +3,7 @@ import { defineConfig } from "eslint-define-config";
 export const performanceConfig = defineConfig({
   rules: {
     "no-restricted-imports": [
-      "warn",
+      "error",
       {
         paths: [
           {
@@ -23,16 +23,12 @@ export const performanceConfig = defineConfig({
             message:
               "Please use useFocusEffect instead of useIsFocused to avoid excessive rerenders.",
           },
-          {
-            name: "react-native-svg",
-            message:
-              "Usage of react-native-svg is discouraged. Consider alternatives if applicable.",
-          },
         ],
       },
     ],
     "@bam.tech/no-animated-without-native-driver": "error",
     "@bam.tech/avoid-intl-number-format": "error",
+    "@bam.tech/avoid-react-native-svg": "warn",
   },
   overrides: [
     {
