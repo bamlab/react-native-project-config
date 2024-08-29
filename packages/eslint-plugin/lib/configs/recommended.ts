@@ -47,6 +47,7 @@ export const recommendedConfig = defineConfig({
     "react/prop-types": "off",
     "react/no-unused-prop-types": "error",
     "react/jsx-no-useless-fragment": "error",
+    "@bam.tech/no-different-displayname": "error",
     // ☢️ Rules that require type information must be added to the `.ts` overrides section below
   },
   env: {
