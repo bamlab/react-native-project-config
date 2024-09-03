@@ -7,12 +7,6 @@ export const performanceConfig = defineConfig({
       {
         paths: [
           {
-            name: "react-native",
-            importNames: ["FlatList"],
-            message:
-              "Please use FlashList from @shopify/flash-list instead of FlatList from react-native.",
-          },
-          {
             name: "@react-navigation/stack",
             message:
               'Please use "@react-navigation/native-stack" instead of "@react-navigation/stack".',
@@ -29,6 +23,7 @@ export const performanceConfig = defineConfig({
     "@bam.tech/no-animated-without-native-driver": "error",
     "@bam.tech/avoid-intl-number-format": "error",
     "@bam.tech/avoid-react-native-svg": "warn",
+    "@bam.tech/no-flatlist": "error",
   },
   overrides: [
     {

@@ -1,7 +1,7 @@
 // Save without formatting: [⌘ + K] > [S]
 
-// This should trigger one error breaking eslint-plugin-react-native:
-// no-restricted-imports
+// This should trigger one error breaking custom FlatList import rule:
+// @bam.tech/no-flatlist
 
 import { FlatList } from "react-native";
 

@@ -5,6 +5,7 @@ import { noDifferentDisplaynameRule } from "./no-different-displayname";
 import { noAnimatedWithoutNativeDriverRule } from "./no-animated-without-native-driver";
 import { preferUserEventRule } from "./prefer-user-event";
 import { requireNamedEffectRule } from "./require-named-effect";
+import { noFlatListImportRule } from "./no-flatlist";
 
 export default {
   "await-user-event": awaitUserEventRule,
@@ -14,4 +15,5 @@ export default {
   "no-animated-without-native-driver": noAnimatedWithoutNativeDriverRule,
   "avoid-intl-number-format": avoidIntlNumberFormatRule,
   "avoid-react-native-svg": avoidReactNativeSvgImportRule,
+  "no-flatlist": noFlatListImportRule,
 };
