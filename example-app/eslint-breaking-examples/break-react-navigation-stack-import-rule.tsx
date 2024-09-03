@@ -1,7 +1,7 @@
 // Save without formatting: [⌘ + K] > [S]
 
-// This should trigger one error breaking eslint-plugin-react-native:
-// no-restricted-imports
+// This should trigger one error breaking custom react-navigation/stack rule:
+// @bam.tech/no-react-navigation-stack
 
 import { createStackNavigator } from "@react-navigation/stack";
 

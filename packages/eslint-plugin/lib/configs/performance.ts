@@ -7,11 +7,6 @@ export const performanceConfig = defineConfig({
       {
         paths: [
           {
-            name: "@react-navigation/stack",
-            message:
-              'Please use "@react-navigation/native-stack" instead of "@react-navigation/stack".',
-          },
-          {
             name: "@react-navigation/native",
             importNames: ["useIsFocused"],
             message:
@@ -24,6 +19,7 @@ export const performanceConfig = defineConfig({
     "@bam.tech/avoid-intl-number-format": "error",
     "@bam.tech/avoid-react-native-svg": "warn",
     "@bam.tech/no-flatlist": "error",
+    "@bam.tech/no-react-navigation-stack": "error",
   },
   overrides: [
     {

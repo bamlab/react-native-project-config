@@ -6,6 +6,7 @@ import { noAnimatedWithoutNativeDriverRule } from "./no-animated-without-native-
 import { preferUserEventRule } from "./prefer-user-event";
 import { requireNamedEffectRule } from "./require-named-effect";
 import { noFlatListImportRule } from "./no-flatlist";
+import { noReactNavigationStackImportRule } from "./no-react-navigation-stack";
 
 export default {
   "await-user-event": awaitUserEventRule,
@@ -16,4 +17,5 @@ export default {
   "avoid-intl-number-format": avoidIntlNumberFormatRule,
   "avoid-react-native-svg": avoidReactNativeSvgImportRule,
   "no-flatlist": noFlatListImportRule,
+  "no-react-navigation-stack": noReactNavigationStackImportRule,
 };
