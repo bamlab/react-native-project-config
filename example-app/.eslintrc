@@ -1,6 +1,10 @@
 {
   "root": true,
-  "extends": ["plugin:@bam.tech/recommended", "plugin:@bam.tech/a11y"],
+  "extends": [
+    "plugin:@bam.tech/recommended",
+    "plugin:@bam.tech/a11y",
+    "plugin:@bam.tech/performance"
+  ],
   "overrides": [
     {
       "files": ["*.test.tsx"],
