@@ -1674,7 +1674,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bam.tech/eslint-plugin@npm:*, @bam.tech/eslint-plugin@workspace:packages/eslint-plugin":
+"@bam.tech/eslint-plugin@portal:../packages/eslint-plugin::locator=example-app%40workspace%3Aexample-app":
+  version: 0.0.0-use.local
+  resolution: "@bam.tech/eslint-plugin@portal:../packages/eslint-plugin::locator=example-app%40workspace%3Aexample-app"
+  dependencies:
+    eslint-define-config: "npm:^2.0.0"
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^6.0.0
+    eslint: ^8.44.0
+    eslint-config-prettier: ^9.0.0
+    eslint-import-resolver-typescript: ^3.6.1
+    eslint-plugin-import: ^2.29.1
+    eslint-plugin-jest: ^27.2.2
+    eslint-plugin-jest-formatting: ^3.1.0
+    eslint-plugin-prettier: ^5.0.0
+    eslint-plugin-react: ^7.31.11
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-react-native: ^4.0.0
+    eslint-plugin-react-native-a11y: ^3.3.0
+    eslint-plugin-simple-import-sort: ^10.0.0
+    eslint-plugin-testing-library: ^6.0.1
+    eslint-plugin-unused-imports: ^3.0.0
+    prettier: ^3.0.0
+  languageName: node
+  linkType: soft
+
+"@bam.tech/eslint-plugin@workspace:packages/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@bam.tech/eslint-plugin@workspace:packages/eslint-plugin"
   dependencies:
@@ -1724,7 +1749,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@bam.tech/typescript-config@npm:*, @bam.tech/typescript-config@workspace:packages/typescript-config":
+"@bam.tech/typescript-config@portal:../packages/typescript-config::locator=example-app%40workspace%3Aexample-app":
+  version: 0.0.0-use.local
+  resolution: "@bam.tech/typescript-config@portal:../packages/typescript-config::locator=example-app%40workspace%3Aexample-app"
+  peerDependencies:
+    expo: ">=47"
+  languageName: node
+  linkType: soft
+
+"@bam.tech/typescript-config@workspace:packages/typescript-config":
   version: 0.0.0-use.local
   resolution: "@bam.tech/typescript-config@workspace:packages/typescript-config"
   peerDependencies:
@@ -6969,8 +7002,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example-app@workspace:example-app"
   dependencies:
-    "@bam.tech/eslint-plugin": "npm:*"
-    "@bam.tech/typescript-config": "npm:*"
+    "@bam.tech/eslint-plugin": "portal:../packages/eslint-plugin"
+    "@bam.tech/typescript-config": "portal:../packages/typescript-config"
     "@testing-library/react-native": "npm:^12.3.1"
     "@types/jest": "npm:^29.5.2"
     "@types/react": "npm:^18.2.14"
