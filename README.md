@@ -22,7 +22,7 @@ There is also an example app under `packages/example-app` whose goal is to demon
 - build the eslint-plugin: `yarn workspace @bam.tech/eslint-plugin build`
 - test the errors: `yarn workspace example-app lint`
 
-✅ Check : in the example-app in eslint-breaking-examples you should see the eslint errors.
+✅ Check: in the example-app in eslint-breaking-examples you should see the eslint errors.
 
 ## Modifying the project
 
@@ -40,7 +40,7 @@ Here are some useful commands:
 
 We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to automate the release process.
 
-> If you add a new rule to a config, this is a breaking change, because it could make the CI fail on projects that use the plugin. The commit name where you add the new rule needs to follow this patern `BREAKING CHANGE : the description of your commit`
+> If you add a new rule to a config, this is a breaking change, because it could make the CI fail on projects that use the plugin. The commit name where you add the new rule needs to follow this pattern `BREAKING CHANGE: the description of your commit`
 
 ## Publishing a new version of a package
 
@@ -69,7 +69,7 @@ It will then push a tagged commit `chore(release): Publish` which will then trig
 
 ## Unpublish a package version
 
-If you want to unpublish a package, you have to be contributor of @bam.tech/eslint-plugin (in this case for the eslint plugin). Use the following commad :
+If you want to unpublish a package, you have to be contributor of @bam.tech/eslint-plugin (in this case for the eslint plugin). Use the following commad:
 `npm unpublish @bam.tech/eslint-plugin@X.Y.Z`
 
 ## Running commands
