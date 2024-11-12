@@ -4,7 +4,7 @@ export const testsConfig = defineConfig({
   env: {
     "jest/globals": true,
   },
-  plugins: ["jest", "jest-formatting", "testing-library"],
+  plugins: ["jest", "testing-library"],
   rules: {
     // Setting the recommended rules manually, because we don't want warnings, only errors
     "jest/no-alias-methods": "error", // STYLE
@@ -26,7 +26,7 @@ export const testsConfig = defineConfig({
     "jest/valid-expect": "error",
     "jest/valid-expect-in-promise": "error",
     "jest/valid-title": ["error", { disallowedWords: ["should"] }], // STYLE
-    "jest-formatting/padding-around-all": "error", // STYLE
+    "jest/padding-around-all": "error", // STYLE
     "testing-library/await-async-queries": "error",
     "testing-library/no-manual-cleanup": "error",
     "testing-library/no-container": "error",
