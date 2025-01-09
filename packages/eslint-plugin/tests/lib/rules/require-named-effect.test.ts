@@ -6,7 +6,9 @@ import { requireNamedEffectRule } from "../../../lib/rules/require-named-effect"
 import { RuleTester } from "eslint";
 
 const ruleTester = new RuleTester({
-  parser: require.resolve("@typescript-eslint/parser"),
+  languageOptions: {
+    parser: require("typescript-eslint").parser,
+  },
 });
 
 const valid = [
