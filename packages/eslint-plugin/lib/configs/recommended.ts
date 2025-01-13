@@ -7,6 +7,7 @@ import reactHookPlugin from "eslint-plugin-react-hooks";
 import { noDifferentDisplaynameRule } from "../rules/no-different-displayname";
 import { requireNamedEffectRule } from "../rules/require-named-effect";
 import { preferUserEventRule } from "../rules/prefer-user-event";
+import { awaitUserEventRule } from "../rules/await-user-event";
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 // @TODO Add the @bam.tech/import plugins
@@ -53,6 +54,7 @@ export const recommendedConfig = tseslint.config(
           "no-different-displayname": noDifferentDisplaynameRule,
           "require-named-effect": requireNamedEffectRule,
           "prefer-user-event": preferUserEventRule,
+          "await-user-event": awaitUserEventRule,
         },
       },
     },

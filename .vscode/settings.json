@@ -1,9 +1,15 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": { "source.fixAll": true },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
   "eslint.workingDirectories": ["example-app", "packages/eslint-plugin"],
   "markdownlint.customRules": [
     "./markdown-lint-custom-rules/no-relative-links.js"
-  ]
+  ],
+  "eslint.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "./eslint.config.js"
+  }
 }
