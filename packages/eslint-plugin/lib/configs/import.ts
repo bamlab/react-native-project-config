@@ -1,7 +1,6 @@
 import { defineFlatConfig } from "eslint-define-config";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 
-// @ts-ignore
 import { flatConfigs } from "eslint-plugin-import";
 import unusedImports from "eslint-plugin-unused-imports";
 

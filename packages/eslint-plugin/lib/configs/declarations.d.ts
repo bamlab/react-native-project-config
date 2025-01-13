@@ -140,12 +140,3 @@ declare module "eslint-plugin-import" {
     typescript: Config;
   };
 }
-
-declare module "eslint-plugin-unused-imports" {
-  export const rules: {
-    "no-unused-vars": Rule;
-    "no-unused-imports": Rule;
-    "no-unused-vars-ts": Rule;
-    "no-unused-imports-ts": Rule;
-  };
-}
