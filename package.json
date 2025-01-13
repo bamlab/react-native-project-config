@@ -15,5 +15,8 @@
     "markdownlint-rule-helpers": "^0.23.0",
     "prettier": "^3.0.0"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "yarn@4.5.1",
+  "dependencies": {
+    "@types/eslint": "^9.6.1"
+  }
 }
