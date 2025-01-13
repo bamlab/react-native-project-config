@@ -1,18 +1,17 @@
-"use strict";
+const tseslint = require("typescript-eslint");
+const eslintPlugin = require("eslint-plugin-eslint-plugin");
 
-module.exports = {
-  root: true,
-  extends: [
-    "eslint:recommended",
-    "plugin:eslint-plugin/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
+module.exports = tseslint.config(eslintPlugin.configs["flat/recommended"], {
+  ignores: ["example-app", "dist"],
+  languageOptions: {
+    parser: tseslint.parser,
+  },
+  plugins: {
+    "@typescript-eslint": tseslint.plugin,
+  },
   rules: {
     "eslint-plugin/require-meta-docs-description": [
-      2,
+      "error",
       { pattern: "^(Enforce|Require|Disallow)" },
     ],
     "eslint-plugin/require-meta-docs-url": [
@@ -24,8 +23,4 @@ module.exports = {
     ],
     "no-console": ["error", { allow: ["warn", "error"] }],
   },
-  env: {
-    node: true,
-  },
-  ignorePatterns: ["example-app"],
-};
+});
