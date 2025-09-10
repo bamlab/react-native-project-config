@@ -5,7 +5,7 @@ import { testsConfig } from "./tests";
 
 export default {
   recommended: recommendedConfig,
-  tests: testsConfig,
   a11y: a11yconfig,
   import: importConfig,
+  tests: testsConfig,
 };
