@@ -10,6 +10,11 @@ export const testsConfig = defineFlatConfig([
       globals: jestPlugin.environments.globals.globals,
     },
     plugins: {
+      "@bam.tech": {
+        rules: {
+          "await-user-event": awaitUserEventRule,
+        },
+      },
       jest: jestPlugin,
       "testing-library": testingLibrary,
     },
