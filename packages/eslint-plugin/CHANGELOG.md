@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.2](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.0.1...@bam.tech/eslint-plugin@7.0.2) (2025-10-28)
+
+### Bug Fixes
+
+- **eslint:** remove [@bam](https://github.com/bam).tech duplicated rule in test ([#128](https://github.com/bamlab/react-native-project-config/issues/128)) ([9521997](https://github.com/bamlab/react-native-project-config/commit/9521997b1559773a279db6a4e9775f8357a69e29))
+
 ## [7.0.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.0.0...@bam.tech/eslint-plugin@7.0.1) (2025-10-28)
 
 ### Bug Fixes
