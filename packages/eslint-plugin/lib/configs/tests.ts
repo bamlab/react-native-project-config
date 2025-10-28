@@ -1,7 +1,6 @@
 import { defineFlatConfig } from "eslint-define-config";
 import jestPlugin from "eslint-plugin-jest";
 import testingLibrary from "eslint-plugin-testing-library";
-import { awaitUserEventRule } from "../rules/await-user-event";
 
 export const testsConfig = defineFlatConfig([
   {
@@ -10,11 +9,6 @@ export const testsConfig = defineFlatConfig([
       globals: jestPlugin.environments.globals.globals,
     },
     plugins: {
-      "@bam.tech": {
-        rules: {
-          "await-user-event": awaitUserEventRule,
-        },
-      },
       jest: jestPlugin,
       "testing-library": testingLibrary,
     },
