@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.0.3](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.0.2...@bam.tech/eslint-plugin@7.0.3) (2025-10-28)
+
+### Bug Fixes
+
+- **eslint:** use jest globals everywhere ([#130](https://github.com/bamlab/react-native-project-config/issues/130)) ([cf35b46](https://github.com/bamlab/react-native-project-config/commit/cf35b4676d0f341fc9dff3ae9ec2e8d953a5ff6b))
+
 ## [7.0.2](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.0.1...@bam.tech/eslint-plugin@7.0.2) (2025-10-28)
 
 ### Bug Fixes
