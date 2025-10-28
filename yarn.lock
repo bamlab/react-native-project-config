@@ -1691,7 +1691,7 @@ __metadata:
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-eslint-plugin: "npm:^6.4.0"
     eslint-plugin-import: "npm:^2.31.0"
-    eslint-plugin-jest: "npm:^28.10.0"
+    eslint-plugin-jest: "npm:^29.0.1"
     eslint-plugin-prettier: "npm:^5.2.1"
     eslint-plugin-react: "npm:^7.37.4"
     eslint-plugin-react-hooks: "npm:^5.1.0"
@@ -1708,20 +1708,20 @@ __metadata:
     typescript: "npm:^5.7.2"
     typescript-eslint: "npm:^8.19.1"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^8.19.1
-    eslint: ^9.18.0
-    eslint-config-prettier: ^10.0.1
-    eslint-import-resolver-typescript: ^3.7.0
-    eslint-plugin-import: ^2.31.0
-    eslint-plugin-jest: ^28.10.10
-    eslint-plugin-react: ^7.37.4
-    eslint-plugin-react-hooks: ^5.1.0
+    "@typescript-eslint/eslint-plugin": ^8.46.0
+    eslint: ^9.37.0
+    eslint-config-prettier: ^10.1.8
+    eslint-import-resolver-typescript: ^4.4.4
+    eslint-plugin-import: ^2.32.0
+    eslint-plugin-jest: ^29.0.1
+    eslint-plugin-react: ^7.37.5
+    eslint-plugin-react-hooks: ^7.0.0
     eslint-plugin-react-native: ^5.0.0
     eslint-plugin-react-native-a11y: ^3.5.1
     eslint-plugin-simple-import-sort: ^12.1.1
-    eslint-plugin-testing-library: ^7.1.1
-    eslint-plugin-unused-imports: ^4.1.4
-    prettier: ^3.0.0
+    eslint-plugin-testing-library: ^7.13.1
+    eslint-plugin-unused-imports: ^4.2.0
+    prettier: ^3.6.2
   languageName: unknown
   linkType: soft
 
@@ -1731,20 +1731,20 @@ __metadata:
   dependencies:
     eslint-define-config: "npm:^2.0.0"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^8.19.1
-    eslint: ^9.18.0
-    eslint-config-prettier: ^10.0.1
-    eslint-import-resolver-typescript: ^3.7.0
-    eslint-plugin-import: ^2.31.0
-    eslint-plugin-jest: ^28.10.10
-    eslint-plugin-react: ^7.37.4
-    eslint-plugin-react-hooks: ^5.1.0
+    "@typescript-eslint/eslint-plugin": ^8.46.0
+    eslint: ^9.37.0
+    eslint-config-prettier: ^10.1.8
+    eslint-import-resolver-typescript: ^4.4.4
+    eslint-plugin-import: ^2.32.0
+    eslint-plugin-jest: ^29.0.1
+    eslint-plugin-react: ^7.37.5
+    eslint-plugin-react-hooks: ^7.0.0
     eslint-plugin-react-native: ^5.0.0
     eslint-plugin-react-native-a11y: ^3.5.1
     eslint-plugin-simple-import-sort: ^12.1.1
-    eslint-plugin-testing-library: ^7.1.1
-    eslint-plugin-unused-imports: ^4.1.4
-    prettier: ^3.0.0
+    eslint-plugin-testing-library: ^7.13.1
+    eslint-plugin-unused-imports: ^4.2.0
+    prettier: ^3.6.2
   languageName: node
   linkType: soft
 
@@ -4039,7 +4039,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.19.1, @typescript-eslint/utils@npm:^6.0.0 || ^7.0.0 || ^8.0.0, @typescript-eslint/utils@npm:^8.0.0, @typescript-eslint/utils@npm:^8.15.0":
+"@typescript-eslint/utils@npm:8.19.1, @typescript-eslint/utils@npm:^8.0.0, @typescript-eslint/utils@npm:^8.15.0":
   version: 8.19.1
   resolution: "@typescript-eslint/utils@npm:8.19.1"
   dependencies:
@@ -6805,21 +6805,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^28.10.0":
-  version: 28.10.0
-  resolution: "eslint-plugin-jest@npm:28.10.0"
+"eslint-plugin-jest@npm:^29.0.1":
+  version: 29.0.1
+  resolution: "eslint-plugin-jest@npm:29.0.1"
   dependencies:
-    "@typescript-eslint/utils": "npm:^6.0.0 || ^7.0.0 || ^8.0.0"
+    "@typescript-eslint/utils": "npm:^8.0.0"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^6.0.0 || ^7.0.0 || ^8.0.0
-    eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
+    "@typescript-eslint/eslint-plugin": ^8.0.0
+    eslint: ^8.57.0 || ^9.0.0
     jest: "*"
   peerDependenciesMeta:
     "@typescript-eslint/eslint-plugin":
       optional: true
     jest:
       optional: true
-  checksum: 10c0/f1eeabcc9bf650e755ef07da501271e9a54d2ef6414c648a33d5dc71f2545fcfc060d06846549ec7978e7bd9d11e6cb57b33ccd97ebf5a86ee4682853c06381b
+  checksum: 10c0/20edc166503a50c10b45f733797d530a5107c91efa25410ef405780d12222a796b5b41ed8f6d2b939632a1af273af6cc5732233463d1f36dbe7680bbb86c4eec
   languageName: node
   linkType: hard
 
@@ -7109,7 +7109,7 @@ __metadata:
     eslint-define-config: "npm:^2.1.0"
     eslint-import-resolver-typescript: "npm:^3.7.0"
     eslint-plugin-import: "npm:^2.31.0"
-    eslint-plugin-jest: "npm:^28.10.0"
+    eslint-plugin-jest: "npm:^29.0.1"
     eslint-plugin-prettier: "npm:^5.2.0"
     eslint-plugin-react: "npm:^7.37.3"
     eslint-plugin-react-hooks: "npm:^5.1.0"

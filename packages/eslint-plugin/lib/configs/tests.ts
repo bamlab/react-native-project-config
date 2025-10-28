@@ -5,12 +5,16 @@ import { awaitUserEventRule } from "../rules/await-user-event";
 
 export const testsConfig = defineFlatConfig([
   {
+    files: ["**/*.test.tsx", "**/*.test.ts"],
     languageOptions: {
-      globals: {
-        "jest/globals": true,
-      },
+      globals: jestPlugin.environments.globals.globals,
     },
     plugins: {
+      "@bam.tech": {
+        rules: {
+          "await-user-event": awaitUserEventRule,
+        },
+      },
       jest: jestPlugin,
       "testing-library": testingLibrary,
     },
