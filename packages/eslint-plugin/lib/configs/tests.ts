@@ -4,10 +4,13 @@ import testingLibrary from "eslint-plugin-testing-library";
 
 export const testsConfig = defineFlatConfig([
   {
-    files: ["**/*.test.tsx", "**/*.test.ts"],
+    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
     languageOptions: {
       globals: jestPlugin.environments.globals.globals,
     },
+  },
+  {
+    files: ["**/*.test.tsx", "**/*.test.ts"],
     plugins: {
       jest: jestPlugin,
       "testing-library": testingLibrary,
