@@ -53,6 +53,7 @@ export const testsConfig = defineFlatConfig([
       "testing-library/no-wait-for-side-effects": "error",
       "testing-library/prefer-screen-queries": "error",
       "@bam.tech/await-user-event": "error",
+      "@bam.tech/prefer-user-event": "error",
     },
   },
 ]);
