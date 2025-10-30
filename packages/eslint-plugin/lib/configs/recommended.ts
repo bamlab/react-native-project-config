@@ -8,6 +8,7 @@ import { noDifferentDisplaynameRule } from "../rules/no-different-displayname";
 import { requireNamedEffectRule } from "../rules/require-named-effect";
 import { preferUserEventRule } from "../rules/prefer-user-event";
 import { awaitUserEventRule } from "../rules/await-user-event";
+import { noInlineStyleRule } from "../rules/no-inline-style";
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 // @TODO Add the @bam.tech/import plugins
@@ -43,6 +44,7 @@ export const recommendedConfig = tseslint.config(
       "react/jsx-no-useless-fragment": "error",
       "@bam.tech/no-different-displayname": "error",
       "@bam.tech/require-named-effect": "error",
+      "@bam.tech/no-inline-style": "error",
       // ☢️ Rules that require type information must be added to the `.ts` overrides section below
     },
     plugins: {
@@ -55,6 +57,7 @@ export const recommendedConfig = tseslint.config(
           "require-named-effect": requireNamedEffectRule,
           "prefer-user-event": preferUserEventRule,
           "await-user-event": awaitUserEventRule,
+          "no-inline-style": noInlineStyleRule,
         },
       },
     },
