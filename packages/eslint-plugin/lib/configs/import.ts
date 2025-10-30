@@ -24,9 +24,13 @@ export const importConfig = defineFlatConfig([
       "@typescript-eslint/no-var-requires": "off",
 
       // Auto-remove unused imports
-      "@typescript-eslint/no-unused-vars": "off",
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": "error",
+      
+      // We disable the base rule because it doesn't work well with TypeScript
+      // https://typescript-eslint.io/rules/no-unused-vars/
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error",
 
       // Import sorting
       "simple-import-sort/imports": [
