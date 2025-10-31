@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.1.1...@bam.tech/eslint-plugin@8.0.0) (2025-10-31)
+
+### Features
+
+- Add no inline style rule ([#131](https://github.com/bamlab/react-native-project-config/issues/131)) ([f5372ef](https://github.com/bamlab/react-native-project-config/commit/f5372ef9de1585e5b9dee9fac3ded7259983bb7f))
+
+### BREAKING CHANGES
+
+- Add no-inline-style custom rule
+
+- feat: add no-inline-style rule to recommended config
+
 ## [7.1.1](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.1.0...@bam.tech/eslint-plugin@7.1.1) (2025-10-30)
 
 ### Bug Fixes
