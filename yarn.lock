@@ -1674,11 +1674,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bam.tech/eslint-plugin@npm:^7.0.0, @bam.tech/eslint-plugin@workspace:packages/eslint-plugin":
+"@bam.tech/eslint-plugin@npm:^8.0.0, @bam.tech/eslint-plugin@workspace:packages/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@bam.tech/eslint-plugin@workspace:packages/eslint-plugin"
   dependencies:
-    "@bam.tech/eslint-plugin": "npm:^7.0.0"
+    "@bam.tech/eslint-plugin": "npm:^8.0.0"
     "@eslint/compat": "npm:^1.2.4"
     "@eslint/js": "npm:^9.17.0"
     "@types/eslint": "npm:^9.6.1"
