@@ -7,11 +7,17 @@ import { useEffect } from "react";
 
 const MyComponent = () => {
   const doAThing = (t: number) => t;
+  const doNothing = () => {};
+  const initializeStuff = () => Promise.resolve();
 
   useEffect(() => {
     const abc = 1;
     doAThing(abc);
   }, []);
+
+  // Does not trigger an error:
+  useEffect(() => doNothing(), []);
+  useEffect(() => void initializeStuff(), []);
 
   return <></>;
 };
