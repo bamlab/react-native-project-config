@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "lerna": "^8.0.0",
-    "markdownlint": "^0.32.0",
-    "markdownlint-cli": "^0.38.0",
-    "markdownlint-rule-helpers": "^0.23.0",
+    "markdownlint": "^0.39.0",
+    "markdownlint-cli": "^0.46.0",
+    "markdownlint-rule-helpers": "^0.30.0",
     "prettier": "^3.0.0"
   },
   "packageManager": "yarn@4.5.1",
