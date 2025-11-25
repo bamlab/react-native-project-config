@@ -105,6 +105,10 @@ export const recommendedConfig = tseslint.config(
       "@typescript-eslint/return-await": "error",
       "@typescript-eslint/no-floating-promises": "error",
       "@typescript-eslint/no-unnecessary-condition": "error",
+      "@typescript-eslint/no-empty-object-type": [
+        "error",
+        { allowInterfaces: "with-single-extends" },
+      ],
     },
   },
 );
