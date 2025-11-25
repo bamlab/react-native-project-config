@@ -52,6 +52,14 @@ export const requireNamedEffectRule: Rule.RuleModule = {
         return true;
       }
 
+      // It's a unary expression that contains a function call:
+      //   `useEffect(() => void theNameOfAFunction(), []);`
+      if (body.type === "UnaryExpression") {
+        if (body.argument.type === "CallExpression") {
+          return true;
+        }
+      }
+
       // There's a function body, but it just calls another function:
       //   `useEffect(() => {
       //     theOnlyChildIsAFunctionCall();

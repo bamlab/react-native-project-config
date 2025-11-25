@@ -34,6 +34,10 @@ useEffect(() => theNameOfAFunction(), []);
 ```
 
 ```jsx
+useEffect(() => void theNameOfAFunction(), []);
+```
+
+```jsx
 useEffect(() => {
   theOnlyChildIsAFunctionCall();
 }, []);
