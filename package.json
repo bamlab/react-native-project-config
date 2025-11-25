@@ -6,7 +6,7 @@
     "example-app"
   ],
   "scripts": {
-    "lint-md": "find . -name '*.md' -not -path './node_modules/*' -exec markdownlint --config ./.markdownlint.json --rules ./markdown-lint-custom-rules/no-relative-links.js {} +"
+    "lint-md": "find . -name '*.md' -not -path '*/node_modules/*' -exec markdownlint --config ./.markdownlint.json --rules ./markdown-lint-custom-rules/no-relative-links.js {} +"
   },
   "devDependencies": {
     "lerna": "^8.0.0",

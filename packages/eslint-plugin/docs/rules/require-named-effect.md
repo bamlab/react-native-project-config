@@ -1,5 +1,7 @@
 # Enforces the use of named functions inside a useEffect (`@bam.tech/require-named-effect`)
 
+💼 This rule is enabled in the ✅ `recommended` config.
+
 <!-- end auto-generated rule header -->
 
 Force to use named functions inside a useEffect instead of lambda functions.
