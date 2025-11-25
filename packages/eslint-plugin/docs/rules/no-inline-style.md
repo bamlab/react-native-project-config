@@ -1,5 +1,7 @@
 # Detect inline styles in JSX (`@bam.tech/no-inline-style`)
 
+💼 This rule is enabled in the ✅ `recommended` config.
+
 <!-- end auto-generated rule header -->
 
 > **Note:** This rule is a flat config adaptation of [`react-native/no-inline-styles`](https://github.com/Intellicode/eslint-plugin-react-native/blob/master/docs/rules/no-inline-styles.md).
