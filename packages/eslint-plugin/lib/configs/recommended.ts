@@ -38,7 +38,7 @@ export const recommendedConfig = tseslint.config(
       "react-native/no-color-literals": "off",
       "react-native/sort-styles": "off",
       "react-native/no-raw-text": "error",
-      "react/no-unstable-nested-components": "error",
+      "react/no-unstable-nested-components": ["error", { allowAsProps: true }], // allowAsProps for Functions as child components
       "react/prop-types": "off",
       "react/no-unused-prop-types": "error",
       "react/jsx-no-useless-fragment": "error",
