@@ -39,8 +39,8 @@
   },
   "private": true,
   "dependencies": {
-    "expo": "^49.0.0",
-    "react": "^18.2.0",
+    "expo": "^54.0.0",
+    "react": "^19.0.0",
     "react-native": "^0.73.0"
   }
 }
