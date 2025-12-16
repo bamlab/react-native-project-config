@@ -41,6 +41,7 @@ export const recommendedConfig = tseslint.config(
       "react/no-unstable-nested-components": ["error", { allowAsProps: true }], // allowAsProps for Functions as child components
       "react/prop-types": "off",
       "react/no-unused-prop-types": "error",
+      "@typescript-eslint/no-unnecessary-condition": "error",
       "react/jsx-no-useless-fragment": "error",
       "@bam.tech/no-different-displayname": "error",
       "@bam.tech/require-named-effect": "error",
