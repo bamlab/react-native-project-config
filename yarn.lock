@@ -1669,11 +1669,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bam.tech/eslint-plugin@npm:^8.0.0, @bam.tech/eslint-plugin@workspace:packages/eslint-plugin":
+"@bam.tech/eslint-plugin@portal:../packages/eslint-plugin::locator=example-app%40workspace%3Aexample-app":
+  version: 0.0.0-use.local
+  resolution: "@bam.tech/eslint-plugin@portal:../packages/eslint-plugin::locator=example-app%40workspace%3Aexample-app"
+  dependencies:
+    eslint-define-config: "npm:^2.0.0"
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^8.46.0
+    eslint: ^9.37.0
+    eslint-config-prettier: ^10.1.8
+    eslint-import-resolver-typescript: ^4.4.4
+    eslint-plugin-import: ^2.32.0
+    eslint-plugin-jest: ^29.0.1
+    eslint-plugin-react: ^7.37.5
+    eslint-plugin-react-hooks: ^7.0.0
+    eslint-plugin-react-native: ^5.0.0
+    eslint-plugin-react-native-a11y: ^3.5.1
+    eslint-plugin-simple-import-sort: ^12.1.1
+    eslint-plugin-testing-library: ^7.13.1
+    eslint-plugin-unused-imports: ^4.2.0
+    prettier: ^3.6.2
+  languageName: node
+  linkType: soft
+
+"@bam.tech/eslint-plugin@workspace:packages/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@bam.tech/eslint-plugin@workspace:packages/eslint-plugin"
   dependencies:
-    "@bam.tech/eslint-plugin": "npm:^8.0.0"
     "@eslint/compat": "npm:^2.0.0"
     "@eslint/js": "npm:^9.17.0"
     "@types/eslint": "npm:^9.6.1"
@@ -1718,29 +1740,6 @@ __metadata:
     eslint-plugin-unused-imports: ^4.2.0
     prettier: ^3.6.2
   languageName: unknown
-  linkType: soft
-
-"@bam.tech/eslint-plugin@portal:../packages/eslint-plugin::locator=example-app%40workspace%3Aexample-app":
-  version: 0.0.0-use.local
-  resolution: "@bam.tech/eslint-plugin@portal:../packages/eslint-plugin::locator=example-app%40workspace%3Aexample-app"
-  dependencies:
-    eslint-define-config: "npm:^2.0.0"
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^8.46.0
-    eslint: ^9.37.0
-    eslint-config-prettier: ^10.1.8
-    eslint-import-resolver-typescript: ^4.4.4
-    eslint-plugin-import: ^2.32.0
-    eslint-plugin-jest: ^29.0.1
-    eslint-plugin-react: ^7.37.5
-    eslint-plugin-react-hooks: ^7.0.0
-    eslint-plugin-react-native: ^5.0.0
-    eslint-plugin-react-native-a11y: ^3.5.1
-    eslint-plugin-simple-import-sort: ^12.1.1
-    eslint-plugin-testing-library: ^7.13.1
-    eslint-plugin-unused-imports: ^4.2.0
-    prettier: ^3.6.2
-  languageName: node
   linkType: soft
 
 "@bam.tech/typescript-config@portal:../packages/typescript-config::locator=example-app%40workspace%3Aexample-app":
