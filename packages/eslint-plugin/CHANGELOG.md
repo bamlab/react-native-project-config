@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@8.0.0...@bam.tech/eslint-plugin@9.0.0) (2026-01-22)
+
+### Bug Fixes
+
+- **eslint-plugin:** require-named-effect does not allow to use void operator ([#135](https://github.com/bamlab/react-native-project-config/issues/135)) ([05da0aa](https://github.com/bamlab/react-native-project-config/commit/05da0aa72808ba2127a03d2c1d34ce27b8a86846))
+
+### Features
+
+- **eslint-plugin:** allow single extends for interfaces ([#134](https://github.com/bamlab/react-native-project-config/issues/134)) ([2a2370d](https://github.com/bamlab/react-native-project-config/commit/2a2370d1e16c55952741b970ab9780bc36cdfb67))
+- **no-console:** no console ever. ([#139](https://github.com/bamlab/react-native-project-config/issues/139)) ([1b574d6](https://github.com/bamlab/react-native-project-config/commit/1b574d6536c782e17ebaf5ad94d01e0a6cc01875))
+- **no-unnecessary-condition:** no unnecessary condition ([#140](https://github.com/bamlab/react-native-project-config/issues/140)) ([29b88b1](https://github.com/bamlab/react-native-project-config/commit/29b88b19b4c8e4010e5779a56e57e144d7f8efca))
+- **no-unstable-nested-components:** allow to use for props set by the parent ([#138](https://github.com/bamlab/react-native-project-config/issues/138)) ([0df707a](https://github.com/bamlab/react-native-project-config/commit/0df707ab831ef4deb14852a58bcab01a5d042b7c))
+
 # [8.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@7.1.1...@bam.tech/eslint-plugin@8.0.0) (2025-10-31)
 
 ### Features
