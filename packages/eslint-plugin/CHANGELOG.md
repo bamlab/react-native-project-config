@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@9.0.0...@bam.tech/eslint-plugin@9.0.0) (2026-01-26)
+
+### Bug Fixes
+
+- fixes some issues with the package.json and the no-unnecessary-condition rule ([#141](https://github.com/bamlab/react-native-project-config/issues/141)) ([e6c18ad](https://github.com/bamlab/react-native-project-config/commit/e6c18add41c46de6c0aa67b2dced90e1afdd584f))
+
 # [9.0.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@8.0.0...@bam.tech/eslint-plugin@9.0.0) (2026-01-22)
 
 ### Bug Fixes
