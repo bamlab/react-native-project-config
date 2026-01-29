@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [9.0.5](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@9.0.4...@bam.tech/eslint-plugin@9.0.5) (2026-01-29)
+
+### Bug Fixes
+
+- add more peer dep required ([#143](https://github.com/bamlab/react-native-project-config/issues/143)) ([30944c1](https://github.com/bamlab/react-native-project-config/commit/30944c141e43d4f062ef680485481db52e5aee75))
+- import rules without the typescript rule ([#144](https://github.com/bamlab/react-native-project-config/issues/144)) ([ac17472](https://github.com/bamlab/react-native-project-config/commit/ac17472ac592017d49574611a63ae24e89555068))
+
 ## [9.0.4](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@9.0.3...@bam.tech/eslint-plugin@9.0.4) (2026-01-26)
 
 **Note:** Version bump only for package @bam.tech/eslint-plugin
