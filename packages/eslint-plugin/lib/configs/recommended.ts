@@ -86,6 +86,7 @@ export const recommendedConfig = tseslint.config(
       "coverage", // jest
       "dist", // expo updates
       "node_modules",
+      "expo-env.d.ts",
     ],
     settings: {
       react: {

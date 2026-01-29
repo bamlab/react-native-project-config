@@ -3,6 +3,7 @@ import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 import { flatConfigs } from "eslint-plugin-import";
 import unusedImports from "eslint-plugin-unused-imports";
+import tseslint from "typescript-eslint";
 
 export const importConfig = defineFlatConfig([
   flatConfigs.recommended,
@@ -10,6 +11,17 @@ export const importConfig = defineFlatConfig([
     plugins: {
       "simple-import-sort": simpleImportSort,
       "unused-imports": unusedImports,
+      "@typescript-eslint": tseslint.plugin,
+    },
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
     settings: {
       "import/resolver": {
@@ -26,7 +38,7 @@ export const importConfig = defineFlatConfig([
       // Auto-remove unused imports
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": "error",
-      
+
       // We disable the base rule because it doesn't work well with TypeScript
       // https://typescript-eslint.io/rules/no-unused-vars/
       "no-unused-vars": "off",
