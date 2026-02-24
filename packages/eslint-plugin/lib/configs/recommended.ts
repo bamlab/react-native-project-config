@@ -31,7 +31,7 @@ export const recommendedConfig = tseslint.config(
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-non-null-assertion": "error",
       "@typescript-eslint/no-shadow": "error",
-      "no-console": ["error", { allow: ["warn", "error"] }],
+      "no-console": "error",
       "no-return-await": "error",
       "array-callback-return": ["error"],
       "react-hooks/exhaustive-deps": "error",

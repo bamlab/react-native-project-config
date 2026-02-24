@@ -21,6 +21,5 @@ module.exports = tseslint.config(eslintPlugin.configs["flat/recommended"], {
           "https://github.com/bamlab/react-native-project-config/tree/main/packages/eslint-plugin/docs/rules/{{name}}.md",
       },
     ],
-    "no-console": "error",
   },
 });
