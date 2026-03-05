@@ -1,9 +1,41 @@
 declare module "eslint-plugin-react-hooks" {
   import type { Linter, Rule } from "eslint";
+
+  type ReactHooksFlatConfig = {
+    plugins: { react: any };
+    rules: Linter.RulesRecord;
+  };
+
   export const rules: {
     "rules-of-hooks": Rule.RuleModule;
     "exhaustive-deps": Rule.RuleModule;
+    config: Rule.RuleModule;
+    "error-boundaries": Rule.RuleModule;
+    "component-hook-factories": Rule.RuleModule;
+    gating: Rule.RuleModule;
+    globals: Rule.RuleModule;
+    immutability: Rule.RuleModule;
+    "preserve-manual-memoization": Rule.RuleModule;
+    purity: Rule.RuleModule;
+    refs: Rule.RuleModule;
+    "set-state-in-effect": Rule.RuleModule;
+    "set-state-in-render": Rule.RuleModule;
+    "static-components": Rule.RuleModule;
+    "unsupported-syntax": Rule.RuleModule;
+    "use-memo": Rule.RuleModule;
+    "incompatible-library": Rule.RuleModule;
   };
+
+  const plugin: {
+    meta: { name: string; version: string };
+    rules: typeof rules;
+    configs: {
+      flat: {
+        recommended: ReactHooksFlatConfig;
+      };
+    };
+  };
+  export default plugin;
 }
 
 declare module "eslint-plugin-react-native" {
