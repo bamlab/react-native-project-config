@@ -2,7 +2,7 @@ declare module "eslint-plugin-react-hooks" {
   import type { Linter, Rule } from "eslint";
 
   type ReactHooksFlatConfig = {
-    plugins: { react: any };
+    plugins: { "react-hooks": any };
     rules: Linter.RulesRecord;
   };
 
