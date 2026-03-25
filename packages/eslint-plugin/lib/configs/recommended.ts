@@ -35,7 +35,7 @@ export const recommendedConfig = tseslint.config(
       "no-console": "error",
       "no-return-await": "error",
       "array-callback-return": ["error"],
-      "react-hooks/exhaustive-deps": "error", // upgrade from recommended's "warn" to "error"
+      "react-hooks/exhaustive-deps": "error",
       "react-native/no-color-literals": "off",
       "react-native/sort-styles": "off",
       "react-native/no-raw-text": "error",
