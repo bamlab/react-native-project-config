@@ -17,6 +17,7 @@ export const recommendedConfig = tseslint.config(
   tseslint.configs.recommended,
   eslint.configs.recommended,
   eslintPluginPrettierRecommended,
+  reactHookPlugin.configs.flat.recommended,
   {
     rules: {
       "no-var": "error",
@@ -50,7 +51,6 @@ export const recommendedConfig = tseslint.config(
     plugins: {
       react,
       "react-native": reactNativePlugin,
-      "react-hooks": reactHookPlugin,
       "@bam.tech": {
         rules: {
           "no-different-displayname": noDifferentDisplaynameRule,

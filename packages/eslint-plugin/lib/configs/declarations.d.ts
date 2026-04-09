@@ -1,11 +1,3 @@
-declare module "eslint-plugin-react-hooks" {
-  import type { Linter, Rule } from "eslint";
-  export const rules: {
-    "rules-of-hooks": Rule.RuleModule;
-    "exhaustive-deps": Rule.RuleModule;
-  };
-}
-
 declare module "eslint-plugin-react-native" {
   export const deprecatedRules: Record<string, any>;
   export const rules: Record<string, any>;
