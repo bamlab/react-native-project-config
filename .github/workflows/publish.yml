@@ -9,17 +9,24 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: npm-publish
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          ref: "main" # Replace with your branch name
+          ref: "main"
 
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: yarn --immutable
@@ -27,10 +34,5 @@ jobs:
       - name: Build eslint-plugin
         run: yarn workspace @bam.tech/eslint-plugin build
 
-      - name: Set up .npmrc file
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
       - name: Publish to npm
         run: npx lerna publish from-package --no-private --yes
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
