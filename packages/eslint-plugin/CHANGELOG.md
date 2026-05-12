@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [9.2.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@9.1.0...@bam.tech/eslint-plugin@9.2.0) (2026-05-12)
+
+### Features
+
+- **reacthookPlugin:** add all reactHookPlugin recommended rules ([#146](https://github.com/bamlab/react-native-project-config/issues/146)) ([4f9ec3d](https://github.com/bamlab/react-native-project-config/commit/4f9ec3df60d0eabc4edbe9f680a41e3b54803f27))
+
 # [9.1.0](https://github.com/bamlab/react-native-project-config/compare/@bam.tech/eslint-plugin@9.0.5...@bam.tech/eslint-plugin@9.1.0) (2026-02-24)
 
 ### Features
