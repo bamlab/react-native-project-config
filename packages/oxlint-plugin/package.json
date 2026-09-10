@@ -1,0 +1,58 @@
+{
+  "name": "@bam.tech/oxlint-plugin",
+  "version": "0.1.0",
+  "description": "oxlint plugin and shareable configs for bam react-native projects",
+  "keywords": [
+    "oxlint",
+    "oxlint-plugin",
+    "react-native"
+  ],
+  "author": "BAM.tech",
+  "repository": "https://github.com/bamlab/react-native-project-config",
+  "homepage": "https://github.com/bamlab/react-native-project-config/blob/main/packages/oxlint-plugin/README.md",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./configs": "./dist/configs.js",
+    "./configs/*": "./configs/*"
+  },
+  "files": [
+    "dist",
+    "configs",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "oxlint .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.82.0",
+    "oxlint-tsgolint": "*",
+    "oxfmt": "^0.67.0"
+  },
+  "peerDependenciesMeta": {
+    "oxlint-tsgolint": {
+      "optional": true
+    },
+    "oxfmt": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@oxlint/plugins": "^1.82.0",
+    "oxfmt": "^0.67.0",
+    "oxlint": "^1.82.0",
+    "oxlint-tsgolint": "*",
+    "typescript": "^5.7.2",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.0"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  }
+}

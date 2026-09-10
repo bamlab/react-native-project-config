@@ -1,0 +1,10 @@
+{
+  "plugins": ["typescript", "unicorn", "import"],
+  "categories": { "correctness": "error" },
+  "ignorePatterns": ["dist", "node_modules"],
+  "rules": {
+    "no-console": "error",
+    "eqeqeq": "error",
+    "no-var": "error"
+  }
+}

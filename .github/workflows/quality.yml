@@ -14,6 +14,7 @@ jobs:
       pull-requests: read
     outputs:
       eslint: ${{ steps.filter.outputs.eslint }}
+      oxlint: ${{ steps.filter.outputs.oxlint }}
     steps:
       - uses: dorny/paths-filter@v2
         id: filter
@@ -22,6 +23,9 @@ jobs:
             eslint:
               - 'packages/eslint-plugin/**'
               - 'example-app/**'
+            oxlint:
+              - 'packages/oxlint-plugin/**'
+              - 'example-app/**'
 
   eslint-quality:
     name: Eslint-Plugin Quality
@@ -29,15 +33,21 @@ jobs:
     if: ${{ needs.changes.outputs.eslint == 'true' }}
     uses: ./.github/workflows/quality-eslint.yml
 
+  oxlint-quality:
+    name: Oxlint-Plugin Quality
+    needs: changes
+    if: ${{ needs.changes.outputs.oxlint == 'true' }}
+    uses: ./.github/workflows/quality-oxlint.yml
+
   final-check:
     name: Final Check
-    needs: [eslint-quality]
+    needs: [eslint-quality, oxlint-quality]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - name: Check previous jobs status
         run: |
-          status=$(echo "${{ needs.eslint-quality.result }}" | tr '[:upper:]' '[:lower:]')
+          status=$(echo "${{ needs.eslint-quality.result }} ${{ needs.oxlint-quality.result }}" | tr '[:upper:]' '[:lower:]')
           if [[ "$status" == *"failure"* ]]; then
             echo "One or more previous jobs failed."
             exit 1

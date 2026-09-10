@@ -1,0 +1,30 @@
+{
+  "plugins": ["import", "typescript"],
+  "categories": {
+    "correctness": "off"
+  },
+  "env": {
+    "builtin": true,
+    "es2018": true
+  },
+  "rules": {
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "import/no-duplicates": "error",
+    "no-unused-vars": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "typescript/consistent-type-imports": "error",
+    "typescript/no-require-imports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "typescript/no-require-imports": "off"
+      }
+    }
+  ]
+}

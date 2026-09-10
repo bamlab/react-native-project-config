@@ -1,0 +1,15 @@
+{
+  "plugins": [],
+  "categories": {
+    "correctness": "off"
+  },
+  "env": {
+    "builtin": true
+  },
+  "rules": {
+    "@bam.tech/has-accessibility-hint": "warn",
+    "@bam.tech/has-valid-accessibility-state": "error",
+    "@bam.tech/has-valid-accessibility-descriptors": "error"
+  },
+  "jsPlugins": ["@bam.tech/oxlint-plugin"]
+}
