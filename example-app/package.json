@@ -6,10 +6,12 @@
   "scripts": {
     "start": "node .",
     "lint": "eslint .",
-    "types": "tsc --noEmit"
+    "types": "tsc --noEmit",
+    "lint:oxlint": "oxlint --type-aware ."
   },
   "devDependencies": {
     "@bam.tech/eslint-plugin": "portal:../packages/eslint-plugin",
+    "@bam.tech/oxlint-plugin": "portal:../packages/oxlint-plugin",
     "@bam.tech/typescript-config": "portal:../packages/typescript-config",
     "@eslint/js": "^9.17.0",
     "@testing-library/react-native": "^13.0.0",
@@ -33,6 +35,8 @@
     "eslint-plugin-unused-imports": "^4.1.0",
     "globals": "^16.0.0",
     "jest": "^30.0.0",
+    "oxlint": "^1.82.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "prettier": "^3.0.0",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.19.1"
