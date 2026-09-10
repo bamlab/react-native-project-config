@@ -6,6 +6,6 @@ Kept up to date by Claude Code, see `~/.claude/rules/changelog.md`.
 
 <!-- newest-first: insert new entries directly below this line -->
 
-- `2026-09-10` Lint example-app with oxlint alongside eslint (`uncommitted`)
-- `2026-09-10` Stop pinning legacy `moduleResolution: node` in @bam.tech/typescript-config (`uncommitted`)
-- `2026-09-10` Add @bam.tech/oxlint-plugin: 9 rules, 4 presets, no ESLint plugin at lint time (`uncommitted`)
+- `2026-09-10` Lint example-app with oxlint alongside eslint (`84f4406`)
+- `2026-09-10` Stop pinning legacy `moduleResolution: node` in @bam.tech/typescript-config (`05f8d14`)
+- `2026-09-10` Add @bam.tech/oxlint-plugin: 9 rules, 4 presets, no ESLint plugin at lint time (`868f009`)
