@@ -18,6 +18,8 @@ import { fileURLToPath } from "node:url";
 
 import { afterEach, describe, expect, it } from "vitest";
 
+import { parseDiagnostics } from "./parseDiagnostics";
+
 const packageRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repoRoot = join(packageRoot, "..", "..");
 
@@ -82,9 +84,7 @@ console.log("hi");
     throw new Error(`oxlint rejected the config:\n${output}`);
   }
 
-  return [...output.matchAll(/(?:error|warning) ([\w@.-]+\([\w-]+\))/g)].map(
-    (match) => match[1]!,
-  );
+  return parseDiagnostics(output);
 };
 
 afterEach(() => {

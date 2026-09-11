@@ -19,6 +19,8 @@ import { fileURLToPath } from "node:url";
 
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
+import { parseDiagnostics } from "./parseDiagnostics";
+
 const packageRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repoRoot = join(packageRoot, "..", "..");
 
@@ -41,9 +43,7 @@ const lint = (files: string): string[] => {
     output = `${failure.stdout ?? ""}${failure.stderr ?? ""}`;
   }
 
-  return [...output.matchAll(/(?:error|warning) ([\w@.-]+\([\w-]+\))/g)].map(
-    (match) => match[1]!,
-  );
+  return parseDiagnostics(output);
 };
 
 beforeAll(() => {
