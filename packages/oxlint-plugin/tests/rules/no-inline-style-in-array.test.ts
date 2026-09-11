@@ -17,6 +17,8 @@ tsx.run("no-inline-style-in-array", noInlineStyleInArrayRule, {
     `const F = () => <View style={[]} />;`,
     `const G = () => <View style={[styles.a, isActive && styles.b]} />;`,
     `const H = () => <View style={[styles.a, {}]} />;`,
+    // not a style prop, despite containing "style"
+    `const I = () => <View onStyleChange={[{ flex: 1 }]} />;`,
   ],
   invalid: [
     {
@@ -43,6 +45,15 @@ tsx.run("no-inline-style-in-array", noInlineStyleInArrayRule, {
     },
     {
       code: `const E = () => <View customStyle={[styles.a, { flex: 1 }]} />;`,
+      errors: [{ messageId: "inlineStyleInArray" }],
+    },
+    // React Native flattens nested style arrays
+    {
+      code: `const F = () => <View style={[styles.a, [styles.b, { flex: 1 }]]} />;`,
+      errors: [{ messageId: "inlineStyleInArray" }],
+    },
+    {
+      code: `const G = () => <View contentContainerStyle={[styles.a, { flex: 1 }]} />;`,
       errors: [{ messageId: "inlineStyleInArray" }],
     },
   ],

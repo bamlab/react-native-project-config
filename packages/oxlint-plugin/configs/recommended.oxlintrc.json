@@ -8,18 +8,6 @@
     "es2020": true,
     "node": true
   },
-  "ignorePatterns": [
-    ".cache",
-    ".expo-shared",
-    ".expo",
-    ".yarn",
-    "android",
-    "ios",
-    "coverage",
-    "dist",
-    "node_modules",
-    "expo-env.d.ts"
-  ],
   "rules": {
     "no-array-constructor": "error",
     "no-unused-expressions": "error",
@@ -122,7 +110,6 @@
     "typescript/no-misused-new": "error",
     "typescript/no-namespace": "error",
     "typescript/no-non-null-asserted-optional-chain": "error",
-    "typescript/no-require-imports": "error",
     "typescript/no-this-alias": "error",
     "typescript/no-unnecessary-type-constraint": "error",
     "typescript/no-unsafe-declaration-merging": "error",

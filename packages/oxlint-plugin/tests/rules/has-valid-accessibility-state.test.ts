@@ -12,6 +12,11 @@ tsx.run("has-valid-accessibility-state", hasValidAccessibilityStateRule, {
     `const F = () => <Pressable accessibilityState={{ disabled: isDisabled }} />;`,
     `const G = () => <Pressable accessibilityState={state} />;`,
     `const H = () => <Pressable />;`,
+    // a static template key resolves, so this is a valid key, not "undefined"
+    "const I = () => <Pressable accessibilityState={{ [`checked`]: true }} />;",
+    // a key that cannot be evaluated statically is skipped rather than accused
+    "const J = () => <Pressable accessibilityState={{ [`${prefix}ed`]: true }} />;",
+    `const K = () => <Pressable accessibilityState={{ ["disabled"]: true }} />;`,
   ],
   invalid: [
     {
@@ -24,6 +29,11 @@ tsx.run("has-valid-accessibility-state", hasValidAccessibilityStateRule, {
     },
     {
       code: `const C = () => <Pressable accessibilityState={{ invalidKey: true }} />;`,
+      errors: [{ messageId: "invalidKey" }],
+    },
+    // a static template key still gets validated
+    {
+      code: "const F = () => <Pressable accessibilityState={{ [`nope`]: true }} />;",
       errors: [{ messageId: "invalidKey" }],
     },
     {

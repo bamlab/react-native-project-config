@@ -169,11 +169,20 @@ All 9 rules ship under the `@bam.tech` plugin name.
 | `@bam.tech/has-valid-accessibility-state`       | Enforce a valid `accessibilityState` shape                       | `a11y`        |         |
 
 Four of these are reimplementations of rules from `eslint-plugin-react-native` and
-`eslint-plugin-react-native-a11y` (both MIT): `no-raw-text` and the three `a11y` rules. They are
-verified against the upstream ESLint rules on a shared set of fixtures, so they report the same
-things. Oxlint has no native `react-native` or `react-native-a11y` plugin, and oxc has declared new
-plugins out of scope ([oxc#26151](https://github.com/oxc-project/oxc/issues/26151)), so the only way
-to keep these checks without loading an ESLint plugin is to own them.
+`eslint-plugin-react-native-a11y` (both MIT): `no-raw-text` and the three `a11y` rules. Oxlint has
+no native `react-native` or `react-native-a11y` plugin, and oxc has declared new plugins out of
+scope ([oxc#26151](https://github.com/oxc-project/oxc/issues/26151)), so the only way to keep these
+checks without loading an ESLint plugin is to own them.
+
+They are checked against the upstream ESLint rules on a shared fixture set and agree on it, with one
+deliberate difference: **prop names are matched case-sensitively.** Upstream reaches props through
+`jsx-ast-utils`, which defaults to `ignoreCase: true` because it was written for the DOM, where
+attribute names really are case-insensitive. React Native props are not: `accessibilitylabel` is
+simply not a prop and does nothing at runtime, so an element carrying it genuinely has no
+accessibility label and is worth reporting. Upstream stays silent on it.
+
+They are also more defensive than the originals. Inputs that make the upstream rules throw
+(`<Pressable accessibilityState />`, `` <View>{`plain`}</View> ``) are handled here.
 
 ## Differences from `@bam.tech/eslint-plugin`
 

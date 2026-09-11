@@ -66,6 +66,12 @@ console.log("hi");
     join(projectDir, "src", "app.test.tsx"),
     `it("works", () => { fireEvent.press(b); });\n`,
   );
+  // CommonJS is normal in a React Native project's tooling (metro.config.js,
+  // babel.config.js), so `no-require-imports` has to stay exempt for `.js`.
+  writeFileSync(
+    join(projectDir, "metro.config.js"),
+    `const { getDefaultConfig } = require("expo/metro-config");\n`,
+  );
 
   let output = "";
 
@@ -97,6 +103,16 @@ afterEach(() => {
 });
 
 describe("defineBamConfig", () => {
+  it("exempts CommonJS .js files from no-require-imports", () => {
+    const reported = lintWith(
+      `import { defineBamConfig } from "@bam.tech/oxlint-plugin/configs";
+export default defineBamConfig();
+`,
+    );
+
+    expect(reported).not.toContain("typescript(no-require-imports)");
+  });
+
   it("enables all four presets by default", () => {
     const reported = lintWith(
       `import { defineBamConfig } from "@bam.tech/oxlint-plugin/configs";
@@ -142,6 +158,9 @@ export default defineBamConfig({ presets: ["recommended"] });
     );
 
     expect(reported).toContain("@bam.tech(no-raw-text)");
+    // the rule and its `*.js` exemption both live in the `import` preset, so
+    // selecting `recommended` alone must not flag a CommonJS config file
+    expect(reported).not.toContain("typescript(no-require-imports)");
     // a11y and tests were not requested
     expect(reported).not.toContain(
       "@bam.tech(has-valid-accessibility-descriptors)",

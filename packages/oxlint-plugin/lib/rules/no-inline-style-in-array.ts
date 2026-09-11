@@ -65,6 +65,12 @@ export const noInlineStyleInArrayRule: Rule = {
             ...collectObjects(node.left ?? null),
             ...collectObjects(node.right ?? null),
           ];
+        case "ArrayExpression":
+          // React Native flattens nested style arrays, so an object one level
+          // down allocates on every render just the same.
+          return (node.elements ?? []).flatMap((element) =>
+            collectObjects(element ?? null),
+          );
         default:
           return [];
       }
@@ -75,7 +81,10 @@ export const noInlineStyleInArrayRule: Rule = {
         const attribute = node as unknown as JSXAttributeNode;
         const name = attribute.name?.name;
 
-        if (!name || !name.toLowerCase().includes("style")) return;
+        // React Native style props are `style` or a `*Style` suffix
+        // (`contentContainerStyle`, `titleStyle`). Matching any name merely
+        // containing "style" also caught handlers like `onStyleChange`.
+        if (!name || !name.toLowerCase().endsWith("style")) return;
         if (attribute.value?.type !== "JSXExpressionContainer") return;
 
         const { expression } = attribute.value;

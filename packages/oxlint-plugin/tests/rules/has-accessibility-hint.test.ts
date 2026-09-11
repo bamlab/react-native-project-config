@@ -8,6 +8,11 @@ tsx.run("has-accessibility-hint", hasAccessibilityHintRule, {
     `const B = () => <Pressable accessibilityRole="button" />;`,
     `const C = () => <View />;`,
     `const D = () => <Pressable accessibilityHint="Saves the form" />;`,
+    // Prop names are matched case-sensitively on purpose. `accessibilitylabel`
+    // is not a React Native prop and does nothing at runtime, so there is no
+    // label here and nothing to require a hint for. Upstream reads props
+    // through jsx-ast-utils, which ignores case, and reports this instead.
+    `const E = () => <Pressable accessibilitylabel="Save" />;`,
   ],
   invalid: [
     {
