@@ -12,6 +12,8 @@
       "files": ["**/*.test.tsx", "**/*.test.ts"],
       "rules": {
         "jest/no-alias-methods": "error",
+        "jest/padding-around-test-blocks": "error",
+        "jest/padding-around-after-all-blocks": "error",
         "jest/no-commented-out-tests": "error",
         "jest/no-conditional-expect": "error",
         "jest/no-conditional-in-test": "error",

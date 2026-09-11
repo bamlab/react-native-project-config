@@ -6,6 +6,7 @@ Kept up to date by Claude Code, see `~/.claude/rules/changelog.md`.
 
 <!-- newest-first: insert new entries directly below this line -->
 
+- `2026-09-11` Enable `import/named`, `import/export`, and the two native Jest padding rules oxlint already had, closing two silent parity gaps found in review (`uncommitted`)
 - `2026-09-11` Auto-remove unused imports in oxlint again with a `@bam.tech/no-unused-imports` rule (`53510e5`)
 
 - `2026-09-11` Fix oxlint-plugin preset scoping and three rule defects found by review (`393f368`)
