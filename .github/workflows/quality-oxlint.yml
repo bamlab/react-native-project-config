@@ -1,0 +1,45 @@
+name: Oxlint-Plugin Quality
+
+on: workflow_call
+
+jobs:
+  quality-job:
+    name: Oxlint-Plugin Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        id: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: packages/oxlint-plugin/.nvmrc
+
+      - name: Load dependency cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: oxlint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            oxlint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-modules-
+            oxlint-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build
+        run: yarn workspace @bam.tech/oxlint-plugin build
+
+      - name: Linter
+        run: yarn workspace @bam.tech/oxlint-plugin lint
+
+      - name: Formatter
+        run: yarn workspace @bam.tech/oxlint-plugin format:check
+
+      # Covers the rules in isolation and, through the integration suite, the
+      # shipped presets driving the real oxlint binary.
+      - name: Tests
+        run: yarn workspace @bam.tech/oxlint-plugin test

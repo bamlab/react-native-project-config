@@ -3,6 +3,7 @@
 Each package has its own specifications for contribution. Please refer to the `CONTRIBUTING.md` file in the package you want to contribute to.
 
 - [eslint-plugin](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/CONTRIBUTING.md)
+- [oxlint-plugin](https://github.com/bamlab/react-native-project-config/blob/main/packages/oxlint-plugin/CONTRIBUTING.md)
 
 ## Conventional commits
 

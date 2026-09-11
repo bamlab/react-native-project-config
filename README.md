@@ -1,6 +1,6 @@
 # react-native-project-config by BAM
 
-Monorepo with packages for setting up ESLint and Typescript for any new React Native project.
+Monorepo with packages for setting up linting and Typescript for any new React Native project.
 
 ## Presentation
 
@@ -13,6 +13,7 @@ There is also an example app under `packages/example-app` whose goal is to demon
 ## Using the configurations
 
 - [Using ESLint plugin](https://github.com/bamlab/react-native-project-config/blob/main/packages/eslint-plugin/README.md)
+- [Using oxlint plugin](https://github.com/bamlab/react-native-project-config/blob/main/packages/oxlint-plugin/README.md)
 - [Using Typescript config](https://github.com/bamlab/react-native-project-config/blob/main/packages/typescript-config/README.md)
 
 ## Installing the project
@@ -20,6 +21,7 @@ There is also an example app under `packages/example-app` whose goal is to demon
 - clone the project: `git clone https://github.com/bamlab/react-native-project-config`,
 - install the dependencies: `yarn install`,
 - build the eslint-plugin: `yarn workspace @bam.tech/eslint-plugin build`
+- build the oxlint-plugin: `yarn workspace @bam.tech/oxlint-plugin build`
 - test the errors: `yarn workspace example-app lint`
 
 ✅ Check: in the example-app in eslint-breaking-examples you should see the eslint errors.

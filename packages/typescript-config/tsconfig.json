@@ -9,7 +9,6 @@
     "isolatedModules": true,
     "jsx": "react-native",
     "lib": ["esnext"],
-    "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,

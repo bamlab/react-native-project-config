@@ -1,3 +1,9 @@
 {
-  "extends": "@bam.tech/typescript-config"
+  "extends": "@bam.tech/typescript-config",
+  "compilerOptions": {
+    // Expo 49 pins the legacy node10 resolution, which cannot read the
+    // `exports` map that @bam.tech/oxlint-plugin (and most modern packages)
+    // ship their types behind. Expo does this itself from SDK 53 onwards.
+    "moduleResolution": "bundler"
+  }
 }
