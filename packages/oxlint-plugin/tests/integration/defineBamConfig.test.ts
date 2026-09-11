@@ -72,7 +72,11 @@ console.log("hi");
   try {
     output = execFileSync(
       process.execPath,
-      [join(repoRoot, "node_modules", "oxlint", "dist", "cli.js"), "."],
+      [
+        join(repoRoot, "node_modules", "oxlint", "dist", "cli.js"),
+        "--format=json",
+        ".",
+      ],
       { cwd: projectDir, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
     );
   } catch (error) {

@@ -20,5 +20,16 @@ ts.run("prefer-user-event", preferUserEventRule, {
       errors: [{ messageId: "replaceChangeText" }],
       output: `await userEvent.type(input, "hi");`,
     },
+    // an await already there must not be doubled
+    {
+      code: `await fireEvent.press(button);`,
+      errors: [{ messageId: "replacePress" }],
+      output: `await userEvent.press(button);`,
+    },
+    {
+      code: `await fireEvent?.press(button);`,
+      errors: [{ messageId: "replacePress" }],
+      output: `await userEvent?.press(button);`,
+    },
   ],
 });

@@ -9,6 +9,8 @@ ts.run("await-user-event", awaitUserEventRule, {
     `fireEvent.press(button);`,
     `otherEvent.press(button);`,
     `await userEvent.press(await screen.findByText("ok"));`,
+    // optional chaining puts a ChainExpression between the call and the await
+    `await userEvent?.press(button);`,
   ],
   invalid: [
     {
@@ -20,6 +22,11 @@ ts.run("await-user-event", awaitUserEventRule, {
       code: `userEvent.type(input, "hello");`,
       errors: [{ messageId: "missingAwait" }],
       output: `await userEvent.type(input, "hello");`,
+    },
+    {
+      code: `userEvent?.press(button);`,
+      errors: [{ messageId: "missingAwait" }],
+      output: `await userEvent?.press(button);`,
     },
   ],
 });

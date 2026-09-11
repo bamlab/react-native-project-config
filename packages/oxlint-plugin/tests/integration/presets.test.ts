@@ -33,7 +33,11 @@ const lint = (files: string): string[] => {
   try {
     output = execFileSync(
       process.execPath,
-      [join(repoRoot, "node_modules", "oxlint", "dist", "cli.js"), files],
+      [
+        join(repoRoot, "node_modules", "oxlint", "dist", "cli.js"),
+        "--format=json",
+        files,
+      ],
       { cwd: projectDir, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
     );
   } catch (error) {

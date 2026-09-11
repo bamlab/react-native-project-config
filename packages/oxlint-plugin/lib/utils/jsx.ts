@@ -9,9 +9,10 @@
 /** Minimal structural types: oxlint's AST is ESTree-compatible. */
 interface JSXIdentifierLike {
   type: string;
-  name?: string;
+  name?: string | JSXIdentifierLike;
   object?: JSXIdentifierLike;
   property?: JSXIdentifierLike;
+  namespace?: JSXIdentifierLike;
 }
 
 export interface JSXAttributeLike {
@@ -27,21 +28,36 @@ export interface JSXOpeningElementLike {
 }
 
 /**
- * The element name as written, e.g. `View` for `<View />` and
- * `Animated.View` for `<Animated.View />`.
+ * The element name as written, e.g. `View` for `<View />`, `Animated.View` for
+ * `<Animated.View />` and `A.B.Text` for `<A.B.Text />`.
+ *
+ * The member-expression case recurses because the object of a
+ * `JSXMemberExpression` can be another one. Returning only the last segment
+ * would make `<A.B.Text>` look like `Text`, which is in `no-raw-text`'s
+ * allowlist, and `<A.B.Pressable>` look like a touchable, which
+ * `has-valid-accessibility-descriptors` autofixes. It would also stop the
+ * `skip` and `touchables` options from ever matching a dotted name.
+ * `jsx-ast-utils`' `elementType`, which the upstream rules use, recurses too.
  */
-export const elementName = (node: JSXOpeningElementLike): string => {
-  const { name } = node;
+const nameOf = (node: JSXIdentifierLike | undefined): string => {
+  if (!node) return "";
 
-  if (name.type === "JSXMemberExpression") {
-    const object = name.object?.name ?? "";
-    const property = name.property?.name ?? "";
+  if (node.type === "JSXMemberExpression") {
+    const object = nameOf(node.object);
+    const property = nameOf(node.property);
 
     return object && property ? `${object}.${property}` : property;
   }
 
-  return name.name ?? "";
+  if (node.type === "JSXNamespacedName") {
+    return `${nameOf(node.namespace)}:${nameOf(node.name as JSXIdentifierLike)}`;
+  }
+
+  return typeof node.name === "string" ? node.name : "";
 };
+
+export const elementName = (node: JSXOpeningElementLike): string =>
+  nameOf(node.name);
 
 export const hasSpreadAttribute = (node: JSXOpeningElementLike): boolean =>
   node.attributes.some((attribute) => attribute.type === "JSXSpreadAttribute");

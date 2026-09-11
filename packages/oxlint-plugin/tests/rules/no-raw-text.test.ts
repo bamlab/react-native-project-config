@@ -30,6 +30,11 @@ tsx.run("no-raw-text", noRawTextRule, {
       code: `const L = () => <MyText>Hello</MyText>;`,
       options: [{ skip: ["MyText"] }],
     },
+    // a dotted name has to survive whole for `skip` to match it
+    {
+      code: `const M = () => <MyLib.UI.Typography>Hello</MyLib.UI.Typography>;`,
+      options: [{ skip: ["MyLib.UI.Typography"] }],
+    },
   ],
   invalid: [
     {
@@ -48,6 +53,13 @@ tsx.run("no-raw-text", noRawTextRule, {
     },
     {
       code: `const C = () => <View>{"Hello"}</View>;`,
+      errors: [
+        { message: "Raw text (Hello) cannot be used outside of a <Text> tag" },
+      ],
+    },
+    // `A.B.Text` must not be truncated to `Text`, which is in the allowlist
+    {
+      code: `const E = () => <A.B.Text>Hello</A.B.Text>;`,
       errors: [
         { message: "Raw text (Hello) cannot be used outside of a <Text> tag" },
       ],

@@ -4,6 +4,8 @@
  */
 import type { Rule } from "@oxlint/plugins";
 
+import { isAwaited } from "../utils/await.js";
+
 export const awaitUserEventRule: Rule = {
   meta: {
     type: "problem",
@@ -24,7 +26,7 @@ export const awaitUserEventRule: Rule = {
           node.callee.type === "MemberExpression" &&
           "name" in node.callee.object &&
           node.callee.object.name === "userEvent" &&
-          node.parent.type !== "AwaitExpression"
+          !isAwaited(node)
         ) {
           context.report({
             node,

@@ -5,6 +5,8 @@
  */
 import type { Rule } from "@oxlint/plugins";
 
+import { isCallAwaited } from "../utils/await.js";
+
 const REPLACEMENTS = {
   press: { messageId: "replacePress", method: "press" },
   changeText: { messageId: "replaceChangeText", method: "type" },
@@ -36,11 +38,17 @@ export const preferUserEventRule: Rule = {
           REPLACEMENTS[node.property.name as keyof typeof REPLACEMENTS];
         if (!replacement) return;
 
+        // Re-adding `await` to an already-awaited call would produce
+        // `await await userEvent.press(...)`.
+        const replacementObject = isCallAwaited(node)
+          ? "userEvent"
+          : "await userEvent";
+
         context.report({
           node: node.property,
           messageId: replacement.messageId,
           fix: (fixer) => [
-            fixer.replaceText(node.object, "await userEvent"),
+            fixer.replaceText(node.object, replacementObject),
             fixer.replaceText(node.property, replacement.method),
           ],
         });
