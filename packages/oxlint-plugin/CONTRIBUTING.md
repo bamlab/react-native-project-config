@@ -2,6 +2,19 @@
 
 ## Setup
 
+**Node 22 or newer is required to develop this package**, and `.nvmrc` pins it. `RuleTester` from
+`oxlint/plugins-dev` refuses to run on anything older:
+
+```text
+`RuleTester` is not supported on 32-bit or big-endian systems, versions of NodeJS prior to v22.0.0,
+versions of Deno prior to v2.0.0, or other runtimes
+```
+
+Consuming the package is a separate question: `engines` stays at Node 18 because the presets
+and rules run on anything, but the documented `oxlint.config.mts` setup needs Node 22 as well,
+since oxlint hands the file to Node and relies on its type-stripping. The README gives the
+`.oxlintrc.json` fallback for older runtimes.
+
 ```bash
 yarn install
 yarn workspace @bam.tech/oxlint-plugin build

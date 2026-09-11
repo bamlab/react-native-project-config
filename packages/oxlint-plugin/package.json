@@ -31,15 +31,15 @@
     "test": "vitest run"
   },
   "peerDependencies": {
+    "oxfmt": "^0.67.0",
     "oxlint": "^1.82.0",
-    "oxlint-tsgolint": "*",
-    "oxfmt": "^0.67.0"
+    "oxlint-tsgolint": "*"
   },
   "peerDependenciesMeta": {
-    "oxlint-tsgolint": {
+    "oxfmt": {
       "optional": true
     },
-    "oxfmt": {
+    "oxlint-tsgolint": {
       "optional": true
     }
   },

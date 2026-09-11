@@ -41,6 +41,11 @@ export default defineBamConfig();
 
 Then lint with `oxlint .`, or `oxlint --type-aware .` to include the type-aware rules.
 
+> **Node 22 or newer.** Oxlint does not compile TypeScript itself, it hands the config file to
+> Node and relies on its type-stripping, so an `oxlint.config.mts` does not load at all on Node
+> 20. On an older runtime use the `.oxlintrc.json` form shown below instead. (`oxlint.config.mjs`
+> is not a workaround: oxlint auto-discovers the `.mts` name, not the `.mjs` one.)
+
 That is the whole setup. `defineBamConfig` enables all four presets and, importantly, supplies the
 ignore patterns (see below). To narrow it down or add project rules:
 
