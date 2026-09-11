@@ -33,5 +33,5 @@ export const isAwaited = (node: NodeLike): boolean =>
 export const isCallAwaited = (node: NodeLike): boolean => {
   const call = skipChain(node.parent);
 
-  return call != null && isAwaited(call);
+  return call !== null && call !== undefined && isAwaited(call);
 };
