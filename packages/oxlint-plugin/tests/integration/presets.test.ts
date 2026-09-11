@@ -8,6 +8,7 @@
 import { execFileSync } from "node:child_process";
 import {
   mkdtempSync,
+  readFileSync,
   rmSync,
   symlinkSync,
   writeFileSync,
@@ -48,6 +49,31 @@ const lint = (files: string): string[] => {
   }
 
   return parseDiagnostics(output);
+};
+
+/**
+ * Run `oxlint --fix` over `files` and return what the first one now contains.
+ * Unlike `lint`, this is about the fix rather than the diagnostic: the native
+ * `no-unused-vars` reports unused imports but only offers a suggestion, so
+ * `--fix` leaving an import behind is exactly the regression to catch.
+ */
+const fixAndRead = (file: string): string => {
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        join(repoRoot, "node_modules", "oxlint", "dist", "cli.js"),
+        "--fix",
+        file,
+      ],
+      { cwd: projectDir, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+    );
+  } catch {
+    // Non-zero means something was still reported after fixing, which the
+    // assertions on the file contents cover.
+  }
+
+  return readFileSync(join(projectDir, file), "utf8");
 };
 
 beforeAll(() => {
@@ -150,6 +176,44 @@ describe("shipped presets", () => {
     );
     // `disallowedWords: ["should"]` has to survive the migration into the preset
     expect(inTestFile).toContain("jest(valid-title)");
+  });
+
+  it("reports unused imports through the import preset", () => {
+    writeFileSync(
+      join(projectDir, "src", "reported.tsx"),
+      `import { View, Text } from "react-native";\nexport const A = () => <View />;\n`,
+    );
+
+    expect(lint("src/reported.tsx")).toContain("@bam.tech(no-unused-imports)");
+  });
+
+  it("removes unused imports with --fix, which the native rule does not", () => {
+    writeFileSync(
+      join(projectDir, "src", "fixed.tsx"),
+      `import { View, Text } from "react-native";\nimport Unused from "./unused";\nexport const A = () => <View />;\n`,
+    );
+
+    const fixed = fixAndRead("src/fixed.tsx");
+
+    expect(fixed).toBe(
+      `import { View } from "react-native";\nexport const A = () => <View />;\n`,
+    );
+  });
+
+  it("removes a whole block of unused imports in a single --fix pass", () => {
+    // oxlint applies one pass of non-touching fixes and does not iterate, so a
+    // run of unused imports has to be removed by one fix or it takes one
+    // `--fix` per import.
+    writeFileSync(
+      join(projectDir, "src", "block.tsx"),
+      `import { A } from "./a";\nimport B from "./b";\nimport * as C from "./c";\nimport { View } from "react-native";\nexport const D = () => <View />;\n`,
+    );
+
+    // The blank line is `import/newline-after-import`, which fixes in the same
+    // pass once the imports above are gone.
+    expect(fixAndRead("src/block.tsx")).toBe(
+      `import { View } from "react-native";\n\nexport const D = () => <View />;\n`,
+    );
   });
 
   it("does not load any ESLint plugin", () => {

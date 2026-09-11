@@ -5,6 +5,7 @@ import { hasValidAccessibilityStateRule } from "./has-valid-accessibility-state.
 import { noDifferentDisplaynameRule } from "./no-different-displayname.js";
 import { noInlineStyleInArrayRule } from "./no-inline-style-in-array.js";
 import { noRawTextRule } from "./no-raw-text.js";
+import { noUnusedImportsRule } from "./no-unused-imports.js";
 import { preferUserEventRule } from "./prefer-user-event.js";
 import { requireNamedEffectRule } from "./require-named-effect.js";
 
@@ -15,6 +16,7 @@ export const rules = {
   "no-different-displayname": noDifferentDisplaynameRule,
   "no-inline-style-in-array": noInlineStyleInArrayRule,
   "no-raw-text": noRawTextRule,
+  "no-unused-imports": noUnusedImportsRule,
   "has-accessibility-hint": hasAccessibilityHintRule,
   "has-valid-accessibility-descriptors": hasValidAccessibilityDescriptorsRule,
   "has-valid-accessibility-state": hasValidAccessibilityStateRule,

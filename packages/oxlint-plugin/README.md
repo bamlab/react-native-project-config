@@ -111,7 +111,7 @@ If you are not in a monorepo and prefer plain JSON, this also works:
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `recommended` | The base config for all projects: the ESLint/TypeScript/React/React-hooks natives, plus this package's React Native rules. Includes the type-aware rules, which only run with `--type-aware`. |
 | `tests`       | Test-file rules (native `jest`, plus the two userEvent rules), scoped to `**/*.test.ts?(x)`.                                                                                                  |
-| `import`      | Import hygiene: native `import` rules, `no-unused-vars`, `consistent-type-imports`.                                                                                                           |
+| `import`      | Import hygiene: native `import` rules, `no-unused-vars`, `no-unused-imports`, `consistent-type-imports`.                                                                                                           |
 | `a11y`        | React Native accessibility. Enabled by default here, unlike the ESLint plugin where it was opt-in beta.                                                                                       |
 
 ## Formatting
@@ -154,7 +154,7 @@ there is no export-sorting feature at all.
 
 ## Rules
 
-All 9 rules ship under the `@bam.tech` plugin name.
+All 10 rules ship under the `@bam.tech` plugin name.
 
 | Rule                                            | Description                                                      | Config        | Fixable |
 | ----------------------------------------------- | ---------------------------------------------------------------- | ------------- | ------- |
@@ -162,6 +162,7 @@ All 9 rules ship under the `@bam.tech` plugin name.
 | `@bam.tech/require-named-effect`                | Enforce named functions inside a `useEffect`                     | `recommended` |         |
 | `@bam.tech/no-inline-style-in-array`            | Disallow inline style objects inside a style array               | `recommended` |         |
 | `@bam.tech/no-raw-text`                         | Disallow text outside of a `<Text>` component                    | `recommended` |         |
+| `@bam.tech/no-unused-imports`                   | Disallow imports that are never used, and remove them            | `import`      | yes     |
 | `@bam.tech/await-user-event`                    | Enforce awaiting `userEvent` calls                               | `tests`       | yes     |
 | `@bam.tech/prefer-user-event`                   | Enforce `userEvent` over `fireEvent`                             | `tests`       | yes     |
 | `@bam.tech/has-accessibility-hint`              | Require an `accessibilityHint` alongside an `accessibilityLabel` | `a11y`        |         |
@@ -201,7 +202,7 @@ reports 64 findings and this config reports the same findings except as listed h
 | ESLint rule                            | oxlint rule                                                                   | Note                                                                                                                                                                                                              |
 | -------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `@bam.tech/no-inline-style`            | `react-perf/jsx-no-new-object-as-prop` + `@bam.tech/no-inline-style-in-array` | The native rule does not look inside arrays; the companion rule covers that. Enabling `react-perf/jsx-no-new-array-as-prop` instead is not possible, as it rejects the legitimate `style={[styles.a, styles.b]}`. |
-| `unused-imports/no-unused-imports`     | `no-unused-vars`                                                              | Reported, but **not auto-removed**: the native rule has no import-removing fix.                                                                                                                                   |
+| `unused-imports/no-unused-imports`     | `no-unused-vars` + `@bam.tech/no-unused-imports`                              | The native rule reports unused imports, but its import-removing fix is a *suggestion*, so `oxlint --fix` skips it. The companion rule carries the same fix as a safe one. See the note below.                      |
 | `unused-imports/no-unused-vars`        | `no-unused-vars`                                                              |                                                                                                                                                                                                                   |
 | `react-hooks/component-hook-factories` | `react/static-components`                                                     | Renamed upstream in eslint-plugin-react-hooks 7.1.                                                                                                                                                                |
 
@@ -215,6 +216,38 @@ reports 64 findings and this config reports the same findings except as listed h
 | `react/no-unused-prop-types` | Dropped upstream: PropTypes are ignored in React 19, and `no-unused-vars` plus TypeScript already catch unused props.                                                                                                                                                                                                                              |
 | `import/no-unresolved`       | Not implemented: oxlint considers it inherently false-positive-prone.                                                                                                                                                                                                                                                                              |
 | `no-undef`                   | Only available as a nursery rule. TypeScript already catches undefined identifiers, and typescript-eslint recommends disabling it on TS code.                                                                                                                                                                                                      |
+
+### Why unused imports need a companion rule
+
+The native `no-unused-vars` does have an import-removing fix, but it is registered as a
+*suggestion*, which `oxlint --fix` does not apply. The only way to apply it is
+`oxlint --fix-suggestions`, and that flag is global: on `example-app` it also deletes
+`console.log()` calls, deletes an `if (true) {}` block, rewrites an `interface ... extends` into a
+type alias and guesses an `accessibilityRole` onto a `<Pressable>`. It cannot be narrowed to one
+rule, so it is not a substitute for the safe, targeted fix that
+`unused-imports/no-unused-imports` gave us.
+
+`@bam.tech/no-unused-imports` carries that fix instead. It removes an unused specifier along with
+the comma that joined it, drops the braces when no named import survives, and removes the whole
+statement, trailing newline included, when nothing in it is used. It also removes unused `import * as
+ns` bindings, which the native suggestion leaves behind. Side-effect imports (`import "./polyfill"`)
+declare nothing and are never touched.
+
+A whole block of unused imports is reported as **one** finding rather than one per import, and so is
+a run of adjacent unused specifiers inside one `{ ... }`. This is not cosmetic: `oxlint --fix`
+applies a single pass of non-touching fixes and does not iterate, so two removals that met at a
+shared comma or line break would take one `oxlint --fix` each. Fused into one removal, the block goes
+in one run. The per-import diagnostic is not lost, since `no-unused-vars` still reports each binding
+separately.
+
+Two further deliberate consequences:
+
+- **Unused imports are reported twice**, once by `no-unused-vars` and once by this rule. The ESLint
+  config did the same, from `@typescript-eslint/no-unused-vars` and
+  `unused-imports/no-unused-imports`.
+- **`_`-prefixed imports are ignored**, matching the native `no-unused-vars`, which treats `^_` as
+  the deliberately-unused convention. Reporting them here would make `oxlint --fix` rewrite code
+  that `oxlint` itself calls clean.
 
 ### Known rule-semantics divergences
 

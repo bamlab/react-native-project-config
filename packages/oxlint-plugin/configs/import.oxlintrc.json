@@ -14,6 +14,7 @@
     "import/no-named-as-default-member": "warn",
     "import/no-duplicates": "error",
     "no-unused-vars": "error",
+    "@bam.tech/no-unused-imports": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
     "typescript/consistent-type-imports": "error",
@@ -26,5 +27,6 @@
         "typescript/no-require-imports": "off"
       }
     }
-  ]
+  ],
+  "jsPlugins": ["@bam.tech/oxlint-plugin"]
 }
