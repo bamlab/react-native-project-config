@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@oxlint/plugins": "^1.82.0",
-    "oxfmt": "^0.67.0",
+    "oxfmt": "^0.70.0",
     "oxlint": "^1.82.0",
     "oxlint-tsgolint": "*",
     "typescript": "^5.7.2",
